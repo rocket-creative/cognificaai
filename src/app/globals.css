@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark Theme - Matching Kronos Health */
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+  
+  --cognifica-bg: #0A0A0A;
+  --cognifica-card: #161616;
+  --cognifica-gray-100: #F5F5F5;
+  --cognifica-gray-200: #E5E5E5;
+  --cognifica-gray-300: #D4D4D4;
+  --cognifica-gray-400: #A3A3A3;
+  --cognifica-gray-500: #737373;
+  --cognifica-gray-600: #525252;
+  --cognifica-gray-700: #404040;
+  --cognifica-gray-800: #262626;
+  --cognifica-gray-900: #171717;
+  --cognifica-text-dark: #171717;
+  
+  /* Accent Colors */
+  --cognifica-lavender: #D4B8E8;
+  --cognifica-lavender-light: #E8D8F0;
+  --cognifica-lavender-dark: #A78BFA;
+  --cognifica-cyan: #00FFFF;
+  --cognifica-green: #00A896;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-cognifica-bg: var(--cognifica-bg);
+  --color-cognifica-card: var(--cognifica-card);
+  --color-cognifica-gray-100: var(--cognifica-gray-100);
+  --color-cognifica-gray-200: var(--cognifica-gray-200);
+  --color-cognifica-gray-300: var(--cognifica-gray-300);
+  --color-cognifica-gray-400: var(--cognifica-gray-400);
+  --color-cognifica-gray-500: var(--cognifica-gray-500);
+  --color-cognifica-gray-600: var(--cognifica-gray-600);
+  --color-cognifica-gray-700: var(--cognifica-gray-700);
+  --color-cognifica-gray-800: var(--cognifica-gray-800);
+  --color-cognifica-gray-900: var(--cognifica-gray-900);
+  --color-cognifica-text-dark: var(--cognifica-text-dark);
+  --color-cognifica-lavender: var(--cognifica-lavender);
+  --color-cognifica-lavender-light: var(--cognifica-lavender-light);
+  --color-cognifica-lavender-dark: var(--cognifica-lavender-dark);
+  --color-cognifica-cyan: var(--cognifica-cyan);
+  --color-cognifica-green: var(--cognifica-green);
+  
+  /* Typography */
+  --font-heading: var(--font-bebas-neue);
+  --font-body: var(--font-ibm-plex-sans);
+  --font-nav: var(--font-open-sans);
+  
+  /* Breakpoints - Mobile First */
+  --breakpoint-sm: 393px;
+  --breakpoint-md: 810px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1920px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #0A0A0A;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: var(--font-body, 'IBM Plex Sans', system-ui, sans-serif);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, 'Bebas Neue', sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.font-heading {
+  font-family: var(--font-heading, 'Bebas Neue', sans-serif);
+}
+
+.font-body {
+  font-family: var(--font-body, 'IBM Plex Sans', system-ui, sans-serif);
+}
+
+.font-nav {
+  font-family: var(--font-nav, 'Open Sans', sans-serif);
+}
+
+/* Small text readability */
+.text-xs,
+.text-sm,
+.text-\[9px\],
+.text-\[10px\] {
+  letter-spacing: 0.02em;
+}
+
+.text-\[9px\],
+.text-\[10px\] {
+  letter-spacing: 0.03em;
+}
+
+/* Focus States */
+@layer base {
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--cognifica-lavender);
+    outline-offset: 2px;
+  }
+  
+  a {
+    transition: color 0.2s ease;
+  }
+  
+  button {
+    transition: all 0.2s ease;
+  }
+}
+
+/* Selection */
+::selection {
+  background: var(--cognifica-lavender);
+  color: var(--cognifica-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cognifica-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cognifica-gray-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cognifica-lavender);
 }
