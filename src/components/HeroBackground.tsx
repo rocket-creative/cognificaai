@@ -1,13 +1,22 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 interface HeroBackgroundProps {
+  className?: string;
+  waveCount?: number;
   color?: string;
 }
 
-export function HeroBackground({ color = "167, 139, 250" }: HeroBackgroundProps) {
+export function HeroBackground({ 
+  className = "", 
+  waveCount = 5,
+  color = "167, 139, 250"
+}: HeroBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const timeRef = useRef<{ value: number }>({ value: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,10 +25,7 @@ export function HeroBackground({ color = "167, 139, 250" }: HeroBackgroundProps)
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationId: number;
-    let time = 0;
-
-    const resize = () => {
+    const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
       canvas.width = rect.width * dpr;
@@ -27,88 +33,106 @@ export function HeroBackground({ color = "167, 139, 250" }: HeroBackgroundProps)
       ctx.scale(dpr, dpr);
     };
 
-    const drawWaveform = () => {
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    gsap.to(timeRef.current, {
+      value: Math.PI * 2,
+      duration: 8,
+      repeat: -1,
+      ease: "none",
+    });
+
+    const waves = Array.from({ length: waveCount }, (_, i) => ({
+      amplitude: 30 + i * 15,
+      frequency: 0.008 - i * 0.001,
+      speed: 1 + i * 0.2,
+      phase: (i * Math.PI) / waveCount,
+      opacity: 0.15 - i * 0.02,
+      yOffset: i * 40,
+    }));
+
+    const animate = () => {
       const rect = canvas.getBoundingClientRect();
-      const width = rect.width;
-      const height = rect.height;
+      ctx.clearRect(0, 0, rect.width, rect.height);
 
-      ctx.clearRect(0, 0, width, height);
+      const centerY = rect.height / 2;
+      const time = timeRef.current.value;
 
-      const waves = 8;
-      const baseAmplitude = height * 0.12;
-
-      for (let w = 0; w < waves; w++) {
-        const opacity = 0.4 - w * 0.04;
-        const amplitude = baseAmplitude * (1 - w * 0.1);
-        const frequency = 0.002 + w * 0.0003;
-        const speed = 0.015 - w * 0.001;
-        const yOffset = height * 0.45 + w * 40;
-
+      waves.forEach((wave) => {
         ctx.beginPath();
-        ctx.moveTo(0, yOffset);
-
-        for (let x = 0; x <= width; x += 2) {
-          const y =
-            yOffset +
-            Math.sin(x * frequency + time * speed) * amplitude +
-            Math.sin(x * frequency * 2.5 + time * speed * 1.3) * (amplitude * 0.4) +
-            Math.sin(x * frequency * 0.5 + time * speed * 0.7) * (amplitude * 0.2);
-          ctx.lineTo(x, y);
+        
+        for (let x = 0; x <= rect.width; x += 2) {
+          const y = centerY + 
+            wave.yOffset +
+            Math.sin(x * wave.frequency + time * wave.speed + wave.phase) * wave.amplitude +
+            Math.sin(x * wave.frequency * 2 + time * wave.speed * 0.5) * (wave.amplitude * 0.3);
+          
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
         }
 
-        ctx.strokeStyle = `rgba(${color}, ${opacity})`;
-        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = `rgba(${color}, ${wave.opacity})`;
+        ctx.lineWidth = 2;
         ctx.stroke();
+
+        ctx.beginPath();
+        for (let x = 0; x <= rect.width; x += 2) {
+          const y = centerY + 
+            wave.yOffset +
+            Math.sin(x * wave.frequency + time * wave.speed + wave.phase) * wave.amplitude +
+            Math.sin(x * wave.frequency * 2 + time * wave.speed * 0.5) * (wave.amplitude * 0.3);
+          
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.lineTo(rect.width, rect.height);
+        ctx.lineTo(0, rect.height);
+        ctx.closePath();
+        
+        const gradient = ctx.createLinearGradient(0, centerY, 0, rect.height);
+        gradient.addColorStop(0, `rgba(${color}, ${wave.opacity * 0.5})`);
+        gradient.addColorStop(1, `rgba(${color}, 0)`);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+      });
+
+      for (let x = 0; x < rect.width; x += 80) {
+        const baseY = centerY + Math.sin(x * 0.01 + time) * 20;
+        const pulseSize = 3 + Math.sin(time * 2 + x * 0.05) * 2;
+        const opacity = 0.3 + Math.sin(time + x * 0.02) * 0.2;
+        
+        ctx.beginPath();
+        ctx.arc(x, baseY, pulseSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${color}, ${opacity})`;
+        ctx.fill();
       }
 
-      // Add stronger glow effect
-      const gradient = ctx.createRadialGradient(
-        width * 0.3,
-        height * 0.5,
-        0,
-        width * 0.3,
-        height * 0.5,
-        width * 0.6
-      );
-      gradient.addColorStop(0, `rgba(${color}, 0.15)`);
-      gradient.addColorStop(0.5, `rgba(${color}, 0.05)`);
-      gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
-
-      // Add second glow on the right
-      const gradient2 = ctx.createRadialGradient(
-        width * 0.8,
-        height * 0.6,
-        0,
-        width * 0.8,
-        height * 0.6,
-        width * 0.4
-      );
-      gradient2.addColorStop(0, `rgba(${color}, 0.1)`);
-      gradient2.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = gradient2;
-      ctx.fillRect(0, 0, width, height);
-
-      time += 1;
-      animationId = requestAnimationFrame(drawWaveform);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    resize();
-    drawWaveform();
-
-    window.addEventListener("resize", resize);
+    animate();
 
     return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", resizeCanvas);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      gsap.killTweensOf(timeRef.current);
     };
-  }, [color]);
+  }, [waveCount, color]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
+      className={`absolute inset-0 w-full h-full ${className}`}
+      style={{ pointerEvents: "none" }}
       aria-hidden="true"
     />
   );
