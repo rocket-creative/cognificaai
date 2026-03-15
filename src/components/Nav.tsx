@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#employers", label: "For Employers" },
   { href: "#employees", label: "For Employees" },
   { href: "#faq", label: "FAQ" },
+  { href: "https://kronoshealth.co?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true },
 ];
 
 export function Nav() {
@@ -66,6 +67,7 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
+                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </Link>
@@ -123,6 +125,7 @@ export function Nav() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </Link>

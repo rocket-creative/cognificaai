@@ -9,7 +9,9 @@ const footerLinks = {
     { label: "Clinical Assessments", href: "#assessments" },
   ],
   company: [
-    { label: "About Kronos Health", href: "https://kronoshealth.co" },
+    { label: "Kronos Health", href: "https://kronoshealth.co?utm_source=cognificaai&utm_medium=footer" },
+    { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaai&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://kronoshealth.co/revenue-cycle?utm_source=cognificaai&utm_medium=footer" },
     { label: "Contact", href: "#demo" },
   ],
   legal: [
@@ -123,8 +125,16 @@ export function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="font-body text-xs text-white/40">
-              © {currentYear} Cognifica AI. A Kronos Health Company. All rights
-              reserved.
+              © {currentYear} Cognifica AI. A{" "}
+              <Link 
+                href="https://kronoshealth.co?utm_source=cognificaai&utm_medium=footer_copyright" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#D4B8E8]/70 hover:text-[#D4B8E8] transition-colors"
+              >
+                Kronos Health
+              </Link>{" "}
+              Company. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {footerLinks.legal.map((link) => (
