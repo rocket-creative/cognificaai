@@ -28,8 +28,8 @@ export function ClinicalReferralBanner() {
       role="banner"
       aria-label="Clinical care referral"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-4">
-        <p className="font-body text-xs sm:text-sm text-white/70 font-light">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-center min-h-[44px]">
+        <p className="font-body text-xs sm:text-sm text-white/70 font-light text-center">
           Having trouble now? Our clinical team is ready to help.{" "}
           <a
             href="https://cognifica.health?utm_source=cognificaai&utm_medium=referral"
@@ -44,7 +44,7 @@ export function ClinicalReferralBanner() {
         </p>
         <button
           onClick={dismiss}
-          className="text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B8E8] flex-shrink-0 p-1"
+          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B8E8] flex-shrink-0 p-1"
           aria-label="Dismiss this message"
         >
           <X className="w-3.5 h-3.5" aria-hidden="true" />

@@ -11,8 +11,13 @@ const navLinks = [
   { href: "#roi", label: "ROI" },
   { href: "#faq", label: "FAQ" },
   { href: "#pricing", label: "Pricing" },
-  { href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true, ariaLabel: "Kronos Health parent company (opens in new tab)" },
 ];
+
+const kronosHealthLink = {
+  href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav",
+  label: "Kronos Health",
+  ariaLabel: "Kronos Health parent company (opens in new tab)",
+};
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,31 +71,27 @@ export function Nav() {
 
           {/* Desktop Navigation */}
           <div className="hidden xl:flex items-center gap-5 flex-shrink-0">
-            {navLinks.map((link) =>
-              "external" in link && link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={"ariaLabel" in link ? link.ariaLabel : "Opens in new tab"}
-                  className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
             <span className="text-white/30 font-nav text-xs" aria-hidden="true">
               |
             </span>
+            <a
+              href={kronosHealthLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={kronosHealthLink.ariaLabel}
+              className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
+            >
+              {kronosHealthLink.label}
+            </a>
           </div>
 
           {/* Desktop CTA */}
@@ -139,31 +140,27 @@ export function Nav() {
       >
         <div className="flex flex-col h-full px-6 py-8">
           <nav className="flex flex-col gap-6">
-            {navLinks.map((link, i) =>
-              "external" in link && link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={"ariaLabel" in link ? link.ariaLabel : "Opens in new tab"}
-                  onClick={() => setIsOpen(false)}
-                  className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  ref={i === 0 ? firstLinkRef : undefined}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.href}
+                ref={i === 0 ? firstLinkRef : undefined}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href={kronosHealthLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={kronosHealthLink.ariaLabel}
+              onClick={() => setIsOpen(false)}
+              className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+            >
+              {kronosHealthLink.label}
+            </a>
           </nav>
 
           <div className="mt-auto pt-8 border-t border-white/10">
