@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ClinicalReferralBanner } from "@/components/ClinicalReferralBanner";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -113,6 +114,7 @@ export default function RootLayout({
           Skip to main content
         </a>
 
+        <ClinicalReferralBanner />
         <Nav />
 
         <main id="main" className="min-h-screen">
