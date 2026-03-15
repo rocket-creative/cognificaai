@@ -4,15 +4,14 @@ import { ArrowRight } from "lucide-react";
 const footerLinks = {
   product: [
     { label: "How It Works", href: "#how" },
-    { label: "For Employers", href: "#employers" },
-    { label: "For Employees", href: "#employees" },
     { label: "Clinical Assessments", href: "#assessments" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Request Demo", href: "#demo" },
   ],
   company: [
     { label: "Kronos Health", href: "https://kronoshealth.co?utm_source=cognificaai&utm_medium=footer" },
     { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaai&utm_medium=footer" },
     { label: "Revenue Cycle", href: "https://kronoshealth.co/revenue-cycle?utm_source=cognificaai&utm_medium=footer" },
-    { label: "Contact", href: "#demo" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

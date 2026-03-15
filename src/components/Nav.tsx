@@ -6,9 +6,9 @@ import { Menu, X, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { href: "#how", label: "How It Works" },
-  { href: "#employers", label: "For Employers" },
-  { href: "#employees", label: "For Employees" },
+  { href: "#assessments", label: "Assessments" },
   { href: "#faq", label: "FAQ" },
+  { href: "#demo", label: "Contact" },
   { href: "https://kronoshealth.co?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true },
 ];
 
