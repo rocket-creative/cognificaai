@@ -115,10 +115,12 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <ClinicalReferralBanner />
-        <Nav />
+        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md">
+          <ClinicalReferralBanner />
+          <Nav />
+        </header>
 
-        <main id="main" className="min-h-screen pb-24 lg:pb-0">
+        <main id="main" className="min-h-screen pt-28 sm:pt-32 pb-24 lg:pb-0">
           {children}
         </main>
 

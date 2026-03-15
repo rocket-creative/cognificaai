@@ -43,11 +43,9 @@ export function Nav() {
   }, [isOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/5"
-          : "bg-transparent"
+    <div
+      className={`transition-all duration-300 border-b border-transparent ${
+        isScrolled ? "border-white/5" : ""
       }`}
     >
       <nav
@@ -58,7 +56,7 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl sm:text-2xl tracking-wide text-white hover:text-[#D4B8E8] transition-colors flex-shrink-0"
+            className="text-xl sm:text-2xl tracking-wide text-white hover:text-[#D4B8E8] transition-colors flex-shrink-0 flex items-center"
             style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 300 }}
             aria-label="Cognifica AI Home"
           >
@@ -90,6 +88,9 @@ export function Nav() {
                 </Link>
               )
             )}
+            <span className="text-white/30 font-nav text-xs" aria-hidden="true">
+              |
+            </span>
           </div>
 
           {/* Desktop CTA */}
@@ -131,7 +132,7 @@ export function Nav() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`xl:hidden fixed inset-0 top-16 sm:top-20 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
+        className={`xl:hidden fixed inset-0 top-28 sm:top-32 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}
@@ -183,6 +184,6 @@ export function Nav() {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
