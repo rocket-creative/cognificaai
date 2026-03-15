@@ -58,7 +58,7 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl sm:text-2xl tracking-wide text-white hover:text-[#D4B8E8] transition-colors"
+            className="text-xl sm:text-2xl tracking-wide text-white hover:text-[#D4B8E8] transition-colors flex-shrink-0"
             style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 300 }}
             aria-label="Cognifica AI Home"
           >
@@ -67,27 +67,33 @@ export function Nav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
-                {...("external" in link && link.external
-                  ? {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      "aria-label": "ariaLabel" in link ? link.ariaLabel : "Opens in new tab",
-                    }
-                  : {})}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="hidden xl:flex items-center gap-5 flex-shrink-0">
+            {navLinks.map((link) =>
+              "external" in link && link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={"ariaLabel" in link ? link.ariaLabel : "Opens in new tab"}
+                  className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden xl:flex items-center gap-4 flex-shrink-0">
             <Link
               href="tel:+19147056830"
               className="font-nav text-xs tracking-wider text-white/60 hover:text-white transition-colors"
@@ -108,7 +114,7 @@ export function Nav() {
             ref={menuButtonRef}
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 -mr-2 text-white"
+            className="xl:hidden p-2 -mr-2 text-white"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -125,31 +131,38 @@ export function Nav() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`lg:hidden fixed inset-0 top-16 sm:top-20 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
+        className={`xl:hidden fixed inset-0 top-16 sm:top-20 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}
       >
         <div className="flex flex-col h-full px-6 py-8">
           <nav className="flex flex-col gap-6">
-            {navLinks.map((link, i) => (
-              <Link
-                key={link.href}
-                ref={i === 0 ? firstLinkRef : undefined}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
-                {...("external" in link && link.external
-                  ? {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      "aria-label": "ariaLabel" in link ? link.ariaLabel : "Opens in new tab",
-                    }
-                  : {})}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, i) =>
+              "external" in link && link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={"ariaLabel" in link ? link.ariaLabel : "Opens in new tab"}
+                  onClick={() => setIsOpen(false)}
+                  className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  ref={i === 0 ? firstLinkRef : undefined}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="mt-auto pt-8 border-t border-white/10">
