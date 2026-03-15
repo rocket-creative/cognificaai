@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#assessments", label: "Assessments" },
   { href: "#faq", label: "FAQ" },
   { href: "#demo", label: "Contact" },
-  { href: "https://kronoshealth.co?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true },
+  { href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true },
 ];
 
 export function Nav() {
