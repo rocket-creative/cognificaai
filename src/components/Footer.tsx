@@ -90,7 +90,11 @@ export function Footer() {
                     href={link.href}
                     className="font-body text-sm text-white/60 hover:text-white transition-colors"
                     {...(link.href.startsWith("http")
-                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      ? {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          "aria-label": `${link.label} (opens in new tab)`,
+                        }
                       : {})}
                   >
                     {link.label}
@@ -129,6 +133,7 @@ export function Footer() {
                 href="https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Kronos Health parent company (opens in new tab)"
                 className="text-[#D4B8E8]/70 hover:text-[#D4B8E8] transition-colors"
               >
                 Kronos Health

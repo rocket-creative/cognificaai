@@ -3,18 +3,41 @@ import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service for Employee Mental Health",
   description:
-    "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform.",
+    "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
   alternates: {
     canonical: "https://cognifica.ai/terms",
+  },
+  openGraph: {
+    title: "Terms of Service for Employee Mental Health",
+    description:
+      "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+    url: "https://cognifica.ai/terms",
+    siteName: "Cognifica AI",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cognifica AI Employee Mental Health Hub",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service for Employee Mental Health",
+    description:
+      "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+    images: ["/og-image.png"],
   },
 };
 
 export default function TermsPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Terms of Service" }]} />
+      <BreadcrumbSchema items={[{ name: "Terms of Service", url: "https://cognifica.ai/terms" }]} />
 
       <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,7 +214,9 @@ export default function TermsPage() {
                 <p className="font-body text-sm text-white mt-2">
                   legal@cognifica.ai
                   <br />
-                  (914) 705 6830
+                  <a href="tel:+19147056830" className="hover:text-[#D4B8E8] transition-colors">
+                    (914) 705 6830
+                  </a>
                 </p>
               </section>
             </div>

@@ -21,9 +21,13 @@ import {
   Zap,
   ClipboardCheck,
   AlertCircle,
+  Check,
+  X,
 } from "lucide-react";
 import { HeroBackground } from "@/components/HeroBackground";
 import { DemoRequestForm } from "@/components/DemoRequestForm";
+import { ROICalculator } from "@/components/ROICalculator";
+import { PricingSection } from "@/components/PricingSection";
 import {
   OrganizationSchema,
   WebSiteSchema,
@@ -334,7 +338,7 @@ export default function HomePage() {
             id="challenge-heading"
             className="text-xs tracking-widest uppercase text-white/40 mb-6 sm:mb-8 text-center"
           >
-            The Challenge
+            What is the mental health challenge?
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {trustStats.map((stat) => (
@@ -369,7 +373,7 @@ export default function HomePage() {
                 For Employers
               </p>
               <h2 className="font-heading text-2xl sm:text-3xl text-white mb-8">
-                Why Employers Choose This Program
+                Why do employers choose this program?
               </h2>
 
               <div className="space-y-4">
@@ -407,7 +411,7 @@ export default function HomePage() {
                 For Employees
               </p>
               <h2 className="font-heading text-2xl sm:text-3xl text-white mb-8">
-                What Employees Experience
+                What do employees experience?
               </h2>
 
               <div className="space-y-4">
@@ -442,6 +446,166 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section
+        id="comparison"
+        className="py-16 lg:py-24 bg-[#0A0A0A]"
+        aria-labelledby="comparison-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="font-nav text-xs tracking-widest uppercase text-[#D4B8E8] mb-4">
+            The Difference
+          </p>
+          <h2
+            id="comparison-heading"
+            className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
+          >
+            Why choose Cognifica AI?
+          </h2>
+          <p className="font-body text-sm text-white/60 font-light mb-12 max-w-2xl">
+            Our proactive model reaches 3–5× more employees than hotline-only EAPs.
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-3xl mx-auto border-collapse">
+              <thead>
+                <tr>
+                  <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-white/60 border-b border-white/10">
+                    Feature
+                  </th>
+                  <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-white/40 border-b border-white/10">
+                    Traditional EAP
+                  </th>
+                  <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-[#D4B8E8] border-b border-[#D4B8E8]">
+                    Cognifica AI
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Proactive employee outreach</td>
+                  <td className="py-4 px-4">
+                    <X className="w-5 h-5 text-white/30" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Quarterly survey data</td>
+                  <td className="py-4 px-4">
+                    <X className="w-5 h-5 text-white/30" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Aggregate trend analytics</td>
+                  <td className="py-4 px-4">
+                    <X className="w-5 h-5 text-white/30" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Live chat support</td>
+                  <td className="py-4 px-4">
+                    <span className="text-white/40 font-body text-sm">Rarely</span>
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Managed clinical referrals</td>
+                  <td className="py-4 px-4">
+                    <X className="w-5 h-5 text-white/30" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Employer dashboard & reporting</td>
+                  <td className="py-4 px-4">
+                    <X className="w-5 h-5 text-white/30" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 font-body text-sm text-white/70">Individual privacy protected</td>
+                  <td className="py-4 px-4">
+                    <Check className="w-5 h-5 text-white/40" aria-hidden="true" />
+                  </td>
+                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
+                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 90-Day Pilot Banner */}
+      <section
+        id="pilot"
+        className="py-16 lg:py-24 bg-gradient-to-b from-[#0A0A0A] to-[#110d14] border-y border-white/10"
+        aria-labelledby="pilot-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="pilot-heading"
+            className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
+          >
+            How do you start with zero risk?
+          </h2>
+          <p className="font-body text-sm text-white/60 font-light mb-12 max-w-2xl">
+            We offer a 90-day pilot program for qualifying employers. See real
+            workforce mental health data before committing to an annual contract.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-8 mb-12">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-heading text-sm text-white mb-1">Free workforce mental health assessment</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-heading text-sm text-white mb-1">ROI analysis specific to your company size and industry</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-heading text-sm text-white mb-1">Pilot program available for 25–100 employees</p>
+              </div>
+            </div>
+          </div>
+
+          <Link
+            href="#demo"
+            className="inline-flex items-center justify-center gap-4 bg-[#D4B8E8] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all focus:outline-none focus:ring-2 focus:ring-[#D4B8E8] focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
+          >
+            Request Your 90-Day Pilot
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section
         id="how"
@@ -457,7 +621,7 @@ export default function HomePage() {
               id="how-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
             >
-              How Cognifica AI Works
+              How does Cognifica AI work?
             </h2>
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               Move from reactive crisis management to proactive prevention with
@@ -504,11 +668,24 @@ export default function HomePage() {
               id="assessments-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
             >
-              Six Validated Tools
+              What validated tools are used?
             </h2>
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               Every assessment is a peer reviewed clinical instrument validated
-              for both clinical and population level screening contexts.
+              for both clinical and population level screening contexts.{" "}
+              <Link href="#faq" className="text-[#D4B8E8] hover:text-[#D4B8E8]/80 underline">
+                See our FAQ
+              </Link>{" "}
+              for employer questions.
+            </p>
+          </div>
+
+          <div className="mb-8 p-6 bg-[#0A0A0A] border border-white/10">
+            <p className="font-nav text-xs tracking-widest uppercase text-[#D4B8E8] mb-2">
+              <span className="bg-yellow-100 dark:bg-yellow-900/40">Medical review</span>
+            </p>
+            <p className="font-body text-xs text-white/60 font-light">
+              <span className="bg-yellow-100 dark:bg-yellow-900/40">Clinical content reviewed by licensed mental health professionals. Assessment instruments are peer reviewed and validated for screening use. This platform is not a substitute for professional diagnosis or treatment.</span>
             </p>
           </div>
 
@@ -554,7 +731,7 @@ export default function HomePage() {
               Smart Referral Pathways
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-              From Data to Action — Automatically
+              How does data become action?
             </h2>
             <p className="font-body text-sm text-white/60 font-light max-w-2xl">
               Our structured triage model ensures employees receive the right
@@ -598,7 +775,7 @@ export default function HomePage() {
               id="escalation-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
             >
-              Real Crisis Protocol, Not Just a Hotline
+              What happens in a crisis?
             </h2>
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               A hotline number is not sufficient. We define escalation steps:
@@ -668,12 +845,16 @@ export default function HomePage() {
                 id="privacy-heading"
                 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-6"
               >
-                Confidentiality is the Gating Requirement
+                Why is confidentiality the gating requirement?
               </h2>
               <p className="font-body text-sm text-white/50 font-light mb-6">
                 If employees perceive this as a tool that gives HR or management
                 visibility into their mental health, adoption will fail. True
-                confidentiality must be demonstrable, not just claimed.
+                confidentiality must be demonstrable, not just claimed.{" "}
+                <Link href="/privacy" className="text-[#D4B8E8] hover:text-[#D4B8E8]/80 underline">
+                  Read our privacy policy
+                </Link>{" "}
+                for full details.
               </p>
 
               <div className="space-y-4">
@@ -741,6 +922,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ROICalculator />
+
       {/* FAQ Section */}
       <section
         id="faq"
@@ -778,11 +961,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PricingSection />
+
+      {/* Author / Credentials */}
+      <section className="py-12 bg-[#161616] border-y border-white/5" aria-labelledby="credentials-heading">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="credentials-heading" className="sr-only">Content credentials</h2>
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <p className="font-nav text-xs tracking-widest uppercase text-white/40">
+              <span className="bg-yellow-100 dark:bg-yellow-900/40">Content developed by Cognifica AI clinical team. Contributors include licensed clinicians and workplace mental health specialists. Built in partnership with Kronos Health.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition Summary */}
       <section className="py-16 lg:py-24 bg-[#0A0A0A]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-6">
-            The Value Proposition
+            What is the value proposition?
           </h2>
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="p-6 bg-[#161616] hover:bg-[#161616]/80 transition-colors">
@@ -816,7 +1013,14 @@ export default function HomePage() {
           </div>
           <p className="font-body text-sm text-[#D4B8E8] mt-8">
             Mental health support employees will actually use. Insight employers
-            can responsibly trust.
+            can responsibly trust.{" "}
+            <Link href="/terms" className="text-white/80 hover:text-white underline">
+              Terms of Service
+            </Link>
+            {" · "}
+            <Link href="/privacy" className="text-white/80 hover:text-white underline">
+              Privacy Policy
+            </Link>
           </p>
         </div>
       </section>
@@ -841,7 +1045,7 @@ export default function HomePage() {
                 thinking employers using Cognifica AI to proactively support
                 their workforce.
               </p>
-              <ul className="space-y-2 mb-6 sm:mb-8" role="list">
+              <ul className="space-y-2 mb-4" role="list">
                 <li className="flex items-center gap-2 text-sm text-[#0A0A0A]/80">
                   <CheckCircle className="w-4 h-4" aria-hidden="true" />
                   Evidence based assessments
@@ -859,6 +1063,11 @@ export default function HomePage() {
                   Actionable analytics for leadership
                 </li>
               </ul>
+              <div className="mb-6 p-4 bg-[#0A0A0A]/10 rounded-sm">
+                <p className="font-body text-xs text-[#0A0A0A]/80 font-light">
+                  <span className="bg-yellow-100 dark:bg-yellow-900/40">Trusted by EAPA aligned employers. Assessments use peer reviewed instruments (PHQ 9, GAD 7, PSQI, AUDIT, DAST, PCL 5) validated in clinical and population settings.</span>
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="tel:+19147056830"

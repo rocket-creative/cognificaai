@@ -24,16 +24,6 @@ export async function POST(request: Request) {
 
     const { name, email, company, employees, message } = result.data;
 
-    // Log the submission (in production, send via Resend or similar)
-    console.log("Demo request received:", {
-      name,
-      email,
-      company,
-      employees,
-      message,
-      timestamp: new Date().toISOString(),
-    });
-
     // TODO: Integrate with Resend for email delivery
     // Requires RESEND_API_KEY environment variable
     // 
@@ -59,7 +49,6 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact form error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

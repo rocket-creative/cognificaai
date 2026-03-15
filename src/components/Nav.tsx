@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -8,13 +8,17 @@ const navLinks = [
   { href: "#how", label: "How It Works" },
   { href: "#employers", label: "For Employers" },
   { href: "#assessments", label: "Assessments" },
+  { href: "#roi", label: "ROI" },
   { href: "#faq", label: "FAQ" },
-  { href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true },
+  { href: "#pricing", label: "Pricing" },
+  { href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav", label: "Kronos Health", external: true, ariaLabel: "Kronos Health parent company (opens in new tab)" },
 ];
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +32,10 @@ export function Nav() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      setTimeout(() => firstLinkRef.current?.focus(), 100);
     } else {
       document.body.style.overflow = "";
+      menuButtonRef.current?.focus();
     }
     return () => {
       document.body.style.overflow = "";
@@ -67,7 +73,13 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
-                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...("external" in link && link.external
+                  ? {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      "aria-label": "ariaLabel" in link ? link.ariaLabel : "Opens in new tab",
+                    }
+                  : {})}
               >
                 {link.label}
               </Link>
@@ -93,6 +105,7 @@ export function Nav() {
 
           {/* Mobile Menu Button */}
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 -mr-2 text-white"
@@ -119,13 +132,20 @@ export function Nav() {
       >
         <div className="flex flex-col h-full px-6 py-8">
           <nav className="flex flex-col gap-6">
-            {navLinks.map((link) => (
+            {navLinks.map((link, i) => (
               <Link
                 key={link.href}
+                ref={i === 0 ? firstLinkRef : undefined}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
-                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                {...("external" in link && link.external
+                  ? {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      "aria-label": "ariaLabel" in link ? link.ariaLabel : "Opens in new tab",
+                    }
+                  : {})}
               >
                 {link.label}
               </Link>

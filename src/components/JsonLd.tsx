@@ -3,13 +3,16 @@ interface FAQItem {
   answer: string;
 }
 
+const ORGANIZATION_ID = "https://cognifica.ai/#organization";
+
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: "Cognifica AI",
     url: "https://cognifica.ai",
-    logo: "https://cognifica.ai/cognifica-ai-logo.svg",
+    logo: "https://cognifica.ai/og-image.png",
     description:
       "Employee Mental Health Hub providing anonymous assessments, digital support, and optional professional access for the modern workforce.",
     parentOrganization: {
@@ -19,7 +22,7 @@ export function OrganizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-914-705-6830",
+      telephone: "+1 914 705 6830",
       contactType: "sales",
       availableLanguage: "English",
     },
@@ -34,19 +37,18 @@ export function OrganizationSchema() {
   );
 }
 
+const WEBSITE_ID = "https://cognifica.ai/#website";
+
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": WEBSITE_ID,
     name: "Cognifica AI",
     url: "https://cognifica.ai",
     description:
       "Employee Mental Health Hub. Trusted by employees. Safe for employers.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://cognifica.ai/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 
   return (
@@ -57,10 +59,13 @@ export function WebSiteSchema() {
   );
 }
 
+const SOFTWARE_APP_ID = "https://cognifica.ai/#softwareapplication";
+
 export function SoftwareApplicationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": SOFTWARE_APP_ID,
     name: "Cognifica AI",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web, iOS, Android",
@@ -86,11 +91,7 @@ export function SoftwareApplicationSchema() {
       "HIPAA compliant",
       "Aggregate employer dashboard",
     ],
-    provider: {
-      "@type": "Organization",
-      name: "Cognifica AI",
-      url: "https://cognifica.ai",
-    },
+    provider: { "@id": ORGANIZATION_ID },
   };
 
   return (
@@ -128,6 +129,7 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url?: string }[];
 }) {
+  const baseUrl = "https://cognifica.ai";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -136,13 +138,13 @@ export function BreadcrumbSchema({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://cognifica.ai",
+        item: baseUrl,
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
         position: index + 2,
         name: item.name,
-        ...(item.url ? { item: item.url } : {}),
+        item: item.url ?? baseUrl,
       })),
     ],
   };

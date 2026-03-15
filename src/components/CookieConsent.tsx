@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const consent = localStorage.getItem("cognifica-cookie-consent");
     if (!consent) {
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+      const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1500;
+      const timer = setTimeout(() => setIsVisible(true), delay);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -24,14 +26,48 @@ export function CookieConsent() {
     setIsVisible(false);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") handleDecline();
+  };
+
+  useEffect(() => {
+    if (!isVisible || !containerRef.current) return;
+    const focusable = containerRef.current.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0] as HTMLElement | undefined;
+    const last = focusable[focusable.length - 1] as HTMLElement | undefined;
+    first?.focus();
+
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", handleTab);
+    return () => document.removeEventListener("keydown", handleTab);
+  }, [isVisible]);
+
   if (!isVisible) return null;
 
   return (
     <div
+      ref={containerRef}
       className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6"
       role="dialog"
+      aria-modal="true"
       aria-labelledby="cookie-heading"
       aria-describedby="cookie-description"
+      onKeyDown={handleKeyDown}
     >
       <div className="max-w-2xl mx-auto bg-[#161616] border border-white/10 shadow-lg p-4 sm:p-6">
         <div className="flex items-start justify-between gap-4">

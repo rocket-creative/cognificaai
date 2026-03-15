@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ClinicalReferralBanner } from "@/components/ClinicalReferralBanner";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -37,11 +38,11 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cognifica.ai"),
   title: {
-    default: "Cognifica AI | Employee Mental Health Hub",
+    default: "Employee Mental Health Screening Platform | Cognifica AI",
     template: "%s | Cognifica AI",
   },
   description:
-    "Anonymous mental health assessments, digital support, and optional professional access for the modern workforce. Trusted by employees. Safe for employers. HIPAA compliant.",
+    "Anonymous mental health assessments, digital support, and optional professional access for the modern workforce. Trusted by employees. Safe for employers. Request a demo.",
   keywords: [
     "employee mental health",
     "workplace wellness",
@@ -71,12 +72,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://cognifica.ai",
     siteName: "Cognifica AI",
-    title: "Cognifica AI | Employee Mental Health Hub",
+    title: "Employee Mental Health Screening Platform | Cognifica AI",
     description:
-      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers.",
+      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Cognifica AI Employee Mental Health Hub",
@@ -85,10 +86,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cognifica AI | Employee Mental Health Hub",
+    title: "Employee Mental Health Screening Platform | Cognifica AI",
     description:
-      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers.",
-    images: ["/og-image.jpg"],
+      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://cognifica.ai",
@@ -117,11 +118,12 @@ export default function RootLayout({
         <ClinicalReferralBanner />
         <Nav />
 
-        <main id="main" className="min-h-screen">
+        <main id="main" className="min-h-screen pb-24 lg:pb-0">
           {children}
         </main>
 
         <Footer />
+        <MobileStickyCTA />
         <CookieConsent />
       </body>
     </html>

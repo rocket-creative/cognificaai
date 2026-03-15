@@ -9,6 +9,11 @@ interface HeroBackgroundProps {
   color?: string;
 }
 
+function prefersReducedMotion(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 export function HeroBackground({ 
   className = "", 
   waveCount = 5,
@@ -19,6 +24,8 @@ export function HeroBackground({
   const timeRef = useRef<{ value: number }>({ value: 0 });
 
   useEffect(() => {
+    if (prefersReducedMotion()) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
