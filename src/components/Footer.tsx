@@ -9,9 +9,9 @@ const footerLinks = {
     { label: "Request Demo", href: "#demo" },
   ],
   company: [
-    { label: "Kronos Health", href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=footer" },
+    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=footer" },
     { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaai&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://kronos-health.vercel.app/revenue-cycle?utm_source=cognificaai&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://kronos-rev.vercel.app?utm_source=cognificaai&utm_medium=footer" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -130,13 +130,13 @@ export function Footer() {
             <p className="font-body text-xs text-white/40">
               © {currentYear} Cognifica AI. A{" "}
               <Link 
-                href="https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=footer_copyright" 
+                href="https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="Kronos Health parent company (opens in new tab)"
+                aria-label="Visit Cognifica Health (opens in new tab)"
                 className="text-[#D4B8E8]/70 hover:text-[#D4B8E8] transition-colors"
               >
-                Kronos Health
+                Cognifica Health
               </Link>{" "}
               Company. All rights reserved.
             </p>

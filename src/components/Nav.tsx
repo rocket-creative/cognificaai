@@ -13,10 +13,10 @@ const navLinks = [
   { href: "#pricing", label: "Pricing" },
 ];
 
-const kronosHealthLink = {
-  href: "https://kronos-health.vercel.app?utm_source=cognificaai&utm_medium=nav",
-  label: "Kronos Health",
-  ariaLabel: "Kronos Health parent company (opens in new tab)",
+const cognificaHealthLink = {
+  href: "https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=nav",
+  label: "Cognifica Health",
+  ariaLabel: "Visit Cognifica Health for clinical care (opens in new tab)",
 };
 
 export function Nav() {
@@ -84,13 +84,13 @@ export function Nav() {
               |
             </span>
             <a
-              href={kronosHealthLink.href}
+              href={cognificaHealthLink.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={kronosHealthLink.ariaLabel}
+              aria-label={cognificaHealthLink.ariaLabel}
               className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
             >
-              {kronosHealthLink.label}
+              {cognificaHealthLink.label}
             </a>
           </div>
 
@@ -152,14 +152,14 @@ export function Nav() {
               </Link>
             ))}
             <a
-              href={kronosHealthLink.href}
+              href={cognificaHealthLink.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={kronosHealthLink.ariaLabel}
+              aria-label={cognificaHealthLink.ariaLabel}
               onClick={() => setIsOpen(false)}
               className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
             >
-              {kronosHealthLink.label}
+              {cognificaHealthLink.label}
             </a>
           </nav>
 

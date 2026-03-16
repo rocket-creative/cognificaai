@@ -32,7 +32,7 @@ export function ClinicalReferralBanner() {
         <p className="font-body text-xs sm:text-sm text-white/70 font-light text-center">
           Having trouble now? Our clinical team is ready to help.{" "}
           <a
-            href="https://cognifica.health?utm_source=cognificaai&utm_medium=referral"
+            href="https://cognifica-health.vercel.app/?utm_source=cognificaai&utm_medium=referral"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[#D4B8E8] hover:text-white transition-colors focus:outline-none focus-visible:underline font-normal"
