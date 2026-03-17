@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { useMobileMenuAnimation } from "@/components/animations";
 
 const navLinks = [
   { href: "#how", label: "How It Works" },
@@ -25,6 +26,8 @@ export function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  useMobileMenuAnimation(isOpen, mobileMenuRef);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -148,6 +151,7 @@ export function Nav() {
 
       {/* Mobile Menu */}
       <div
+        ref={mobileMenuRef}
         id="mobile-menu"
         className={`xl:hidden fixed inset-0 top-28 sm:top-32 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"

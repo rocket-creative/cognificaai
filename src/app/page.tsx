@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useHeroAnimation, useStaggeredCards, useSectionReveal } from "@/components/animations";
 import {
   ArrowRight,
   ArrowDown,
@@ -265,6 +267,10 @@ const employerDataItems = [
 ];
 
 export default function HomePage() {
+  const heroRef = useHeroAnimation();
+  const employerRef = useStaggeredCards();
+  const assessmentsRef = useStaggeredCards();
+
   return (
     <>
       {/* Schema Markup */}
@@ -275,6 +281,7 @@ export default function HomePage() {
 
       {/* Hero Section with Waveform Animation */}
       <section
+        ref={heroRef}
         className="relative min-h-[80dvh] sm:min-h-dvh bg-[#0A0A0A] overflow-hidden"
         aria-labelledby="hero-heading"
       >
@@ -285,30 +292,31 @@ export default function HomePage() {
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-5 sm:p-8 lg:p-14 max-w-xl">
-              <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
+              <p data-hero-eyebrow className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
                 Employee Mental Health Hub
               </p>
 
               <h1
+                data-hero-title
                 id="hero-heading"
                 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-4"
               >
                 Intelligent Mental Health Screening & Risk Stratification
               </h1>
 
-              <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4">
+              <p data-hero-description className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4">
                 Smarter mental health support for the modern workforce.
                 Proactively assess, stratify, and support employee mental
                 wellness using validated clinical tools and intelligent risk
                 modeling.
               </p>
 
-              <p className="font-body text-xs text-[#E6A91A] font-light leading-relaxed mb-6 sm:mb-8">
+              <p data-hero-subtitle className="font-body text-xs text-[#E6A91A] font-light leading-relaxed mb-6 sm:mb-8">
                 Employees get meaningful support. Employers get anonymized
                 insights — never individual data.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div data-hero-cta className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="#demo"
                   className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus:ring-2 focus:ring-[#E6A91A] focus:ring-offset-2 focus:ring-offset-black/40"
@@ -335,6 +343,7 @@ export default function HomePage() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
+            data-scroll-fade
             id="challenge-heading"
             className="text-xs tracking-widest uppercase text-white/40 mb-6 sm:mb-8 text-center"
           >
@@ -343,6 +352,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {trustStats.map((stat) => (
               <div
+                data-stagger-card
                 key={stat.value}
                 className="text-center hover:bg-white/5 p-4 -m-4 transition-colors"
               >
@@ -364,12 +374,12 @@ export default function HomePage() {
       </section>
 
       {/* Two Column Value Props */}
-      <section className="py-16 lg:py-24 bg-[#262626]">
+      <section ref={employerRef} className="py-16 lg:py-24 bg-[#262626]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* For Employers */}
             <div id="employers">
-              <p className="text-xs tracking-widest uppercase text-white/50 mb-4">
+              <p data-section-header className="text-xs tracking-widest uppercase text-white/50 mb-4">
                 For Employers
               </p>
               <h2 className="font-heading text-2xl sm:text-3xl text-white mb-8">
@@ -381,6 +391,7 @@ export default function HomePage() {
                   const Icon = value.icon;
                   return (
                     <div
+                      data-stagger-card
                       key={value.title}
                       className="flex gap-4 p-3 -m-3 hover:bg-white/5 transition-colors"
                     >

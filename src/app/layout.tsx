@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ClinicalReferralBanner } from "@/components/ClinicalReferralBanner";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import { PageTransition } from "@/components/animations";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -127,7 +128,7 @@ export default function RootLayout({
         </header>
 
         <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
 
         <Footer />
