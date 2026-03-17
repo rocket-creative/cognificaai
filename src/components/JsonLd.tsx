@@ -10,14 +10,14 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
-    name: "Cognifica AI",
+    name: "Cognifica App",
     url: "https://cognifica.ai",
     logo: "https://cognifica.ai/og-image.png",
     description:
       "Employee Mental Health Hub providing anonymous assessments, digital support, and optional professional access for the modern workforce.",
     parentOrganization: {
       "@type": "Organization",
-      name: "Kronos Health",
+      name: "Kronos Group",
       url: "https://kronoshealth.co",
     },
     contactPoint: {
@@ -44,7 +44,7 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": WEBSITE_ID,
-    name: "Cognifica AI",
+    name: "Cognifica App",
     url: "https://cognifica.ai",
     description:
       "Employee Mental Health Hub. Trusted by employees. Safe for employers.",
@@ -66,7 +66,7 @@ export function SoftwareApplicationSchema() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": SOFTWARE_APP_ID,
-    name: "Cognifica AI",
+    name: "Cognifica App",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web, iOS, Android",
     description:
@@ -174,7 +174,7 @@ export function ServiceSchema({
     url,
     provider: {
       "@type": "Organization",
-      name: "Cognifica AI",
+      name: "Cognifica App",
       url: "https://cognifica.ai",
     },
     areaServed: "United States",

@@ -102,7 +102,7 @@ export function DemoRequestForm() {
     return (
       <div className="text-center py-8">
         <CheckCircle
-          className="w-12 h-12 text-[#00A896] mx-auto mb-4"
+          className="w-12 h-12 text-[#E6A91A] mx-auto mb-4"
           aria-hidden="true"
         />
         <h3 className="font-heading text-xl text-[#0A0A0A] mb-2">
@@ -123,7 +123,7 @@ export function DemoRequestForm() {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="sr-only">
+        <label htmlFor="name" className="block font-body text-xs text-[#0A0A0A]/70 mb-1">
           Full Name
         </label>
         <input
@@ -132,10 +132,13 @@ export function DemoRequestForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Full Name"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          placeholder="Jane Smith"
+          autoComplete="name"
+          inputMode="text"
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.name ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "name-error" : undefined}
         />
@@ -148,7 +151,7 @@ export function DemoRequestForm() {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor="email" className="block font-body text-xs text-[#0A0A0A]/70 mb-1">
           Work Email
         </label>
         <input
@@ -157,10 +160,13 @@ export function DemoRequestForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Work Email"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          placeholder="jane@company.com"
+          autoComplete="email"
+          inputMode="email"
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.email ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "email-error" : undefined}
         />
@@ -173,7 +179,7 @@ export function DemoRequestForm() {
 
       {/* Company */}
       <div>
-        <label htmlFor="company" className="sr-only">
+        <label htmlFor="company" className="block font-body text-xs text-[#0A0A0A]/70 mb-1">
           Company Name
         </label>
         <input
@@ -182,10 +188,13 @@ export function DemoRequestForm() {
           name="company"
           value={formData.company}
           onChange={handleChange}
-          placeholder="Company Name"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          placeholder="Acme Corp"
+          autoComplete="organization"
+          inputMode="text"
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.company ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.company}
           aria-describedby={errors.company ? "company-error" : undefined}
         />
@@ -198,7 +207,7 @@ export function DemoRequestForm() {
 
       {/* Company Size */}
       <div>
-        <label htmlFor="employees" className="sr-only">
+        <label htmlFor="employees" className="block font-body text-xs text-[#0A0A0A]/70 mb-1">
           Company Size
         </label>
         <select
@@ -206,16 +215,18 @@ export function DemoRequestForm() {
           name="employees"
           value={formData.employees}
           onChange={handleChange}
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          autoComplete="off"
+          style={{ fontSize: "16px" }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.employees ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors appearance-none cursor-pointer ${
+          } px-4 text-[#0A0A0A] font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
             !formData.employees ? "text-[#0A0A0A]/50" : ""
           }`}
           aria-invalid={!!errors.employees}
           aria-describedby={errors.employees ? "employees-error" : undefined}
         >
           <option value="" disabled>
-            Company Size
+            Select company size
           </option>
           <option value="1-50">1 to 50 employees</option>
           <option value="51-200">51 to 200 employees</option>
@@ -232,17 +243,20 @@ export function DemoRequestForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="sr-only">
-          Message (Optional)
+        <label htmlFor="message" className="block font-body text-xs text-[#0A0A0A]/70 mb-1">
+          Message <span className="text-[#0A0A0A]/40">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Tell us about your needs (optional)"
+          placeholder="Tell us about your needs"
           rows={3}
-          className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
+          inputMode="text"
+          autoComplete="off"
+          style={{ fontSize: "16px" }}
+          className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
         />
       </div>
 
@@ -250,7 +264,7 @@ export function DemoRequestForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#0A0A0A] text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light hover:bg-[#0A0A0A]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full min-h-[48px] bg-[#0A0A0A] text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light hover:bg-[#0A0A0A]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
           <>

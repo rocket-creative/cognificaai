@@ -9,9 +9,9 @@ const footerLinks = {
     { label: "Request Demo", href: "#demo" },
   ],
   company: [
-    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=footer" },
-    { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaai&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://kronos-rev.vercel.app?utm_source=cognificaai&utm_medium=footer" },
+    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://kronos-rev.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -40,10 +40,10 @@ export function Footer() {
               href="/"
               className="text-2xl tracking-wide text-white"
               style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 300 }}
-              aria-label="Cognifica AI Home"
+              aria-label="Cognifica App Home"
             >
               cognifica
-              <span className="text-[#D4B8E8]">ai</span>
+              <span className="text-[#E6A91A]">ai</span>
             </Link>
             <p className="mt-4 font-body text-sm text-white/50 font-light leading-relaxed">
               Employee Mental Health Hub. Trusted by employees. Safe for
@@ -110,11 +110,11 @@ export function Footer() {
               Get Started
             </h3>
             <p className="font-body text-sm text-white/50 font-light mb-4">
-              See how Cognifica AI can support your workforce.
+              See how Cognifica App can support your workforce.
             </p>
             <Link
               href="#demo"
-              className="inline-flex items-center gap-3 bg-[#D4B8E8] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+              className="inline-flex items-center gap-3 bg-[#E6A91A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
             >
               Request Demo
               <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -128,13 +128,13 @@ export function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="font-body text-xs text-white/40">
-              © {currentYear} Cognifica AI. A{" "}
+              © {currentYear} Cognifica App. A{" "}
               <Link 
-                href="https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=footer_copyright" 
+                href="https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Cognifica Health (opens in new tab)"
-                className="text-[#D4B8E8]/70 hover:text-[#D4B8E8] transition-colors"
+                className="text-[#E6A91A]/70 hover:text-[#E6A91A] transition-colors"
               >
                 Cognifica Health
               </Link>{" "}

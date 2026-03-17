@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark Theme - Matching Kronos Health */
+  /* Dark Theme - Matching Kronos Group */
   --background: #0A0A0A;
   --foreground: #FFFFFF;
   
@@ -19,11 +19,9 @@
   --cognifica-text-dark: #171717;
   
   /* Accent Colors */
-  --cognifica-lavender: #D4B8E8;
-  --cognifica-lavender-light: #E8D8F0;
-  --cognifica-lavender-dark: #A78BFA;
-  --cognifica-cyan: #00FFFF;
-  --cognifica-green: #00A896;
+  --cognifica-yellow: #E6A91A;
+  --cognifica-yellow-light: #F2C45A;
+  --cognifica-yellow-dark: #C48A10;
 }
 
 @theme inline {
@@ -42,11 +40,9 @@
   --color-cognifica-gray-800: var(--cognifica-gray-800);
   --color-cognifica-gray-900: var(--cognifica-gray-900);
   --color-cognifica-text-dark: var(--cognifica-text-dark);
-  --color-cognifica-lavender: var(--cognifica-lavender);
-  --color-cognifica-lavender-light: var(--cognifica-lavender-light);
-  --color-cognifica-lavender-dark: var(--cognifica-lavender-dark);
-  --color-cognifica-cyan: var(--cognifica-cyan);
-  --color-cognifica-green: var(--cognifica-green);
+  --color-cognifica-yellow: var(--cognifica-yellow);
+  --color-cognifica-yellow-light: var(--cognifica-yellow-light);
+  --color-cognifica-yellow-dark: var(--cognifica-yellow-dark);
   
   /* Typography */
   --font-heading: var(--font-bebas-neue);
@@ -54,14 +50,54 @@
   --font-nav: var(--font-open-sans);
   
   /* Breakpoints - Mobile First */
+  --breakpoint-xs: 375px;
   --breakpoint-sm: 393px;
   --breakpoint-md: 810px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1920px;
+
+  /* Dynamic viewport heights */
+  --height-dvh: 100dvh;
+  --height-svh: 100svh;
+  --height-lvh: 100lvh;
+  --min-height-dvh: 100dvh;
+
+  /* Fluid type scale */
+  --text-display: clamp(40px, 10vw, 160px);
+  --text-display--line-height: 1.0;
+  --text-h1: clamp(28px, 6vw, 96px);
+  --text-h1--line-height: 1.1;
+  --text-h2: clamp(22px, 4vw, 48px);
+  --text-h2--line-height: 1.2;
+  --text-h3: clamp(18px, 3vw, 32px);
+  --text-h3--line-height: 1.3;
+  --text-body: clamp(15px, 1.5vw, 17px);
+  --text-body--line-height: 1.7;
+  --text-caption: 11px;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.08em;
+}
+
+/* Safe area inset utilities */
+@utility pt-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+@utility pr-safe-right {
+  padding-right: env(safe-area-inset-right);
+}
+@utility pb-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@utility pl-safe-left {
+  padding-left: env(safe-area-inset-left);
 }
 
 /* Base Styles */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #0A0A0A;
@@ -81,6 +117,18 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+p, li, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) {
+  * { cursor: auto !important; }
+  .custom-cursor { display: none; }
 }
 
 /* Typography */
@@ -120,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 @layer base {
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid var(--cognifica-lavender);
+    outline: 2px solid var(--cognifica-yellow);
     outline-offset: 2px;
   }
   
@@ -135,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Selection */
 ::selection {
-  background: var(--cognifica-lavender);
+  background: var(--cognifica-yellow);
   color: var(--cognifica-bg);
 }
 
@@ -154,5 +202,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cognifica-lavender);
+  background: var(--cognifica-yellow);
 }

@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // 
     // await resend.emails.send({
-    //   from: 'Cognifica AI <noreply@cognifica.ai>',
+    //   from: 'Cognifica App <noreply@cognifica.ai>',
     //   to: ['sales@cognifica.ai'],
     //   subject: `Demo Request: ${company}`,
     //   html: `

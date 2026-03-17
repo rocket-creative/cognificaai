@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -14,7 +15,7 @@ const navLinks = [
 ];
 
 const cognificaHealthLink = {
-  href: "https://cognifica-health.vercel.app?utm_source=cognificaai&utm_medium=nav",
+  href: "https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=nav",
   label: "Cognifica Health",
   ariaLabel: "Visit Cognifica Health for clinical care (opens in new tab)",
 };
@@ -47,6 +48,16 @@ export function Nav() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   return (
     <div
       className={`transition-all duration-300 border-b border-transparent ${
@@ -61,12 +72,17 @@ export function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl sm:text-2xl tracking-wide text-white hover:text-[#D4B8E8] transition-colors flex-shrink-0 flex items-center"
-            style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 300 }}
-            aria-label="Cognifica AI Home"
+            className="flex-shrink-0 flex items-center"
+            aria-label="Cognifica App Home"
           >
-            cognifica
-            <span className="text-[#D4B8E8]">ai</span>
+            <Image
+              src="/cognifica-app-logo.svg"
+              alt="Cognifica App"
+              width={160}
+              height={46}
+              priority
+              className="h-8 sm:h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,7 +120,7 @@ export function Nav() {
             </Link>
             <Link
               href="#demo"
-              className="inline-flex items-center gap-3 bg-[#D4B8E8] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+              className="inline-flex items-center gap-3 bg-[#E6A91A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
             >
               Request Demo
               <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -116,7 +132,7 @@ export function Nav() {
             ref={menuButtonRef}
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden p-2 -mr-2 text-white"
+            className="xl:hidden min-h-[44px] min-w-[44px] flex items-center justify-center -mr-2 text-white"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -139,14 +155,14 @@ export function Nav() {
         aria-hidden={!isOpen}
       >
         <div className="flex flex-col h-full px-6 py-8">
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-2">
             {navLinks.map((link, i) => (
               <Link
                 key={link.href}
                 ref={i === 0 ? firstLinkRef : undefined}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+                className="font-heading text-2xl text-white hover:text-[#E6A91A] transition-colors min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -157,7 +173,7 @@ export function Nav() {
               rel="noopener noreferrer"
               aria-label={cognificaHealthLink.ariaLabel}
               onClick={() => setIsOpen(false)}
-              className="font-heading text-2xl text-white hover:text-[#D4B8E8] transition-colors"
+              className="font-heading text-2xl text-white hover:text-[#E6A91A] transition-colors min-h-[44px] flex items-center"
             >
               {cognificaHealthLink.label}
             </a>
@@ -173,7 +189,7 @@ export function Nav() {
             <Link
               href="#demo"
               onClick={() => setIsOpen(false)}
-              className="inline-flex items-center justify-center gap-4 bg-[#D4B8E8] text-[#0A0A0A] py-4 px-8 w-full uppercase tracking-widest text-xs font-light hover:gap-6 transition-all"
+              className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-4 px-8 w-full uppercase tracking-widest text-xs font-light hover:gap-6 transition-all"
             >
               Request Demo
               <ArrowRight className="w-4 h-4" aria-hidden="true" />

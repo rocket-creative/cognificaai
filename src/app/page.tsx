@@ -107,7 +107,7 @@ const howItWorks = [
   {
     step: "02",
     title: "Proprietary Risk Scoring",
-    desc: "Cognifica AI integrates results into a dynamic mental health risk score. Stratifies into risk tiers, identifies emerging concerns early, flags high risk responses.",
+    desc: "Cognifica App integrates results into a dynamic mental health risk score. Stratifies into risk tiers, identifies emerging concerns early, flags high risk responses.",
   },
   {
     step: "03",
@@ -169,19 +169,19 @@ const assessments = [
 const riskTiers = [
   {
     level: "Low Risk",
-    color: "bg-[#D4B8E8]/30",
+    color: "bg-[#E6A91A]/30",
     action: "Self guided digital support",
     desc: "All scores within normal range. Wellness tips and psychoeducation.",
   },
   {
     level: "Moderate Risk",
-    color: "bg-[#D4B8E8]/60",
+    color: "bg-[#E6A91A]/60",
     action: "Referral to mental health professionals",
     desc: "One or more scores at subclinical elevation. Targeted self help resources.",
   },
   {
     level: "High Risk",
-    color: "bg-[#D4B8E8]",
+    color: "bg-[#E6A91A]",
     action: "Crisis support and urgent referral",
     desc: "Severe scores or crisis indicators. Immediate connection to 24/7 support.",
   },
@@ -275,16 +275,16 @@ export default function HomePage() {
 
       {/* Hero Section with Waveform Animation */}
       <section
-        className="relative min-h-[80vh] sm:min-h-screen bg-[#0A0A0A] overflow-hidden"
+        className="relative min-h-[80dvh] sm:min-h-dvh bg-[#0A0A0A] overflow-hidden"
         aria-labelledby="hero-heading"
       >
         {/* Animated Waveform Background */}
         <HeroBackground color="167, 139, 250" />
 
         {/* Glass Effect Content Panel */}
-        <div className="relative z-10 min-h-[80vh] sm:min-h-screen flex items-center">
+        <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
-            <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
+            <div className="backdrop-blur-md bg-black/40 border border-white/10 p-5 sm:p-8 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
                 Employee Mental Health Hub
               </p>
@@ -303,7 +303,7 @@ export default function HomePage() {
                 modeling.
               </p>
 
-              <p className="font-body text-xs text-[#D4B8E8] font-light leading-relaxed mb-6 sm:mb-8">
+              <p className="font-body text-xs text-[#E6A91A] font-light leading-relaxed mb-6 sm:mb-8">
                 Employees get meaningful support. Employers get anonymized
                 insights — never individual data.
               </p>
@@ -311,7 +311,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-4 bg-[#D4B8E8] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus:ring-2 focus:ring-[#D4B8E8] focus:ring-offset-2 focus:ring-offset-black/40"
+                  className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus:ring-2 focus:ring-[#E6A91A] focus:ring-offset-2 focus:ring-offset-black/40"
                 >
                   Request Demo
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -340,13 +340,13 @@ export default function HomePage() {
           >
             What is the mental health challenge?
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {trustStats.map((stat) => (
               <div
                 key={stat.value}
                 className="text-center hover:bg-white/5 p-4 -m-4 transition-colors"
               >
-                <div className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#D4B8E8] mb-1">
+                <div className="font-heading text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#E6A91A] mb-1">
                   {stat.value}
                 </div>
                 <p className="font-body text-[10px] sm:text-xs text-white/40">
@@ -384,9 +384,9 @@ export default function HomePage() {
                       key={value.title}
                       className="flex gap-4 p-3 -m-3 hover:bg-white/5 transition-colors"
                     >
-                      <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-[#E6A91A]/20 flex items-center justify-center flex-shrink-0">
                         <Icon
-                          className="w-4 h-4 text-[#D4B8E8]/60"
+                          className="w-4 h-4 text-[#E6A91A]/60"
                           strokeWidth={1.5}
                           aria-hidden="true"
                         />
@@ -422,9 +422,9 @@ export default function HomePage() {
                       key={item.title}
                       className="flex gap-4 p-3 -m-3 hover:bg-white/5 transition-colors"
                     >
-                      <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-[#E6A91A]/20 flex items-center justify-center flex-shrink-0">
                         <Icon
-                          className="w-4 h-4 text-[#D4B8E8]/60"
+                          className="w-4 h-4 text-[#E6A91A]/60"
                           strokeWidth={1.5}
                           aria-hidden="true"
                         />
@@ -453,17 +453,17 @@ export default function HomePage() {
         aria-labelledby="comparison-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="font-nav text-xs tracking-widest uppercase text-[#D4B8E8] mb-4">
+          <p className="font-nav text-xs tracking-widest uppercase text-[#E6A91A] mb-4">
             The Difference
           </p>
           <h2
             id="comparison-heading"
             className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
           >
-            Why choose Cognifica AI?
+            Why choose Cognifica App?
           </h2>
           <p className="font-body text-sm text-white/60 font-light mb-12 max-w-2xl">
-            Our proactive model reaches 3–5× more employees than hotline-only EAPs.
+            Our proactive model reaches 3 to 5 times more employees than hotline only EAPs.
           </p>
 
           <div className="overflow-x-auto">
@@ -476,8 +476,8 @@ export default function HomePage() {
                   <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-white/40 border-b border-white/10">
                     Traditional EAP
                   </th>
-                  <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-[#D4B8E8] border-b border-[#D4B8E8]">
-                    Cognifica AI
+                  <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-[#E6A91A] border-b border-[#E6A91A]">
+                    Cognifica App
                   </th>
                 </tr>
               </thead>
@@ -487,8 +487,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <X className="w-5 h-5 text-white/30" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -496,8 +496,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <X className="w-5 h-5 text-white/30" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -505,8 +505,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <X className="w-5 h-5 text-white/30" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -514,8 +514,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <span className="text-white/40 font-body text-sm">Rarely</span>
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -523,8 +523,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <X className="w-5 h-5 text-white/30" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -532,8 +532,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <X className="w-5 h-5 text-white/30" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
@@ -541,8 +541,8 @@ export default function HomePage() {
                   <td className="py-4 px-4">
                     <Check className="w-5 h-5 text-white/40" aria-hidden="true" />
                   </td>
-                  <td className="py-4 px-4 border-l border-[#D4B8E8]/30">
-                    <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+                  <td className="py-4 px-4 border-l border-[#E6A91A]/30">
+                    <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
                   </td>
                 </tr>
               </tbody>
@@ -565,30 +565,30 @@ export default function HomePage() {
             How do you start with zero risk?
           </h2>
           <p className="font-body text-sm text-white/60 font-light mb-12 max-w-2xl">
-            We offer a 90-day pilot program for qualifying employers. See real
+            We offer a 90 day pilot program for qualifying employers. See real
             workforce mental health data before committing to an annual contract.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
-                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              <div className="w-10 h-10 bg-[#E6A91A]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-heading text-sm text-white mb-1">Free workforce mental health assessment</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
-                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              <div className="w-10 h-10 bg-[#E6A91A]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-heading text-sm text-white mb-1">ROI analysis specific to your company size and industry</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-[#D4B8E8]/20 flex items-center justify-center flex-shrink-0">
-                <Check className="w-5 h-5 text-[#D4B8E8]" aria-hidden="true" />
+              <div className="w-10 h-10 bg-[#E6A91A]/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-5 h-5 text-[#E6A91A]" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-heading text-sm text-white mb-1">Pilot program available for 25–100 employees</p>
@@ -598,9 +598,9 @@ export default function HomePage() {
 
           <Link
             href="#demo"
-            className="inline-flex items-center justify-center gap-4 bg-[#D4B8E8] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all focus:outline-none focus:ring-2 focus:ring-[#D4B8E8] focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
+            className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all focus:outline-none focus:ring-2 focus:ring-[#E6A91A] focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
           >
-            Request Your 90-Day Pilot
+            Request Your 90 Day Pilot
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
@@ -621,7 +621,7 @@ export default function HomePage() {
               id="how-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
             >
-              How does Cognifica AI work?
+              How does Cognifica App work?
             </h2>
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               Move from reactive crisis management to proactive prevention with
@@ -629,11 +629,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {howItWorks.map((item) => (
               <article
                 key={item.step}
-                className="bg-[#161616] p-6 border-l-2 border-[#D4B8E8] hover:bg-[#161616]/80 hover:border-[#D4B8E8]/80 transition-colors"
+                className="bg-[#161616] p-6 border-l-2 border-[#E6A91A] hover:bg-[#161616]/80 hover:border-[#E6A91A]/80 transition-colors"
               >
                 <span
                   className="text-[60px] font-heading text-white/[0.05] leading-none block -mb-8"
@@ -673,7 +673,7 @@ export default function HomePage() {
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               Every assessment is a peer reviewed clinical instrument validated
               for both clinical and population level screening contexts.{" "}
-              <Link href="#faq" className="text-[#D4B8E8] hover:text-[#D4B8E8]/80 underline">
+              <Link href="#faq" className="text-[#E6A91A] hover:text-[#E6A91A]/80 underline">
                 See our FAQ
               </Link>{" "}
               for employer questions.
@@ -681,28 +681,28 @@ export default function HomePage() {
           </div>
 
           <div className="mb-8 p-6 bg-[#0A0A0A] border border-white/10">
-            <p className="font-nav text-xs tracking-widest uppercase text-[#D4B8E8] mb-2">
-              <span className="bg-yellow-100 dark:bg-yellow-900/40">Medical review</span>
+            <p className="font-nav text-xs tracking-widest uppercase text-[#E6A91A] mb-2">
+              Medical review
             </p>
             <p className="font-body text-xs text-white/60 font-light">
-              <span className="bg-yellow-100 dark:bg-yellow-900/40">Clinical content reviewed by licensed mental health professionals. Assessment instruments are peer reviewed and validated for screening use. This platform is not a substitute for professional diagnosis or treatment.</span>
+              Clinical content reviewed by licensed mental health professionals. Assessment instruments are peer reviewed and validated for screening use. This platform is not a substitute for professional diagnosis or treatment.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {assessments.map((test) => {
               const Icon = test.icon;
               return (
                 <article
                   key={test.abbr}
-                  className="bg-[#0A0A0A] border border-white/5 p-4 sm:p-6 hover:border-[#D4B8E8]/20 transition-colors"
+                  className="bg-[#0A0A0A] border border-white/5 p-4 sm:p-6 hover:border-[#E6A91A]/20 transition-colors"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <span className="font-heading text-xl sm:text-2xl lg:text-3xl text-[#D4B8E8]">
+                    <span className="font-heading text-xl sm:text-2xl lg:text-3xl text-[#E6A91A]">
                       {test.abbr}
                     </span>
                     <Icon
-                      className="w-5 h-5 text-[#D4B8E8]/40"
+                      className="w-5 h-5 text-[#E6A91A]/40"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
@@ -713,7 +713,7 @@ export default function HomePage() {
                   <p className="font-body text-[10px] sm:text-xs text-white/50 font-light mb-4">
                     {test.desc}
                   </p>
-                  <span className="inline-block text-[9px] sm:text-[10px] tracking-widest uppercase text-[#D4B8E8] bg-[#D4B8E8]/10 px-2 py-1">
+                  <span className="inline-block text-[9px] sm:text-[10px] tracking-widest uppercase text-[#E6A91A] bg-[#E6A91A]/10 px-2 py-1">
                     {test.tag}
                   </span>
                 </article>
@@ -739,7 +739,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {riskTiers.map((tier) => (
               <article
                 key={tier.level}
@@ -752,7 +752,7 @@ export default function HomePage() {
                 <p className="font-body text-xs text-white/60 font-light mb-4">
                   {tier.desc}
                 </p>
-                <span className="text-xs text-[#D4B8E8] font-bold">
+                <span className="text-xs text-[#E6A91A] font-bold">
                   {tier.action}
                 </span>
               </article>
@@ -784,18 +784,18 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {escalationProtocol.map((item, i) => (
               <article
                 key={item.title}
-                className="bg-[#161616] p-6 border-l-2 border-[#D4B8E8]/50 hover:bg-[#161616]/80 hover:border-[#D4B8E8] transition-colors"
+                className="bg-[#161616] p-6 border-l-2 border-[#E6A91A]/50 hover:bg-[#161616]/80 hover:border-[#E6A91A] transition-colors"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Phone
-                    className="w-4 h-4 text-[#D4B8E8]/60"
+                    className="w-4 h-4 text-[#E6A91A]/60"
                     aria-hidden="true"
                   />
-                  <span className="font-mono text-xs text-[#D4B8E8]/60">
+                  <span className="font-mono text-xs text-[#E6A91A]/60">
                     0{i + 1}
                   </span>
                 </div>
@@ -812,7 +812,7 @@ export default function HomePage() {
           <div className="mt-8 p-6 bg-[#161616] border border-white/10">
             <div className="flex items-start gap-4">
               <AlertTriangle
-                className="w-5 h-5 text-[#D4B8E8] flex-shrink-0 mt-0.5"
+                className="w-5 h-5 text-[#E6A91A] flex-shrink-0 mt-0.5"
                 aria-hidden="true"
               />
               <div>
@@ -851,7 +851,7 @@ export default function HomePage() {
                 If employees perceive this as a tool that gives HR or management
                 visibility into their mental health, adoption will fail. True
                 confidentiality must be demonstrable, not just claimed.{" "}
-                <Link href="/privacy" className="text-[#D4B8E8] hover:text-[#D4B8E8]/80 underline">
+                <Link href="/privacy" className="text-[#E6A91A] hover:text-[#E6A91A]/80 underline">
                   Read our privacy policy
                 </Link>{" "}
                 for full details.
@@ -860,7 +860,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <EyeOff
-                    className="w-5 h-5 text-[#D4B8E8]"
+                    className="w-5 h-5 text-[#E6A91A]"
                     aria-hidden="true"
                   />
                   <span className="font-body text-sm text-white/70">
@@ -869,7 +869,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Lock
-                    className="w-5 h-5 text-[#D4B8E8]"
+                    className="w-5 h-5 text-[#E6A91A]"
                     aria-hidden="true"
                   />
                   <span className="font-body text-sm text-white/70">
@@ -878,7 +878,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Shield
-                    className="w-5 h-5 text-[#D4B8E8]"
+                    className="w-5 h-5 text-[#E6A91A]"
                     aria-hidden="true"
                   />
                   <span className="font-body text-sm text-white/70">
@@ -887,7 +887,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Eye
-                    className="w-5 h-5 text-[#D4B8E8]"
+                    className="w-5 h-5 text-[#E6A91A]"
                     aria-hidden="true"
                   />
                   <span className="font-body text-sm text-white/70">
@@ -908,7 +908,7 @@ export default function HomePage() {
                     className="flex items-center justify-between py-2 border-b border-white/5"
                   >
                     <span className="text-sm text-white/70">{item}</span>
-                    <span className="text-xs text-[#D4B8E8]">
+                    <span className="text-xs text-[#E6A91A]">
                       Aggregate only
                     </span>
                   </div>
@@ -969,7 +969,7 @@ export default function HomePage() {
           <h2 id="credentials-heading" className="sr-only">Content credentials</h2>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <p className="font-nav text-xs tracking-widest uppercase text-white/40">
-              <span className="bg-yellow-100 dark:bg-yellow-900/40">Content developed by Cognifica AI clinical team. Contributors include licensed clinicians and workplace mental health specialists. Built in partnership with Kronos Health.</span>
+              Content developed by Cognifica App clinical team. Contributors include licensed clinicians and workplace mental health specialists. Built in partnership with Kronos Group.
             </p>
           </div>
         </div>
@@ -981,10 +981,10 @@ export default function HomePage() {
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-6">
             What is the value proposition?
           </h2>
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="p-6 bg-[#161616] hover:bg-[#161616]/80 transition-colors">
               <Building2
-                className="w-8 h-8 text-[#D4B8E8]/60 mx-auto mb-4"
+                className="w-8 h-8 text-[#E6A91A]/60 mx-auto mb-4"
                 strokeWidth={1.5}
                 aria-hidden="true"
               />
@@ -998,7 +998,7 @@ export default function HomePage() {
             </div>
             <div className="p-6 bg-[#161616] hover:bg-[#161616]/80 transition-colors">
               <Users
-                className="w-8 h-8 text-[#D4B8E8]/60 mx-auto mb-4"
+                className="w-8 h-8 text-[#E6A91A]/60 mx-auto mb-4"
                 strokeWidth={1.5}
                 aria-hidden="true"
               />
@@ -1011,7 +1011,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <p className="font-body text-sm text-[#D4B8E8] mt-8">
+          <p className="font-body text-sm text-[#E6A91A] mt-8">
             Mental health support employees will actually use. Insight employers
             can responsibly trust.{" "}
             <Link href="/terms" className="text-white/80 hover:text-white underline">
@@ -1028,7 +1028,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section
         id="demo"
-        className="py-16 lg:py-24 bg-[#D4B8E8]"
+        className="py-16 lg:py-24 bg-[#E6A91A]"
         aria-labelledby="cta-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1041,8 +1041,8 @@ export default function HomePage() {
                 Mental Health Shouldn&apos;t Be Invisible
               </h2>
               <p className="font-body text-sm sm:text-base text-[#0A0A0A]/70 font-light mb-4">
-                Cognifica AI makes it measurable — and manageable. Join forward
-                thinking employers using Cognifica AI to proactively support
+                Cognifica App makes it measurable — and manageable. Join forward
+                thinking employers using Cognifica App to proactively support
                 their workforce.
               </p>
               <ul className="space-y-2 mb-4" role="list">
@@ -1065,7 +1065,7 @@ export default function HomePage() {
               </ul>
               <div className="mb-6 p-4 bg-[#0A0A0A]/10 rounded-sm">
                 <p className="font-body text-xs text-[#0A0A0A]/80 font-light">
-                  <span className="bg-yellow-100 dark:bg-yellow-900/40">Trusted by EAPA aligned employers. Assessments use peer reviewed instruments (PHQ 9, GAD 7, PSQI, AUDIT, DAST, PCL 5) validated in clinical and population settings.</span>
+                  Trusted by EAPA aligned employers. Assessments use peer reviewed instruments (PHQ 9, GAD 7, PSQI, AUDIT, DAST, PCL 5) validated in clinical and population settings.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

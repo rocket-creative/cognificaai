@@ -5,23 +5,23 @@ import { BreadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Terms of Service for Employee Mental Health",
   description:
-    "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+    "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
   alternates: {
     canonical: "https://cognifica.ai/terms",
   },
   openGraph: {
     title: "Terms of Service for Employee Mental Health",
     description:
-      "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+      "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
     url: "https://cognifica.ai/terms",
-    siteName: "Cognifica AI",
+    siteName: "Cognifica App",
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cognifica AI Employee Mental Health Hub",
+        alt: "Cognifica App Employee Mental Health Hub",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Service for Employee Mental Health",
     description:
-      "Cognifica AI Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+      "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
     images: ["/og-image.png"],
   },
 };
@@ -70,7 +70,7 @@ export default function TermsPage() {
                   Acceptance of Terms
                 </h2>
                 <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  By accessing or using Cognifica AI (&quot;the Platform&quot;), you agree
+                  By accessing or using Cognifica App (&quot;the Platform&quot;), you agree
                   to be bound by these Terms of Service. If you do not agree to
                   these terms, do not use the Platform.
                 </p>
@@ -81,7 +81,7 @@ export default function TermsPage() {
                   Description of Service
                 </h2>
                 <p className="font-body text-sm text-white/60 font-light leading-relaxed mb-4">
-                  Cognifica AI provides an Employee Mental Health Hub that
+                  Cognifica App provides an Employee Mental Health Hub that
                   includes:
                 </p>
                 <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/60 font-light">
@@ -99,7 +99,7 @@ export default function TermsPage() {
                 </h2>
                 <div className="bg-[#0A0A0A] p-6 mb-4 border border-white/10">
                   <p className="font-body text-sm text-white font-bold">
-                    Important: Cognifica AI is not a substitute for professional
+                    Important: Cognifica App is not a substitute for professional
                     medical advice, diagnosis, or treatment.
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function TermsPage() {
                 </h2>
                 <p className="font-body text-sm text-white/60 font-light leading-relaxed">
                   The Platform and its original content, features, and
-                  functionality are owned by Cognifica AI and are protected by
+                  functionality are owned by Cognifica App and are protected by
                   international copyright, trademark, patent, trade secret, and
                   other intellectual property laws.
                 </p>
@@ -162,7 +162,7 @@ export default function TermsPage() {
                   Limitation of Liability
                 </h2>
                 <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  To the maximum extent permitted by law, Cognifica AI shall not
+                  To the maximum extent permitted by law, Cognifica App shall not
                   be liable for any indirect, incidental, special,
                   consequential, or punitive damages, or any loss of profits or
                   revenues, whether incurred directly or indirectly, or any loss
@@ -214,7 +214,7 @@ export default function TermsPage() {
                 <p className="font-body text-sm text-white mt-2">
                   legal@cognifica.ai
                   <br />
-                  <a href="tel:+19147056830" className="hover:text-[#D4B8E8] transition-colors">
+                  <a href="tel:+19147056830" className="hover:text-[#E6A91A] transition-colors">
                     (914) 705 6830
                   </a>
                 </p>

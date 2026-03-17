@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
@@ -35,11 +35,17 @@ const quicksand = Quicksand({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://cognifica.ai"),
   title: {
-    default: "Employee Mental Health Screening Platform | Cognifica AI",
-    template: "%s | Cognifica AI",
+    default: "Employee Mental Health Screening Platform | Cognifica App",
+    template: "%s | Cognifica App",
   },
   description:
     "Anonymous mental health assessments, digital support, and optional professional access for the modern workforce. Trusted by employees. Safe for employers. Request a demo.",
@@ -53,9 +59,9 @@ export const metadata: Metadata = {
     "HIPAA compliant",
     "corporate wellness",
   ],
-  authors: [{ name: "Cognifica AI" }],
-  creator: "Cognifica AI",
-  publisher: "Cognifica AI",
+  authors: [{ name: "Cognifica App" }],
+  creator: "Cognifica App",
+  publisher: "Cognifica App",
   robots: {
     index: true,
     follow: true,
@@ -71,8 +77,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cognifica.ai",
-    siteName: "Cognifica AI",
-    title: "Employee Mental Health Screening Platform | Cognifica AI",
+    siteName: "Cognifica App",
+    title: "Employee Mental Health Screening Platform | Cognifica App",
     description:
       "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
     images: [
@@ -80,13 +86,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cognifica AI Employee Mental Health Hub",
+        alt: "Cognifica App Employee Mental Health Hub",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Employee Mental Health Screening Platform | Cognifica AI",
+    title: "Employee Mental Health Screening Platform | Cognifica App",
     description:
       "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
     images: ["/og-image.png"],
@@ -106,7 +112,7 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable} ${quicksand.variable}`}
     >
-      <body className="min-h-screen bg-[#0A0A0A] text-white antialiased">
+      <body className="min-h-dvh bg-[#0A0A0A] text-white antialiased">
         {/* Skip to main content - Accessibility */}
         <a
           href="#main"
@@ -115,12 +121,12 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md">
+        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md pt-safe-top">
           <ClinicalReferralBanner />
           <Nav />
         </header>
 
-        <main id="main" className="min-h-screen pt-28 sm:pt-32 pb-24 lg:pb-0">
+        <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
           {children}
         </main>
 

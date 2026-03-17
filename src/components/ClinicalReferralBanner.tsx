@@ -24,7 +24,7 @@ export function ClinicalReferralBanner() {
 
   return (
     <div
-      className="w-full bg-[#D4B8E8]/10 border-b border-[#D4B8E8]/20 z-40"
+      className="w-full bg-[#E6A91A]/10 border-b border-[#E6A91A]/20 z-40"
       role="banner"
       aria-label="Clinical care referral"
     >
@@ -32,10 +32,10 @@ export function ClinicalReferralBanner() {
         <p className="font-body text-xs sm:text-sm text-white/70 font-light text-center">
           Having trouble now? Our clinical team is ready to help.{" "}
           <a
-            href="https://cognifica-health.vercel.app/?utm_source=cognificaai&utm_medium=referral"
+            href="https://cognifica-health.vercel.app/?utm_source=cognificaapp&utm_medium=referral"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[#D4B8E8] hover:text-white transition-colors focus:outline-none focus-visible:underline font-normal"
+            className="inline-flex items-center gap-1.5 text-[#E6A91A] hover:text-white transition-colors focus:outline-none focus-visible:underline font-normal"
             aria-label="Visit Cognifica Health for clinical care"
           >
             Visit Cognifica Health
@@ -44,7 +44,7 @@ export function ClinicalReferralBanner() {
         </p>
         <button
           onClick={dismiss}
-          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B8E8] flex-shrink-0 p-1"
+          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E6A91A] flex-shrink-0 p-1"
           aria-label="Dismiss this message"
         >
           <X className="w-3.5 h-3.5" aria-hidden="true" />

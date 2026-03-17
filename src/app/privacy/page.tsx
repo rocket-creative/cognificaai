@@ -5,23 +5,23 @@ import { BreadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Privacy Policy for Employee Mental Health",
   description:
-    "Cognifica AI Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
+    "Cognifica App Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
   alternates: {
     canonical: "https://cognifica.ai/privacy",
   },
   openGraph: {
     title: "Privacy Policy for Employee Mental Health",
     description:
-      "Cognifica AI Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
+      "Cognifica App Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
     url: "https://cognifica.ai/privacy",
-    siteName: "Cognifica AI",
+    siteName: "Cognifica App",
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cognifica AI Employee Mental Health Hub",
+        alt: "Cognifica App Employee Mental Health Hub",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy for Employee Mental Health",
     description:
-      "Cognifica AI Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
+      "Cognifica App Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
     images: ["/og-image.png"],
   },
 };
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
                   Introduction
                 </h2>
                 <p className="font-body text-sm text-white/60 font-light leading-relaxed mb-4">
-                  Cognifica AI (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
+                  Cognifica App (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
                   privacy. This Privacy Policy explains how we collect, use,
                   disclose, and safeguard your information when you use our
                   Employee Mental Health Hub platform.
@@ -192,7 +192,7 @@ export default function PrivacyPage() {
                 <p className="font-body text-sm text-white mt-2">
                   privacy@cognifica.ai
                   <br />
-                  <a href="tel:+19147056830" className="hover:text-[#D4B8E8] transition-colors">
+                  <a href="tel:+19147056830" className="hover:text-[#E6A91A] transition-colors">
                     (914) 705 6830
                   </a>
                 </p>

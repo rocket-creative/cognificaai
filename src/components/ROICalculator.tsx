@@ -73,7 +73,7 @@ export function ROICalculator() {
       aria-labelledby="roi-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="font-nav text-xs tracking-widest uppercase text-[#D4B8E8] mb-4">
+        <p className="font-nav text-xs tracking-widest uppercase text-[#E6A91A] mb-4">
           ROI Calculator
         </p>
         <h2
@@ -100,7 +100,7 @@ export function ROICalculator() {
                 max={5000}
                 value={employees}
                 onChange={(e) => setEmployees(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 accent-[#D4B8E8]"
+                className="w-full h-2 bg-white/10 accent-[#E6A91A]"
               />
               <span className="font-body text-sm text-white/90">{employees}</span>
             </div>
@@ -117,7 +117,7 @@ export function ROICalculator() {
                 step={5000}
                 value={annualSalary}
                 onChange={(e) => setAnnualSalary(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 accent-[#D4B8E8]"
+                className="w-full h-2 bg-white/10 accent-[#E6A91A]"
               />
               <span className="font-body text-sm text-white/90">
                 {formatCurrency(annualSalary)}
@@ -135,7 +135,7 @@ export function ROICalculator() {
                 max={50}
                 value={turnoverRate}
                 onChange={(e) => setTurnoverRate(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 accent-[#D4B8E8]"
+                className="w-full h-2 bg-white/10 accent-[#E6A91A]"
               />
               <span className="font-body text-sm text-white/90">{turnoverRate}%</span>
             </div>
@@ -151,7 +151,7 @@ export function ROICalculator() {
                 max={20}
                 value={absenteeDays}
                 onChange={(e) => setAbsenteeDays(Number(e.target.value))}
-                className="w-full h-2 bg-white/10 accent-[#D4B8E8]"
+                className="w-full h-2 bg-white/10 accent-[#E6A91A]"
               />
               <span className="font-body text-sm text-white/90">{absenteeDays}</span>
             </div>
@@ -164,7 +164,9 @@ export function ROICalculator() {
                 id="roi-tier"
                 value={tier}
                 onChange={(e) => setTier(e.target.value as Tier)}
-                className="w-full bg-[#0A0A0A] border border-white/10 text-white py-3 px-4 font-body text-sm focus:outline-none focus:ring-2 focus:ring-[#D4B8E8]"
+                autoComplete="off"
+                style={{ fontSize: "16px" }}
+                className="w-full h-12 bg-[#0A0A0A] border border-white/10 text-white px-4 font-body focus:outline-none focus:ring-2 focus:ring-[#E6A91A]"
               >
                 <option value="essentials">Essentials ($2.50 PEPM)</option>
                 <option value="standard">Standard ($4.50 PEPM)</option>
@@ -173,7 +175,7 @@ export function ROICalculator() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-[#1a0f0f] p-6 border border-white/10">
               <p className="font-nav text-[10px] tracking-widest uppercase text-white/50 mb-2">
                 Cost of Inaction
@@ -196,7 +198,7 @@ export function ROICalculator() {
               <p className="font-nav text-[10px] tracking-widest uppercase text-white/50 mb-2">
                 Net Benefit
               </p>
-              <p className="font-heading text-xl sm:text-2xl text-[#D4B8E8]">
+              <p className="font-heading text-xl sm:text-2xl text-[#E6A91A]">
                 {formatCurrency(results.netBenefit)}
               </p>
               <p className="font-body text-[10px] text-white/50 mt-1">
@@ -213,7 +215,7 @@ export function ROICalculator() {
 
         <Link
           href="#demo"
-          className="inline-flex items-center justify-center gap-4 bg-[#D4B8E8] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all mt-8 focus:outline-none focus:ring-2 focus:ring-[#D4B8E8] focus:ring-offset-2 focus:ring-offset-[#161616]"
+          className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all mt-8 focus:outline-none focus:ring-2 focus:ring-[#E6A91A] focus:ring-offset-2 focus:ring-offset-[#161616]"
         >
           Get a Custom ROI Analysis
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
