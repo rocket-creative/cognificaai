@@ -176,7 +176,7 @@ export function ROICalculator() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-[#1a0f0f] p-6 border border-white/10">
+            <div className="bg-[#110e00] p-6 border border-[#E6A91A]/20">
               <p className="font-nav text-[10px] tracking-widest uppercase text-white/50 mb-2">
                 Cost of Inaction
               </p>
@@ -194,7 +194,7 @@ export function ROICalculator() {
               </p>
               <p className="font-body text-[10px] text-white/50 mt-1">annual</p>
             </div>
-            <div className="bg-[#0a1a0a] p-6 border border-white/10">
+            <div className="bg-[#1a1400] p-6 border border-[#E6A91A]/40">
               <p className="font-nav text-[10px] tracking-widest uppercase text-white/50 mb-2">
                 Net Benefit
               </p>
