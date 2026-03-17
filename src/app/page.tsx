@@ -279,7 +279,7 @@ export default function HomePage() {
         aria-labelledby="hero-heading"
       >
         {/* Animated Waveform Background */}
-        <HeroBackground color="167, 139, 250" />
+        <HeroBackground color="230, 169, 26" />
 
         {/* Glass Effect Content Panel */}
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
