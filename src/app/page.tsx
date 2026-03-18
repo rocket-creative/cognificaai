@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useHeroAnimation, useStaggeredCards, useSectionReveal } from "@/components/animations";
 import {
   ArrowRight,
@@ -292,6 +293,16 @@ export default function HomePage() {
         <div className="relative z-10 min-h-[80dvh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-5 sm:p-8 lg:p-14 max-w-xl">
+              <div className="mb-6 sm:mb-8" data-hero-title>
+                <Image
+                  src="/cognifica-app-logo.svg"
+                  alt="Cognifica App"
+                  width={260}
+                  height={80}
+                  className="w-[160px] sm:w-[200px] lg:w-[260px] h-auto"
+                  priority
+                />
+              </div>
               <p data-hero-eyebrow className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
                 Employee Mental Health Hub
               </p>
