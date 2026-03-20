@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 const cognificaHealthLink = {
-  href: "https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=nav",
+  href: "https://cognifica-health.vercel.app/for-employees?utm_source=cognificaapp&utm_medium=nav",
   label: "Cognifica Health",
   ariaLabel: "Visit Cognifica Health for clinical care (opens in new tab)",
 };

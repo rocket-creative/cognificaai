@@ -169,7 +169,16 @@ const assessments = [
   },
 ];
 
-const riskTiers = [
+type RiskTier = {
+  level: string;
+  color: string;
+  action: string;
+  desc: string;
+  secondaryDesc?: string;
+  link?: { label: string; href: string };
+};
+
+const riskTiers: RiskTier[] = [
   {
     level: "Low Risk",
     color: "bg-[#E6A91A]/30",
@@ -179,14 +188,23 @@ const riskTiers = [
   {
     level: "Moderate Risk",
     color: "bg-[#E6A91A]/60",
-    action: "Referral to mental health professionals",
+    action: "Referral to Cognifica Health specialists",
     desc: "One or more scores at subclinical elevation. Targeted self help resources.",
+    link: {
+      label: "Meet the clinical team",
+      href: "https://cognifica-health.vercel.app/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=moderate",
+    },
   },
   {
     level: "High Risk",
     color: "bg-[#E6A91A]",
     action: "Crisis support and urgent referral",
     desc: "Severe scores or crisis indicators. Immediate connection to 24/7 support.",
+    secondaryDesc: "Our clinical partners at Cognifica Health offer same week telehealth for urgent needs.",
+    link: {
+      label: "Book telehealth now",
+      href: "https://cognifica-health.vercel.app/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=high",
+    },
   },
 ];
 
@@ -777,6 +795,19 @@ export default function HomePage() {
                 <span className="text-xs text-[#E6A91A] font-bold">
                   {tier.action}
                 </span>
+                {tier.secondaryDesc && (
+                  <p className="text-xs text-white/50 font-light mt-1">{tier.secondaryDesc}</p>
+                )}
+                {tier.link && (
+                  <a
+                    href={tier.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-[#E6A91A] hover:text-white transition-colors font-normal mt-2"
+                  >
+                    {tier.link.label} →
+                  </a>
+                )}
               </article>
             ))}
           </div>
