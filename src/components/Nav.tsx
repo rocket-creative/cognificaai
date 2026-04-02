@@ -12,7 +12,6 @@ const navLinks = [
   { href: "#assessments", label: "Assessments" },
   { href: "#roi", label: "ROI" },
   { href: "#faq", label: "FAQ" },
-  { href: "#pricing", label: "Pricing" },
 ];
 
 const cognificaHealthLink = {

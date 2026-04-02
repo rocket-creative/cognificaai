@@ -30,7 +30,6 @@ import {
 import { HeroBackground } from "@/components/HeroBackground";
 import { DemoRequestForm } from "@/components/DemoRequestForm";
 import { ROICalculator } from "@/components/ROICalculator";
-import { PricingSection } from "@/components/PricingSection";
 import {
   OrganizationSchema,
   WebSiteSchema,
@@ -1013,8 +1012,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <PricingSection />
 
       {/* Author / Credentials */}
       <section className="py-12 bg-[#161616] border-y border-white/5" aria-labelledby="credentials-heading">
