@@ -15,6 +15,7 @@ import {
   SoftwareApplicationSchema,
   MedicalOrganizationSchema,
 } from "@/components/JsonLd";
+import { HeroBackground } from "@/components/HeroBackground";
 
 export const metadata: Metadata = {
   title: "Cognifica | Cognitive health, measured.",
@@ -109,31 +110,38 @@ export default function HomePage() {
       <SoftwareApplicationSchema />
       <MedicalOrganizationSchema />
 
-      <PageContainer className="pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24">
-        <div className="max-w-5xl">
-          <Eyebrow>Cognifica</Eyebrow>
-          <h1 className="font-heading text-[clamp(36px,8vw,120px)] leading-[0.98] text-white mt-6 uppercase">
-            Cognitive health, measured.
-            <br />
-            Managed. Never surveilled.
-          </h1>
-          <p className="mt-8 font-body text-lg sm:text-xl text-white/75 font-light leading-relaxed max-w-2xl">
-            Cognifica builds validated screening and risk stratification for two
-            audiences that have never had the right tool. Employers who want to
-            support workforce mental health without violating privacy.
-            Clinicians who want to know which patients need them most.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <ArrowLink href="/how-it-works" variant="solid">
-              How it works
-            </ArrowLink>
-            <ArrowLink href="https://www.cognifica.ai/demo" variant="ghost" external>
-              Try the demo
-            </ArrowLink>
-            <AggregateOnlyBadge className="ml-1" />
+      <section className="relative overflow-hidden" aria-label="Intro">
+        <HeroBackground />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#0A0A0A] pointer-events-none"
+          aria-hidden="true"
+        />
+        <PageContainer className="relative pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24">
+          <div className="max-w-5xl">
+            <Eyebrow>Cognifica</Eyebrow>
+            <h1 className="font-heading text-[clamp(36px,8vw,120px)] leading-[0.98] text-white mt-6 uppercase">
+              Cognitive health, measured.
+              <br />
+              Managed. Never surveilled.
+            </h1>
+            <p className="mt-8 font-body text-lg sm:text-xl text-white/75 font-light leading-relaxed max-w-2xl">
+              Cognifica builds validated screening and risk stratification for two
+              audiences that have never had the right tool. Employers who want to
+              support workforce mental health without violating privacy.
+              Clinicians who want to know which patients need them most.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <ArrowLink href="/how-it-works" variant="solid">
+                How it works
+              </ArrowLink>
+              <ArrowLink href="https://www.cognifica.ai/demo" variant="ghost" external>
+                Try the demo
+              </ArrowLink>
+              <AggregateOnlyBadge className="ml-1" />
+            </div>
           </div>
-        </div>
-      </PageContainer>
+        </PageContainer>
+      </section>
 
       <section
         className="border-t border-white/10 bg-[#111111]"
