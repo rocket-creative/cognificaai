@@ -36,7 +36,7 @@ const dashboardFeatures = [
   },
   {
     title: "Crisis flags surfaced in real time",
-    body: "Automated escalation fires the moment a check-in clears a clinical threshold. The crisis counselor is paged immediately, not at the end of the day.",
+    body: "Automated escalation fires the moment a check in clears a clinical threshold. The crisis counselor is paged immediately, not at the end of the day.",
   },
   {
     title: "Secure Clinical Messaging",
@@ -54,8 +54,8 @@ const adjacencies = [
     body: "The same product, pointed at a physician population with organizational sponsorship. Validated screeners. Aggregate only reporting to the hospital system, per the consent architecture.",
   },
   {
-    title: "Self-insured plans at medical groups",
-    body: "Medical groups that are themselves self-insured can run the workforce product in parallel with the clinical product, without duplicating data.",
+    title: "Self insured plans at medical groups",
+    body: "Medical groups that are themselves self insured can run the workforce product in parallel with the clinical product, without duplicating data.",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function ForClinicsPage() {
             className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
           >
             {[
-              { t: "Automated in-app escalation", b: "Crisis flag fires on submission. The counselor is paged in real time." },
+              { t: "Automated in app escalation", b: "Crisis flag fires on submission. The counselor is paged in real time." },
               { t: "LiveChat 24 by 7", b: "The user facing channel. Logged and routed inside the clinical boundary." },
               { t: "Warm handoff to 988", b: "When appropriate, the counselor facilitates the handoff on the line." },
               { t: "Safety check in at 24 to 48 hours", b: "Follow up appointment is placed on the calendar automatically." },
@@ -231,7 +231,7 @@ export default function ForClinicsPage() {
           <SectionHeading
             eyebrow="Adjacencies"
             title="Two shapes the clinical product takes"
-            lede="The same engine serves two adjacent use cases. Hospital systems wanting physician wellness. Medical groups that are themselves self-insured."
+            lede="The same engine serves two adjacent use cases. Hospital systems wanting physician wellness. Medical groups that are themselves self insured."
             as="h2"
           />
           <div id="adjacency-heading" className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">

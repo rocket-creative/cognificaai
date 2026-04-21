@@ -159,7 +159,7 @@ export function Footer() {
               </p>
             </div>
             <p className="font-body text-xs text-white/30 font-light">
-              Non-diagnostic. Non-emergency. Human-initiated clinical decisions only.
+              Not used for diagnosis. Not for emergency response. Clinical decisions are always initiated by a human.
             </p>
           </div>
         </div>

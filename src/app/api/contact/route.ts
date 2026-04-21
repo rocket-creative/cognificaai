@@ -160,9 +160,9 @@ function buildDemoRequestEmail(d: z.infer<typeof DemoRequestSchema>): { subject:
 
 function buildSelfInsuredEmployerEmail(d: z.infer<typeof SelfInsuredEmployerSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Self-Insured Employer — ${d.company_name} — ${d.contact_name}`,
+    subject: `[Cognifica] Self Insured Employer — ${d.company_name} — ${d.contact_name}`,
     html: wrap(
-      "Self-Insured Employer Inquiry",
+      "Self Insured Employer Inquiry",
       htmlTable([
         ["Name", d.contact_name],
         ["Title", d.title],

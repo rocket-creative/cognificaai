@@ -95,7 +95,7 @@ const sharedRules = [
   },
   {
     title: "A published exit",
-    body: "Every pilot has a documented exit. Walk away clauses for workforce. Non-renewal language for insurers. Termination on notice for clinics.",
+    body: "Every pilot has a documented exit. Walk away clauses for workforce. Non renewal language for insurers. Termination on notice for clinics.",
   },
 ];
 

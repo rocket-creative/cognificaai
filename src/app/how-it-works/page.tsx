@@ -13,12 +13,12 @@ import { BreadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Validated instruments on a cadence. R-Score risk stratification. Three views: employee, manager, executive. Crisis protocol routed through the clinical team. Non-diagnostic AI, human-initiated decisions only.",
+    "Validated instruments on a cadence. R-Score risk stratification. Three views: employee, manager, executive. Crisis protocol routed through the clinical team. AI is not diagnostic, and clinical decisions are always initiated by a human.",
   alternates: { canonical: "https://www.cognifica.app/how-it-works" },
   openGraph: {
     title: "How Cognifica works",
     description:
-      "Validated instruments. R-Score stratification. Consent-first architecture.",
+      "Validated instruments. R-Score stratification. A consent architecture that prevents employer reidentification.",
     url: "https://www.cognifica.app/how-it-works",
   },
 };
@@ -39,7 +39,7 @@ const screeners = [
   {
     acronym: "PCL-5",
     name: "PTSD Checklist for DSM 5",
-    measures: "Trauma and post-traumatic stress",
+    measures: "Trauma and posttraumatic stress",
     note: "Used for screening, severity, and response to treatment over time.",
   },
   {
@@ -63,7 +63,7 @@ const screeners = [
   {
     acronym: "Work Wellness",
     name: "Workplace Wellbeing Index",
-    measures: "Work-related wellbeing",
+    measures: "Work related wellbeing",
     note: "Captures engagement, workload pressure, and psychological safety signals.",
   },
 ];
@@ -71,18 +71,18 @@ const screeners = [
 const views = [
   {
     label: "Employee",
-    title: "Eight minute check-in. Always private.",
+    title: "Eight minute check in. Always private.",
     body: "The employee sees their own trends. Their score is theirs. Nobody at the employer can pull it, request it, or reconstruct it.",
   },
   {
     label: "Manager",
     title: "Aggregate only. Department level.",
-    body: "The manager sees department-level trends. No individual scores. No reconstruction. The aggregate-only floor is a function of minimum cohort size, not a dashboard setting.",
+    body: "The manager sees department level trends. No individual scores. No reconstruction. The aggregate only floor is a function of minimum cohort size, not a dashboard setting.",
   },
   {
     label: "Executive",
     title: "Organization R-Score and engagement.",
-    body: "Leadership sees organization-level R-Score, participation, and trend. The same aggregate-only rules apply. Every view enforces the same boundary.",
+    body: "Leadership sees organization level R-Score, participation, and trend. The same aggregate only rules apply. Every view enforces the same boundary.",
   },
 ];
 
@@ -93,11 +93,11 @@ const cadenceOptions = [
   },
   {
     label: "Monthly",
-    body: "Twelve cycles per year. Standard for workforce programs that want trend visibility without over-surveying.",
+    body: "Twelve cycles per year. Standard for workforce programs that want trend visibility without over surveying.",
   },
   {
     label: "Weekly",
-    body: "Used in clinical delivery for high-risk check-ins and short-cycle response measurement.",
+    body: "Used in clinical delivery for high risk check ins and short cycle response measurement.",
   },
   {
     label: "Custom",
@@ -107,8 +107,8 @@ const cadenceOptions = [
 
 const crisisSteps = [
   {
-    title: "Automated in-app escalation",
-    body: "Crisis flags from a check-in trigger an automated escalation to the designated crisis counselor in real time. No delay. No manual routing.",
+    title: "Automated in app escalation",
+    body: "Crisis flags from a check in trigger an automated escalation to the designated crisis counselor in real time. No delay. No manual routing.",
   },
   {
     title: "LiveChat 24 by 7",
@@ -120,14 +120,14 @@ const crisisSteps = [
   },
   {
     title: "Scheduled safety check in",
-    body: "A follow up check-in is scheduled at 24 to 48 hours. The record stays with the clinical team. Anonymity may be paused only to connect urgent clinical support.",
+    body: "A follow up check in is scheduled at 24 to 48 hours. The record stays with the clinical team. Anonymity may be paused only to connect urgent clinical support.",
   },
 ];
 
 const aiPostureLines = [
-  "Non-diagnostic",
-  "Non-emergency",
-  "Human-initiated clinical decisions only",
+  "Not used for diagnosis",
+  "Not for emergency response",
+  "Clinical decisions are always initiated by a human",
   "Transparent to the user",
 ];
 
@@ -332,7 +332,7 @@ export default function HowItWorksPage() {
               {
                 n: "03",
                 t: "Save",
-                b: "The schedule goes live at the next cycle boundary. Anyone on the audience receives the check-in on the chosen cadence.",
+                b: "The schedule goes live at the next cycle boundary. Anyone on the audience receives the check in on the chosen cadence.",
               },
             ].map((step, i) => (
               <li
@@ -467,7 +467,7 @@ export default function HowItWorksPage() {
               </h2>
               <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
                 A live demo sandbox sits at cognifica.ai/demo. Click through a
-                tenant. Run a check-in. Look at the R-Score. Leave without
+                tenant. Run a check in. Look at the R-Score. Leave without
                 leaving a record.
               </p>
             </div>

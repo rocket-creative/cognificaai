@@ -17,7 +17,7 @@ import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/JsonLd"
 export const metadata: Metadata = {
   title: "CogAI Workforce for employers",
   description:
-    "Proactive employee mental health screening. Seat-based pricing. 90-day pilot. The employer never sees an individual score. Validated instruments. Aggregate-only reporting.",
+    "Proactive employee mental health screening. Seat based pricing. 90 day pilot. The employer never sees an individual score. Validated instruments. Aggregate only reporting.",
   alternates: { canonical: "https://www.cognifica.app/for-employers" },
   openGraph: {
     title: "CogAI Workforce for employers | Cognifica",
@@ -45,18 +45,18 @@ const problemBlocks = [
 const views = [
   {
     label: "Employee view",
-    title: "Monthly check-in, eight minutes, always private",
+    title: "Monthly check in, eight minutes, always private",
     body: "The employee owns their score. Nothing about that record is reconstructable from the employer side.",
   },
   {
     label: "Manager view",
     title: "Aggregate only, department level trends",
-    body: "Managers see department-level signal, subject to a minimum cohort floor. No individual reconstruction.",
+    body: "Managers see department level signal, subject to a minimum cohort floor. No individual reconstruction.",
   },
   {
     label: "Executive view",
     title: "Organization R-Score and engagement",
-    body: "Leadership sees organization-level R-Score, participation, and trend. Same aggregate only rules apply.",
+    body: "Leadership sees organization level R-Score, participation, and trend. Same aggregate only rules apply.",
   },
 ];
 
@@ -65,7 +65,7 @@ const cadenceOptions = ["Quarterly", "Monthly", "Weekly", "Custom"];
 const pricingTiers = [
   { tier: "XS", size: "Up to 25 employees", note: "Small practices, micro teams" },
   { tier: "SM", size: "Up to 150 employees", note: "Schools, nonprofits, small firms" },
-  { tier: "MD", size: "Up to 355 employees", note: "Mid-sized organizations" },
+  { tier: "MD", size: "Up to 355 employees", note: "Mid sized organizations" },
   { tier: "LG", size: "2,200 or more employees", note: "Enterprise and agencies" },
 ];
 
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: "What if we do not want to see employee results?",
     answer:
-      "Employers can opt to not see any data at all, including aggregate reports. Some tenants prefer this posture, sponsoring the benefit without receiving population-level reporting. The architecture supports it.",
+      "Employers can opt to not see any data at all, including aggregate reports. Some tenants prefer this posture, sponsoring the benefit without receiving population level reporting. The architecture supports it.",
   },
   {
     question: "What happens if an employee reports self harm or harm to others?",
@@ -113,7 +113,7 @@ const faqs = [
   {
     question: "My company is too small for department divisions. Can we still use it?",
     answer:
-      "Yes. At smaller headcounts, aggregate reporting is produced at the organization level only, still under the minimum cohort floor. Tenants that want to proceed without any aggregate reporting can use the opt-out clause.",
+      "Yes. At smaller headcounts, aggregate reporting is produced at the organization level only, still under the minimum cohort floor. Tenants that want to proceed without any aggregate reporting can use the opt out clause.",
   },
 ];
 
@@ -125,7 +125,7 @@ export default function ForEmployersPage() {
       />
       <ServiceSchema
         name="CogAI Workforce"
-        description="Validated mental health screening and risk stratification for employers. Aggregate-only reporting. The employer never sees an individual score."
+        description="Validated mental health screening and risk stratification for employers. Aggregate only reporting. The employer never sees an individual score."
         url="https://www.cognifica.app/for-employers"
       />
       <FAQSchema questions={faqs} />

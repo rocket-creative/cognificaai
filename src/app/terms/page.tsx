@@ -96,7 +96,7 @@ export default function TermsPage() {
                 </h2>
                 <div className="bg-[#0A0A0A] p-6 mb-4 border border-white/10">
                   <p className="font-body text-sm text-white font-bold">
-                    Cognifica is non-diagnostic and non-emergency. It is not a
+                    Cognifica is not used for diagnosis and is not for emergency response. It is not a
                     substitute for professional medical advice, diagnosis, or
                     treatment.
                   </p>

@@ -15,12 +15,12 @@ import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/JsonLd"
 export const metadata: Metadata = {
   title: "CogAI Medical for insurers and workers compensation",
   description:
-    "Small insurance plans. Validated depression and anxiety screening. HEDIS movement. Per-patient-per-month pricing. Work-related injury recovery support.",
+    "Small insurance plans. Validated depression and anxiety screening. HEDIS movement. Per patient per month pricing. Work related injury recovery support.",
   alternates: { canonical: "https://www.cognifica.app/for-insurers" },
   openGraph: {
     title: "CogAI Medical for insurers | Cognifica",
     description:
-      "Validated screening and risk stratification for small insurance plans. HEDIS movement. Per-patient-per-month pricing.",
+      "Validated screening and risk stratification for small insurance plans. HEDIS movement. Per patient per month pricing.",
     url: "https://www.cognifica.app/for-insurers",
   },
 };
@@ -97,7 +97,7 @@ const useCases = [
   },
   {
     title: "Workers compensation carriers",
-    body: "Behavioral health screening for members recovering from a work-related injury. Anxiety, depression, PTSD, pain adjacent mental health, and sleep instruments appropriate to recovery are run on a cadence.",
+    body: "Behavioral health screening for members recovering from a work related injury. Anxiety, depression, PTSD, pain adjacent mental health, and sleep instruments appropriate to recovery are run on a cadence.",
   },
   {
     title: "Self insured TPAs",

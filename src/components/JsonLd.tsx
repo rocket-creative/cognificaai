@@ -66,7 +66,7 @@ export function SoftwareApplicationSchema() {
     applicationCategory: "HealthApplication",
     operatingSystem: "Web, iOS, Android",
     description:
-      "Validated mental health screening and panel triage. PHQ-9, GAD-7, PCL-5, DAST-10, AUDIT, PSQI, and Work Wellness. HIPAA-aligned posture. The employer never sees an individual score.",
+      "Validated mental health screening and panel triage. PHQ-9, GAD-7, PCL-5, DAST-10, AUDIT, PSQI, and Work Wellness. HIPAA aligned posture. The employer never sees an individual score.",
     featureList: [
       "PHQ-9 depression screening",
       "GAD-7 anxiety screening",
@@ -77,9 +77,9 @@ export function SoftwareApplicationSchema() {
       "Work Wellness screening",
       "R-Score risk stratification",
       "Panel triage for clinicians",
-      "Aggregate-only employer dashboard",
-      "Consent-first architecture",
-      "HIPAA-aligned posture",
+      "Aggregate only employer dashboard",
+      "Consent first architecture",
+      "HIPAA aligned posture",
     ],
     provider: { "@id": ORGANIZATION_ID },
   };

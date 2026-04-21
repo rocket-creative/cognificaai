@@ -125,7 +125,7 @@ export default function PrivacyPolicyPage() {
                 </h2>
                 <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/70 font-light">
                   <li>Provide validated screening, R-Score stratification, and routed clinical support</li>
-                  <li>Generate aggregate, de-identified tenant insights where consent supports it</li>
+                  <li>Generate aggregate, deidentified tenant insights where consent supports it</li>
                   <li>Facilitate crisis intervention through the Cognifica clinical team</li>
                   <li>Improve the platform and services</li>
                   <li>Comply with legal obligations</li>
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
                   </ul>
                 </div>
                 <p className="font-body text-sm text-white/70 font-light leading-relaxed">
-                  Employers receive only aggregate, de-identified data subject
+                  Employers receive only aggregate, deidentified data subject
                   to a minimum cohort floor. No individual level data leaves the
                   clinical boundary.
                 </p>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
                   Crisis situations
                 </h2>
                 <p className="font-body text-sm text-white/70 font-light leading-relaxed">
-                  If a check-in response indicates immediate risk of harm to
+                  If a check in response indicates immediate risk of harm to
                   self or to others, anonymity may be paused solely to connect
                   urgent clinical or crisis support. This is the only
                   circumstance under which identity is disclosed, and the

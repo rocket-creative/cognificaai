@@ -232,13 +232,13 @@ export default function AboutPage() {
               </p>
               <p>
                 So the practice built it. Validated instruments on a cadence.
-                Thresholds pre-wired. Twelve-month trend per patient. The
+                Thresholds prewired. Twelve month trend per patient. The
                 clinician sees the panel sorted by risk the moment they log in.
               </p>
               <p>
                 Two adjacencies followed. Employers wanted the same proactive
                 signal for their workforce, without ever seeing an individual
-                score. Insurers wanted population-level movement on HEDIS
+                score. Insurers wanted population level movement on HEDIS
                 depression measures and on ER admissions. The architecture
                 supported both, because the clinical boundary never moves.
               </p>

@@ -55,11 +55,11 @@ const hipaaPosture = [
 const dataLifecycle = [
   {
     title: "Consent captured up front",
-    body: "Before a first check-in, the user is walked through what is collected, who sees what, and how to revoke. The Cognifica AI Mental Health Hub consent document is the artifact that governs the relationship.",
+    body: "Before a first check in, the user is walked through what is collected, who sees what, and how to revoke. The Cognifica AI Mental Health Hub consent document is the artifact that governs the relationship.",
   },
   {
     title: "Revocable at any time",
-    body: "Consent can be revoked from the user portal. The revocation is timestamped. Future check-ins do not run. Past records are retained under the retention policy, or deleted on request.",
+    body: "Consent can be revoked from the user portal. The revocation is timestamped. Future check ins do not run. Past records are retained under the retention policy, or deleted on request.",
   },
   {
     title: "Retention under a stated policy",
@@ -156,7 +156,7 @@ export default function PrivacyPage() {
           </div>
           <p className="mt-8 font-body text-sm text-white/60 font-light italic">
             Consent document text is available on request while the
-            self-serve download is in production.
+            self serve download is in production.
           </p>
         </PageContainer>
       </section>
@@ -242,8 +242,8 @@ export default function PrivacyPage() {
             <div className="lg:col-span-3">
               <ul className="space-y-0" role="list">
                 <li>
-                  <NumberedStep index={1} title="Automated in-app escalation">
-                    Crisis flags from a check-in trigger an automated
+                  <NumberedStep index={1} title="Automated in app escalation">
+                    Crisis flags from a check in trigger an automated
                     escalation to the designated crisis counselor.
                   </NumberedStep>
                 </li>
@@ -261,7 +261,7 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <NumberedStep index={4} title="Safety check in at 24 to 48 hours">
-                    A follow up check-in is scheduled. The record stays with
+                    A follow up check in is scheduled. The record stays with
                     the clinical team.
                   </NumberedStep>
                 </li>
@@ -278,12 +278,12 @@ export default function PrivacyPage() {
         <PageContainer className="py-16 sm:py-24">
           <SectionHeading
             eyebrow="Section 05"
-            title="AI is non-diagnostic"
+            title="AI does not diagnose"
             lede="The system flags and stratifies. It does not diagnose. It does not decide. Clinical decisions are made by clinicians and initiated by humans."
             as="h2"
           />
           <div id="ai-heading" className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {["Non-diagnostic", "Non-emergency", "Human-initiated clinical decisions only", "Transparent to the user"].map(
+            {["Not used for diagnosis", "Not for emergency response", "Clinical decisions always initiated by a human", "Transparent to the user"].map(
               (line, i) => (
                 <Reveal key={line} delay={i * 60}>
                   <div className="border border-white/10 p-6 h-full">
