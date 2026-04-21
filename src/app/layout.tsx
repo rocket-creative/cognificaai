@@ -1,3 +1,4 @@
+/* |UXUIDC| RootLayout */
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
@@ -6,7 +7,6 @@ import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ClinicalReferralBanner } from "@/components/ClinicalReferralBanner";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import { PageTransition } from "@/components/animations";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -31,7 +31,7 @@ const openSans = Open_Sans({
 
 const quicksand = Quicksand({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
   variable: "--font-quicksand",
   display: "swap",
 });
@@ -45,24 +45,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cognifica.app"),
   title: {
-    default: "Employee Mental Health Screening Platform | Cognifica App",
-    template: "%s | Cognifica App",
+    default: "Cognifica | Cognitive health, measured.",
+    template: "%s | Cognifica",
   },
   description:
-    "Anonymous mental health assessments, digital support, and optional professional access for the modern workforce. Trusted by employees. Safe for employers. Request a demo.",
-  keywords: [
-    "employee mental health",
-    "workplace wellness",
-    "mental health platform",
-    "employee assistance",
-    "workplace mental health",
-    "anonymous assessments",
-    "HIPAA compliant",
-    "corporate wellness",
-  ],
-  authors: [{ name: "Cognifica App" }],
-  creator: "Cognifica App",
-  publisher: "Cognifica App",
+    "Validated mental health screening and risk stratification for employers, clinics, and insurers. Built on top of an active clinical practice. The employer never sees an individual score.",
+  authors: [{ name: "Cognifica" }],
+  creator: "Cognifica",
+  publisher: "Cognifica",
   robots: {
     index: true,
     follow: true,
@@ -78,24 +68,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.cognifica.app",
-    siteName: "Cognifica App",
-    title: "Employee Mental Health Screening Platform | Cognifica App",
+    siteName: "Cognifica",
+    title: "Cognifica | Cognitive health, measured.",
     description:
-      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
+      "Validated mental health screening for employers, clinics, and insurers. Built by a practicing clinician. The employer never sees an individual score.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cognifica App Employee Mental Health Hub",
+        alt: "Cognifica",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Employee Mental Health Screening Platform | Cognifica App",
+    title: "Cognifica | Cognitive health, measured.",
     description:
-      "Anonymous mental health assessments, digital support, and optional professional access. Trusted by employees. Safe for employers. Request a demo.",
+      "Validated mental health screening for employers, clinics, and insurers. Built by a practicing clinician.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -114,7 +104,6 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable} ${quicksand.variable}`}
     >
       <body className="min-h-dvh bg-[#0A0A0A] text-white antialiased">
-        {/* Skip to main content - Accessibility */}
         <a
           href="#main"
           className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-[#161616] focus-visible:px-4 focus-visible:py-2 focus-visible:text-white focus-visible:shadow-lg"
@@ -128,7 +117,7 @@ export default function RootLayout({
         </header>
 
         <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
-          <PageTransition>{children}</PageTransition>
+          {children}
         </main>
 
         <Footer />
