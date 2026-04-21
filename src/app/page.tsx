@@ -378,27 +378,27 @@ export default function HomePage() {
                 Three audiences. Three pilots. A real operator on every call.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 lg:justify-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:max-w-md lg:ml-auto w-full">
               <Link
                 href="/for-employers#demo"
-                className="group inline-flex items-center gap-3 bg-[#0A0A0A] text-[#E6A91A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+                className="group flex items-center justify-between gap-3 bg-[#0A0A0A] text-[#E6A91A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#161616] transition-colors"
               >
                 Request a demo
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/for-insurers#contact"
-                className="group inline-flex items-center gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+                className="group flex items-center justify-between gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#0A0A0A] hover:text-[#E6A91A] transition-colors"
               >
                 Book a call
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/pilot"
-                className="group inline-flex items-center gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+                className="group flex items-center justify-between gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#0A0A0A] hover:text-[#E6A91A] transition-colors sm:col-span-2"
               >
                 Schedule a consultation
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>
           </div>
