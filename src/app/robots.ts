@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://cognifica.ai/sitemap.xml",
+    sitemap: "https://www.cognifica.app/sitemap.xml",
   };
 }

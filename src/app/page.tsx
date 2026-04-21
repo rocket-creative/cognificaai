@@ -191,7 +191,7 @@ const riskTiers: RiskTier[] = [
     desc: "One or more scores at subclinical elevation. Targeted self help resources.",
     link: {
       label: "Meet the clinical team",
-      href: "https://cognifica-health.vercel.app/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=moderate",
+      href: "https://www.cognifica.health/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=moderate",
     },
   },
   {
@@ -202,7 +202,7 @@ const riskTiers: RiskTier[] = [
     secondaryDesc: "Our clinical partners at Cognifica Health offer same week telehealth for urgent needs.",
     link: {
       label: "Book telehealth now",
-      href: "https://cognifica-health.vercel.app/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=high",
+      href: "https://www.cognifica.health/for-employees?utm_source=cognificaapp&utm_medium=risk_tier&utm_content=high",
     },
   },
 ];

@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cognifica.ai"),
+  metadataBase: new URL("https://www.cognifica.app"),
   title: {
     default: "Employee Mental Health Screening Platform | Cognifica App",
     template: "%s | Cognifica App",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cognifica.ai",
+    url: "https://www.cognifica.app",
     siteName: "Cognifica App",
     title: "Employee Mental Health Screening Platform | Cognifica App",
     description:
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://cognifica.ai",
+    canonical: "https://www.cognifica.app",
   },
 };
 

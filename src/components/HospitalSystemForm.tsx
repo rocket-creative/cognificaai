@@ -9,14 +9,15 @@ interface FormData {
   organization: string;
   phone: string;
   email: string;
-  buyer_type: string;
-  population_size: string;
-  timeframe: string;
+  clinician_count: string;
+  program_scope: string;
+  current_program: string;
   message: string;
 }
 
 interface FormErrors {
   contact_name?: string;
+  title?: string;
   organization?: string;
   phone?: string;
   email?: string;
@@ -27,35 +28,18 @@ const inputClass = (error?: string) =>
     error ? "border-red-400" : "border-[#0A0A0A]/30"
   } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`;
 
-const selectClass = (hasValue: boolean, error?: string) =>
-  `w-full h-12 bg-[#0A0A0A]/20 border ${
-    error ? "border-red-400" : "border-[#0A0A0A]/30"
-  } px-4 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
+const selectClass = (hasValue: boolean) =>
+  `w-full h-12 bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
     hasValue ? "text-[#0A0A0A]" : "text-[#0A0A0A]/50"
   }`;
 
 const labelClass = "block font-body text-xs text-[#0A0A0A]/70 mb-1";
 const errorClass = "text-red-700 text-xs mt-1";
 
-const BUYER_TYPES = [
-  { value: "employer", label: "Employer / HR / Benefits" },
-  { value: "provider", label: "Medical group or health system" },
-  { value: "payer", label: "Health plan / insurer" },
-  { value: "broker", label: "Benefits broker or consultant" },
-  { value: "other", label: "Other" },
-];
-
-export function DemoRequestForm() {
+export function HospitalSystemForm() {
   const [formData, setFormData] = useState<FormData>({
-    contact_name: "",
-    title: "",
-    organization: "",
-    phone: "",
-    email: "",
-    buyer_type: "",
-    population_size: "",
-    timeframe: "",
-    message: "",
+    contact_name: "", title: "", organization: "", phone: "", email: "",
+    clinician_count: "", program_scope: "", current_program: "", message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,6 +48,7 @@ export function DemoRequestForm() {
   const validate = (): boolean => {
     const e: FormErrors = {};
     if (!formData.contact_name.trim()) e.contact_name = "Name is required";
+    if (!formData.title.trim()) e.title = "Title is required";
     if (!formData.organization.trim()) e.organization = "Organization is required";
     if (!formData.phone.trim()) e.phone = "Phone number is required";
     if (!formData.email.trim()) {
@@ -83,13 +68,13 @@ export function DemoRequestForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, form_type: "demo" }),
+        body: JSON.stringify({ ...formData, form_type: "hospital_system_clinicians" }),
       });
       if (res.ok) {
         setIsSuccess(true);
         setFormData({
-          contact_name: "", title: "", organization: "", phone: "",
-          email: "", buyer_type: "", population_size: "", timeframe: "", message: "",
+          contact_name: "", title: "", organization: "", phone: "", email: "",
+          clinician_count: "", program_scope: "", current_program: "", message: "",
         });
       }
     } catch {
@@ -115,7 +100,7 @@ export function DemoRequestForm() {
         <CheckCircle className="w-12 h-12 text-[#E6A91A] mx-auto mb-4" aria-hidden="true" />
         <h3 className="font-heading text-xl text-[#0A0A0A] mb-2">Thank You</h3>
         <p className="font-body text-sm text-[#0A0A0A]/70 font-light">
-          We&apos;ll be in touch within one business day to schedule your demo.
+          We&apos;ll be in touch within one business day to discuss your clinician program.
         </p>
       </div>
     );
@@ -123,15 +108,15 @@ export function DemoRequestForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <h3 className="font-heading text-lg text-[#0A0A0A] mb-4">Request a Demo</h3>
+      <h3 className="font-heading text-lg text-[#0A0A0A] mb-4">Clinician Program Inquiry</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="contact_name" className={labelClass}>Full Name *</label>
+          <label htmlFor="contact_name" className={labelClass}>Contact Name *</label>
           <input
             type="text" id="contact_name" name="contact_name"
             value={formData.contact_name} onChange={handleChange}
-            placeholder="Jane Smith" autoComplete="name"
+            placeholder="Dr. Jane Smith" autoComplete="name"
             style={{ fontSize: "16px" }}
             className={inputClass(errors.contact_name)}
             aria-invalid={!!errors.contact_name}
@@ -141,25 +126,26 @@ export function DemoRequestForm() {
         </div>
 
         <div>
-          <label htmlFor="title" className={labelClass}>
-            Title <span className="text-[#0A0A0A]/40">(optional)</span>
-          </label>
+          <label htmlFor="title" className={labelClass}>Title *</label>
           <input
             type="text" id="title" name="title"
             value={formData.title} onChange={handleChange}
-            placeholder="VP of Benefits" autoComplete="organization-title"
+            placeholder="CMO, CWO, Physician Wellness Director…" autoComplete="organization-title"
             style={{ fontSize: "16px" }}
-            className={inputClass()}
+            className={inputClass(errors.title)}
+            aria-invalid={!!errors.title}
+            aria-describedby={errors.title ? "title-error" : undefined}
           />
+          {errors.title && <p id="title-error" className={errorClass}>{errors.title}</p>}
         </div>
       </div>
 
       <div>
-        <label htmlFor="organization" className={labelClass}>Organization *</label>
+        <label htmlFor="organization" className={labelClass}>Hospital or System Name *</label>
         <input
           type="text" id="organization" name="organization"
           value={formData.organization} onChange={handleChange}
-          placeholder="Acme Corp" autoComplete="organization"
+          placeholder="Northwell Health" autoComplete="organization"
           style={{ fontSize: "16px" }}
           className={inputClass(errors.organization)}
           aria-invalid={!!errors.organization}
@@ -188,7 +174,7 @@ export function DemoRequestForm() {
           <input
             type="email" id="email" name="email"
             value={formData.email} onChange={handleChange}
-            placeholder="jane@company.com" autoComplete="email"
+            placeholder="jane@northwell.edu" autoComplete="email"
             inputMode="email" style={{ fontSize: "16px" }}
             className={inputClass(errors.email)}
             aria-invalid={!!errors.email}
@@ -198,62 +184,61 @@ export function DemoRequestForm() {
         </div>
       </div>
 
-      <fieldset>
-        <legend className={`${labelClass} mb-2`}>
-          I am a… <span className="text-[#0A0A0A]/40">(optional)</span>
-        </legend>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {BUYER_TYPES.map(({ value, label }) => (
-            <label key={value} className="flex items-center gap-2 cursor-pointer group">
-              <input
-                type="radio" name="buyer_type" value={value}
-                checked={formData.buyer_type === value}
-                onChange={handleChange}
-                className="accent-[#E6A91A] w-4 h-4"
-              />
-              <span className="font-body text-xs text-[#0A0A0A]/80 group-hover:text-[#0A0A0A] transition-colors">
-                {label}
-              </span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
-          <label htmlFor="population_size" className={labelClass}>
-            Population size <span className="text-[#0A0A0A]/40">(optional)</span>
+          <label htmlFor="clinician_count" className={labelClass}>
+            Clinician count <span className="text-[#0A0A0A]/40">(optional)</span>
           </label>
           <select
-            id="population_size" name="population_size"
-            value={formData.population_size} onChange={handleChange}
+            id="clinician_count" name="clinician_count"
+            value={formData.clinician_count} onChange={handleChange}
             style={{ fontSize: "16px" }}
-            className={selectClass(!!formData.population_size)}
+            className={selectClass(!!formData.clinician_count)}
           >
             <option value="">Select range</option>
             <option value="under_500">Under 500</option>
-            <option value="500_1000">500 to 1,000</option>
-            <option value="1001_5000">1,001 to 5,000</option>
+            <option value="500_2000">500 to 2,000</option>
+            <option value="2001_5000">2,001 to 5,000</option>
             <option value="5001_10000">5,001 to 10,000</option>
             <option value="over_10000">Over 10,000</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="timeframe" className={labelClass}>
-            Timeframe <span className="text-[#0A0A0A]/40">(optional)</span>
+          <label htmlFor="program_scope" className={labelClass}>
+            Program scope <span className="text-[#0A0A0A]/40">(optional)</span>
           </label>
           <select
-            id="timeframe" name="timeframe"
-            value={formData.timeframe} onChange={handleChange}
+            id="program_scope" name="program_scope"
+            value={formData.program_scope} onChange={handleChange}
             style={{ fontSize: "16px" }}
-            className={selectClass(!!formData.timeframe)}
+            className={selectClass(!!formData.program_scope)}
           >
-            <option value="">Select timeframe</option>
-            <option value="evaluating_now">Evaluating now</option>
-            <option value="1_3_months">1 to 3 months</option>
-            <option value="3_6_months">3 to 6 months</option>
-            <option value="just_researching">Just researching</option>
+            <option value="">Select scope</option>
+            <option value="physicians_only">Physicians only</option>
+            <option value="nurses_only">Nurses only</option>
+            <option value="all_clinicians">All clinicians</option>
+            <option value="all_employees">All employees</option>
+            <option value="not_sure">Not sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="current_program" className={labelClass}>
+            Current program <span className="text-[#0A0A0A]/40">(optional)</span>
+          </label>
+          <select
+            id="current_program" name="current_program"
+            value={formData.current_program} onChange={handleChange}
+            style={{ fontSize: "16px" }}
+            className={selectClass(!!formData.current_program)}
+          >
+            <option value="">Select current</option>
+            <option value="internal_eap">Internal EAP</option>
+            <option value="third_party_eap">Third-party EAP</option>
+            <option value="peer_support">Peer-support only</option>
+            <option value="nothing">Nothing in place</option>
+            <option value="not_sure">Not sure</option>
           </select>
         </div>
       </div>
@@ -265,7 +250,7 @@ export function DemoRequestForm() {
         <textarea
           id="message" name="message"
           value={formData.message} onChange={handleChange}
-          placeholder="Tell us about your needs"
+          placeholder="Privacy concerns, goals, or questions"
           rows={3} autoComplete="off" style={{ fontSize: "16px" }}
           className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
         />
@@ -278,7 +263,7 @@ export function DemoRequestForm() {
         {isSubmitting ? (
           <><Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />Submitting...</>
         ) : (
-          <>Request Demo<ArrowRight className="w-3 h-3" aria-hidden="true" /></>
+          <>Request Information<ArrowRight className="w-3 h-3" aria-hidden="true" /></>
         )}
       </button>
 

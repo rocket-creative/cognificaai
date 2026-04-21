@@ -9,9 +9,9 @@ interface FormData {
   organization: string;
   phone: string;
   email: string;
-  buyer_type: string;
-  population_size: string;
-  timeframe: string;
+  payer_type: string;
+  member_count: string;
+  use_case: string;
   message: string;
 }
 
@@ -27,35 +27,18 @@ const inputClass = (error?: string) =>
     error ? "border-red-400" : "border-[#0A0A0A]/30"
   } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`;
 
-const selectClass = (hasValue: boolean, error?: string) =>
-  `w-full h-12 bg-[#0A0A0A]/20 border ${
-    error ? "border-red-400" : "border-[#0A0A0A]/30"
-  } px-4 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
+const selectClass = (hasValue: boolean) =>
+  `w-full h-12 bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
     hasValue ? "text-[#0A0A0A]" : "text-[#0A0A0A]/50"
   }`;
 
 const labelClass = "block font-body text-xs text-[#0A0A0A]/70 mb-1";
 const errorClass = "text-red-700 text-xs mt-1";
 
-const BUYER_TYPES = [
-  { value: "employer", label: "Employer / HR / Benefits" },
-  { value: "provider", label: "Medical group or health system" },
-  { value: "payer", label: "Health plan / insurer" },
-  { value: "broker", label: "Benefits broker or consultant" },
-  { value: "other", label: "Other" },
-];
-
-export function DemoRequestForm() {
+export function PayerForm() {
   const [formData, setFormData] = useState<FormData>({
-    contact_name: "",
-    title: "",
-    organization: "",
-    phone: "",
-    email: "",
-    buyer_type: "",
-    population_size: "",
-    timeframe: "",
-    message: "",
+    contact_name: "", title: "", organization: "", phone: "", email: "",
+    payer_type: "", member_count: "", use_case: "", message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -83,13 +66,13 @@ export function DemoRequestForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, form_type: "demo" }),
+        body: JSON.stringify({ ...formData, form_type: "payer" }),
       });
       if (res.ok) {
         setIsSuccess(true);
         setFormData({
-          contact_name: "", title: "", organization: "", phone: "",
-          email: "", buyer_type: "", population_size: "", timeframe: "", message: "",
+          contact_name: "", title: "", organization: "", phone: "", email: "",
+          payer_type: "", member_count: "", use_case: "", message: "",
         });
       }
     } catch {
@@ -115,7 +98,7 @@ export function DemoRequestForm() {
         <CheckCircle className="w-12 h-12 text-[#E6A91A] mx-auto mb-4" aria-hidden="true" />
         <h3 className="font-heading text-xl text-[#0A0A0A] mb-2">Thank You</h3>
         <p className="font-body text-sm text-[#0A0A0A]/70 font-light">
-          We&apos;ll be in touch within one business day to schedule your demo.
+          We&apos;ll be in touch within one business day to discuss your member program.
         </p>
       </div>
     );
@@ -123,11 +106,11 @@ export function DemoRequestForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <h3 className="font-heading text-lg text-[#0A0A0A] mb-4">Request a Demo</h3>
+      <h3 className="font-heading text-lg text-[#0A0A0A] mb-4">Payer Inquiry</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="contact_name" className={labelClass}>Full Name *</label>
+          <label htmlFor="contact_name" className={labelClass}>Contact Name *</label>
           <input
             type="text" id="contact_name" name="contact_name"
             value={formData.contact_name} onChange={handleChange}
@@ -147,7 +130,7 @@ export function DemoRequestForm() {
           <input
             type="text" id="title" name="title"
             value={formData.title} onChange={handleChange}
-            placeholder="VP of Benefits" autoComplete="organization-title"
+            placeholder="VP of Case Management" autoComplete="organization-title"
             style={{ fontSize: "16px" }}
             className={inputClass()}
           />
@@ -155,11 +138,11 @@ export function DemoRequestForm() {
       </div>
 
       <div>
-        <label htmlFor="organization" className={labelClass}>Organization *</label>
+        <label htmlFor="organization" className={labelClass}>Plan or Payer Name *</label>
         <input
           type="text" id="organization" name="organization"
           value={formData.organization} onChange={handleChange}
-          placeholder="Acme Corp" autoComplete="organization"
+          placeholder="BlueCross BlueShield of…" autoComplete="organization"
           style={{ fontSize: "16px" }}
           className={inputClass(errors.organization)}
           aria-invalid={!!errors.organization}
@@ -188,7 +171,7 @@ export function DemoRequestForm() {
           <input
             type="email" id="email" name="email"
             value={formData.email} onChange={handleChange}
-            placeholder="jane@company.com" autoComplete="email"
+            placeholder="jane@planname.com" autoComplete="email"
             inputMode="email" style={{ fontSize: "16px" }}
             className={inputClass(errors.email)}
             aria-invalid={!!errors.email}
@@ -198,62 +181,62 @@ export function DemoRequestForm() {
         </div>
       </div>
 
-      <fieldset>
-        <legend className={`${labelClass} mb-2`}>
-          I am a… <span className="text-[#0A0A0A]/40">(optional)</span>
-        </legend>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {BUYER_TYPES.map(({ value, label }) => (
-            <label key={value} className="flex items-center gap-2 cursor-pointer group">
-              <input
-                type="radio" name="buyer_type" value={value}
-                checked={formData.buyer_type === value}
-                onChange={handleChange}
-                className="accent-[#E6A91A] w-4 h-4"
-              />
-              <span className="font-body text-xs text-[#0A0A0A]/80 group-hover:text-[#0A0A0A] transition-colors">
-                {label}
-              </span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
-          <label htmlFor="population_size" className={labelClass}>
-            Population size <span className="text-[#0A0A0A]/40">(optional)</span>
+          <label htmlFor="payer_type" className={labelClass}>
+            Payer type <span className="text-[#0A0A0A]/40">(optional)</span>
           </label>
           <select
-            id="population_size" name="population_size"
-            value={formData.population_size} onChange={handleChange}
+            id="payer_type" name="payer_type"
+            value={formData.payer_type} onChange={handleChange}
             style={{ fontSize: "16px" }}
-            className={selectClass(!!formData.population_size)}
+            className={selectClass(!!formData.payer_type)}
           >
-            <option value="">Select range</option>
-            <option value="under_500">Under 500</option>
-            <option value="500_1000">500 to 1,000</option>
-            <option value="1001_5000">1,001 to 5,000</option>
-            <option value="5001_10000">5,001 to 10,000</option>
-            <option value="over_10000">Over 10,000</option>
+            <option value="">Select type</option>
+            <option value="commercial">Commercial</option>
+            <option value="medicare_advantage">Medicare Advantage</option>
+            <option value="medicaid_mco">Medicaid MCO</option>
+            <option value="self_funded_tpa">Self-funded TPA</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="timeframe" className={labelClass}>
-            Timeframe <span className="text-[#0A0A0A]/40">(optional)</span>
+          <label htmlFor="member_count" className={labelClass}>
+            Member count <span className="text-[#0A0A0A]/40">(optional)</span>
           </label>
           <select
-            id="timeframe" name="timeframe"
-            value={formData.timeframe} onChange={handleChange}
+            id="member_count" name="member_count"
+            value={formData.member_count} onChange={handleChange}
             style={{ fontSize: "16px" }}
-            className={selectClass(!!formData.timeframe)}
+            className={selectClass(!!formData.member_count)}
           >
-            <option value="">Select timeframe</option>
-            <option value="evaluating_now">Evaluating now</option>
-            <option value="1_3_months">1 to 3 months</option>
-            <option value="3_6_months">3 to 6 months</option>
-            <option value="just_researching">Just researching</option>
+            <option value="">Select range</option>
+            <option value="under_10k">Under 10k</option>
+            <option value="10k_50k">10k to 50k</option>
+            <option value="50k_250k">50k to 250k</option>
+            <option value="250k_1m">250k to 1M</option>
+            <option value="over_1m">Over 1M</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="use_case" className={labelClass}>
+            Primary use case <span className="text-[#0A0A0A]/40">(optional)</span>
+          </label>
+          <select
+            id="use_case" name="use_case"
+            value={formData.use_case} onChange={handleChange}
+            style={{ fontSize: "16px" }}
+            className={selectClass(!!formData.use_case)}
+          >
+            <option value="">Select use case</option>
+            <option value="case_management">Case management</option>
+            <option value="care_management">Care management</option>
+            <option value="utilization_management">Utilization management</option>
+            <option value="er_diversion">ER diversion</option>
+            <option value="chronic_condition">Chronic-condition program</option>
+            <option value="other">Other</option>
           </select>
         </div>
       </div>
@@ -265,7 +248,7 @@ export function DemoRequestForm() {
         <textarea
           id="message" name="message"
           value={formData.message} onChange={handleChange}
-          placeholder="Tell us about your needs"
+          placeholder="Anything else you'd like us to know"
           rows={3} autoComplete="off" style={{ fontSize: "16px" }}
           className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
         />
@@ -278,7 +261,7 @@ export function DemoRequestForm() {
         {isSubmitting ? (
           <><Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />Submitting...</>
         ) : (
-          <>Request Demo<ArrowRight className="w-3 h-3" aria-hidden="true" /></>
+          <>Request Information<ArrowRight className="w-3 h-3" aria-hidden="true" /></>
         )}
       </button>
 

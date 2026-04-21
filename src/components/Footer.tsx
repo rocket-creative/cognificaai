@@ -9,9 +9,9 @@ const footerLinks = {
     { label: "Request Demo", href: "#demo" },
   ],
   company: [
-    { label: "Cognifica Health", href: "https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
-    { label: "Synaptix", href: "https://synaptix-rho.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://kronos-rev.vercel.app?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "Cognifica Health", href: "https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "Synaptix", href: "https://www.synaptix.health?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://www.kronosrevenue.health?utm_source=cognificaapp&utm_medium=footer" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -130,7 +130,7 @@ export function Footer() {
             <p className="font-body text-xs text-white/40">
               © {currentYear} Cognifica App. A{" "}
               <Link 
-                href="https://cognifica-health.vercel.app?utm_source=cognificaapp&utm_medium=footer_copyright" 
+                href="https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Cognifica Health (opens in new tab)"

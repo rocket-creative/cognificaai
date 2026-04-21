@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Cognifica App Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
   alternates: {
-    canonical: "https://cognifica.ai/privacy",
+    canonical: "https://www.cognifica.app/privacy",
   },
   openGraph: {
     title: "Privacy Policy for Employee Mental Health",
     description:
       "Cognifica App Privacy Policy. Learn how we protect your personal information and maintain HIPAA compliance for employee mental health data. Contact us for inquiries.",
-    url: "https://cognifica.ai/privacy",
+    url: "https://www.cognifica.app/privacy",
     siteName: "Cognifica App",
     type: "website",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Privacy Policy", url: "https://cognifica.ai/privacy" }]} />
+      <BreadcrumbSchema items={[{ name: "Privacy Policy", url: "https://www.cognifica.app/privacy" }]} />
 
       <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,7 +190,7 @@ export default function PrivacyPage() {
                   For privacy related inquiries, contact us at:
                 </p>
                 <p className="font-body text-sm text-white mt-2">
-                  privacy@cognifica.ai
+                  privacy@cognifica.app
                   <br />
                   <a href="tel:+19147056830" className="hover:text-[#E6A91A] transition-colors">
                     (914) 705 6830

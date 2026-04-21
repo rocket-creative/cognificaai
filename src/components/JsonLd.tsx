@@ -3,7 +3,7 @@ interface FAQItem {
   answer: string;
 }
 
-const ORGANIZATION_ID = "https://cognifica.ai/#organization";
+const ORGANIZATION_ID = "https://www.cognifica.app/#organization";
 
 export function OrganizationSchema() {
   const schema = {
@@ -11,14 +11,14 @@ export function OrganizationSchema() {
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
     name: "Cognifica App",
-    url: "https://cognifica.ai",
-    logo: "https://cognifica.ai/og-image.png",
+    url: "https://www.cognifica.app",
+    logo: "https://www.cognifica.app/og-image.png",
     description:
       "Employee Mental Health Hub providing anonymous assessments, digital support, and optional professional access for the modern workforce.",
     parentOrganization: {
       "@type": "Organization",
       name: "Kronos Group",
-      url: "https://kronoshealth.co",
+      url: "https://www.kronosgroup.health",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -26,7 +26,7 @@ export function OrganizationSchema() {
       contactType: "sales",
       availableLanguage: "English",
     },
-    sameAs: ["https://kronoshealth.co"],
+    sameAs: ["https://www.kronosgroup.health"],
   };
 
   return (
@@ -37,7 +37,7 @@ export function OrganizationSchema() {
   );
 }
 
-const WEBSITE_ID = "https://cognifica.ai/#website";
+const WEBSITE_ID = "https://www.cognifica.app/#website";
 
 export function WebSiteSchema() {
   const schema = {
@@ -45,7 +45,7 @@ export function WebSiteSchema() {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     name: "Cognifica App",
-    url: "https://cognifica.ai",
+    url: "https://www.cognifica.app",
     description:
       "Employee Mental Health Hub. Trusted by employees. Safe for employers.",
     publisher: { "@id": ORGANIZATION_ID },
@@ -59,7 +59,7 @@ export function WebSiteSchema() {
   );
 }
 
-const SOFTWARE_APP_ID = "https://cognifica.ai/#softwareapplication";
+const SOFTWARE_APP_ID = "https://www.cognifica.app/#softwareapplication";
 
 export function SoftwareApplicationSchema() {
   const schema = {
@@ -129,7 +129,7 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url?: string }[];
 }) {
-  const baseUrl = "https://cognifica.ai";
+  const baseUrl = "https://www.cognifica.app";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -175,7 +175,7 @@ export function ServiceSchema({
     provider: {
       "@type": "Organization",
       name: "Cognifica App",
-      url: "https://cognifica.ai",
+      url: "https://www.cognifica.app",
     },
     areaServed: "United States",
     serviceType: "Mental Health Software",

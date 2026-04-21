@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
   alternates: {
-    canonical: "https://cognifica.ai/terms",
+    canonical: "https://www.cognifica.app/terms",
   },
   openGraph: {
     title: "Terms of Service for Employee Mental Health",
     description:
       "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
-    url: "https://cognifica.ai/terms",
+    url: "https://www.cognifica.app/terms",
     siteName: "Cognifica App",
     type: "website",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Terms of Service", url: "https://cognifica.ai/terms" }]} />
+      <BreadcrumbSchema items={[{ name: "Terms of Service", url: "https://www.cognifica.app/terms" }]} />
 
       <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,7 +212,7 @@ export default function TermsPage() {
                   For questions about these Terms, contact us at:
                 </p>
                 <p className="font-body text-sm text-white mt-2">
-                  legal@cognifica.ai
+                  legal@cognifica.app
                   <br />
                   <a href="tel:+19147056830" className="hover:text-[#E6A91A] transition-colors">
                     (914) 705 6830

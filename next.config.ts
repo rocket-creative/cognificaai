@@ -49,7 +49,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cognifica.ai",
+        hostname: "www.cognifica.app",
+      },
+      {
+        protocol: "https",
+        hostname: "cognifica.app",
       },
     ],
   },

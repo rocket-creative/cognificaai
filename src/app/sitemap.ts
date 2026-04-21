@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://cognifica.ai";
+  const baseUrl = "https://www.cognifica.app";
 
   return [
     {
