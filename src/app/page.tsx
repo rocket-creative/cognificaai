@@ -1,4 +1,5 @@
 /* |UXUIDC| HomePage */
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   PageContainer,
@@ -8,6 +9,54 @@ import {
   Reveal,
   AggregateOnlyBadge,
 } from "@/components/ui";
+import {
+  OrganizationSchema,
+  WebSiteSchema,
+  SoftwareApplicationSchema,
+  MedicalOrganizationSchema,
+} from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Cognifica | Cognitive health, measured.",
+  description:
+    "Validated mental health screening and risk stratification for employers, clinics, and insurers. Built on an active clinical practice. The employer never sees an individual score.",
+  keywords: [
+    "employee mental health",
+    "workforce mental health",
+    "validated screening",
+    "PHQ-9",
+    "GAD-7",
+    "panel triage",
+    "behavioral health",
+    "HIPAA aligned",
+    "R-Score",
+    "Cognifica",
+  ],
+  alternates: { canonical: "https://www.cognifica.app/" },
+  openGraph: {
+    title: "Cognifica | Cognitive health, measured.",
+    description:
+      "Validated screening and risk stratification for employers, clinics, and insurers. Aggregate only reporting. The employer never sees an individual score.",
+    url: "https://www.cognifica.app/",
+    siteName: "Cognifica",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cognifica",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cognifica | Cognitive health, measured.",
+    description:
+      "Validated screening and risk stratification for employers, clinics, and insurers.",
+    images: ["/og-image.png"],
+  },
+};
 
 const audienceCards = [
   {
@@ -55,6 +104,11 @@ const commitments = [
 export default function HomePage() {
   return (
     <>
+      <OrganizationSchema />
+      <WebSiteSchema />
+      <SoftwareApplicationSchema />
+      <MedicalOrganizationSchema />
+
       <PageContainer className="pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24">
         <div className="max-w-5xl">
           <Eyebrow>Cognifica</Eyebrow>
