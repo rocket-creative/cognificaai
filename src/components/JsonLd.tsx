@@ -1,32 +1,30 @@
+/* |UXUIDC| JsonLd */
 interface FAQItem {
   question: string;
   answer: string;
 }
 
 const ORGANIZATION_ID = "https://www.cognifica.app/#organization";
+const WEBSITE_ID = "https://www.cognifica.app/#website";
 
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
-    name: "Cognifica App",
+    name: "Cognifica",
+    alternateName: ["CogAI Workforce", "CogAI Medical"],
     url: "https://www.cognifica.app",
     logo: "https://www.cognifica.app/og-image.png",
     description:
-      "Employee Mental Health Hub providing anonymous assessments, digital support, and optional professional access for the modern workforce.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "Kronos Group",
-      url: "https://www.kronosgroup.health",
-    },
+      "Validated mental health screening and risk stratification for employers, clinics, and insurers. Built by practicing clinicians on top of an active clinical practice.",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+1 914 705 6830",
       contactType: "sales",
       availableLanguage: "English",
     },
-    sameAs: ["https://www.kronosgroup.health"],
+    sameAs: ["https://www.cognifica.health"],
   };
 
   return (
@@ -37,17 +35,15 @@ export function OrganizationSchema() {
   );
 }
 
-const WEBSITE_ID = "https://www.cognifica.app/#website";
-
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": WEBSITE_ID,
-    name: "Cognifica App",
+    name: "Cognifica",
     url: "https://www.cognifica.app",
     description:
-      "Employee Mental Health Hub. Trusted by employees. Safe for employers.",
+      "Cognitive health, measured. Validated screening for employers, clinics, and insurers.",
     publisher: { "@id": ORGANIZATION_ID },
   };
 
@@ -66,30 +62,24 @@ export function SoftwareApplicationSchema() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": SOFTWARE_APP_ID,
-    name: "Cognifica App",
+    name: "Cognifica",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web, iOS, Android",
     description:
-      "Workplace mental health platform with PHQ-9, GAD-7, PSQI, DAST, AUDIT, and PCL-5 assessments, cognitive remediation, and crisis support.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Contact for enterprise pricing",
-    },
+      "Validated mental health screening and panel triage. PHQ-9, GAD-7, PCL-5, DAST-10, AUDIT, PSQI, and Work Wellness. HIPAA aligned posture. The employer never sees an individual score.",
     featureList: [
-      "Anonymous mental health assessments",
       "PHQ-9 depression screening",
-      "GAD-7 anxiety assessment",
-      "PSQI sleep quality index",
-      "AUDIT alcohol screening",
-      "DAST substance use screening",
-      "PCL-5 PTSD assessment",
-      "Computerized cognitive remediation",
-      "24/7 crisis support",
-      "Licensed mental health professional access",
-      "HIPAA compliant",
-      "Aggregate employer dashboard",
+      "GAD-7 anxiety screening",
+      "PCL-5 trauma screening",
+      "DAST-10 drug use screening",
+      "AUDIT alcohol use screening",
+      "PSQI sleep screening",
+      "Work Wellness screening",
+      "R-Score risk stratification",
+      "Panel triage for clinicians",
+      "Aggregate only employer dashboard",
+      "Consent first architecture",
+      "HIPAA aligned posture",
     ],
     provider: { "@id": ORGANIZATION_ID },
   };
@@ -172,13 +162,49 @@ export function ServiceSchema({
     name,
     description,
     url,
-    provider: {
-      "@type": "Organization",
-      name: "Cognifica App",
-      url: "https://www.cognifica.app",
-    },
+    provider: { "@id": ORGANIZATION_ID },
     areaServed: "United States",
     serviceType: "Mental Health Software",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function MedicalOrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    name: "Cognifica Health",
+    url: "https://www.cognifica.health",
+    description:
+      "Active clinical practice of Dr. John Abrahams. Locations in Aquebogue and West Harrison, NY.",
+    location: [
+      {
+        "@type": "Place",
+        name: "Cognifica Health Aquebogue",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Aquebogue",
+          addressRegion: "NY",
+          addressCountry: "US",
+        },
+      },
+      {
+        "@type": "Place",
+        name: "Cognifica Health West Harrison",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "West Harrison",
+          addressRegion: "NY",
+          addressCountry: "US",
+        },
+      },
+    ],
   };
 
   return (

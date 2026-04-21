@@ -195,7 +195,7 @@ export function MedicalGroupForm() {
             <option value="">Select specialty</option>
             <option value="primary_care">Primary care</option>
             <option value="internal_medicine">Internal medicine</option>
-            <option value="multi_specialty">Multi-specialty</option>
+            <option value="multi_specialty">Multi specialty</option>
             <option value="fqhc">FQHC / community health</option>
             <option value="cardiology">Cardiology</option>
             <option value="oncology">Oncology</option>

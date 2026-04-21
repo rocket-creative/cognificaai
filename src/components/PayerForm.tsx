@@ -196,7 +196,7 @@ export function PayerForm() {
             <option value="commercial">Commercial</option>
             <option value="medicare_advantage">Medicare Advantage</option>
             <option value="medicaid_mco">Medicaid MCO</option>
-            <option value="self_funded_tpa">Self-funded TPA</option>
+            <option value="self_funded_tpa">Self funded TPA</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -235,7 +235,7 @@ export function PayerForm() {
             <option value="care_management">Care management</option>
             <option value="utilization_management">Utilization management</option>
             <option value="er_diversion">ER diversion</option>
-            <option value="chronic_condition">Chronic-condition program</option>
+            <option value="chronic_condition">Chronic condition program</option>
             <option value="other">Other</option>
           </select>
         </div>

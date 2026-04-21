@@ -3,33 +3,30 @@ import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Terms of Service for Employee Mental Health",
+  title: "Terms of service",
   description:
-    "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
-  alternates: {
-    canonical: "https://www.cognifica.app/terms",
-  },
+    "Terms of service for Cognifica. Acceptance, description of service, user and tenant responsibilities, limitation of liability, governing law.",
+  alternates: { canonical: "https://www.cognifica.app/terms" },
   openGraph: {
-    title: "Terms of Service for Employee Mental Health",
+    title: "Terms of service | Cognifica",
     description:
-      "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+      "Terms of service for Cognifica. Acceptance, description, responsibilities, limitation of liability, governing law.",
     url: "https://www.cognifica.app/terms",
-    siteName: "Cognifica App",
+    siteName: "Cognifica",
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cognifica App Employee Mental Health Hub",
+        alt: "Cognifica",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service for Employee Mental Health",
-    description:
-      "Cognifica App Terms of Service. Review the terms and conditions for using our Employee Mental Health Hub platform. HIPAA compliant. Contact us for questions.",
+    title: "Terms of service | Cognifica",
+    description: "Terms of service for Cognifica.",
     images: ["/og-image.png"],
   },
 };
@@ -57,116 +54,118 @@ export default function TermsPage() {
           <article className="bg-[#161616] p-8 sm:p-12 border border-white/5">
             <header className="mb-8 pb-8 border-b border-white/10">
               <h1 className="font-heading text-3xl sm:text-4xl text-white mb-4">
-                Terms of Service
+                Terms of service
               </h1>
               <p className="font-body text-sm text-white/50">
-                Last updated: March 14, 2026
+                Last updated: April 20, 2026
               </p>
             </header>
 
             <div className="space-y-8">
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Acceptance of Terms
+                  Acceptance of terms
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  By accessing or using Cognifica App (&quot;the Platform&quot;), you agree
-                  to be bound by these Terms of Service. If you do not agree to
-                  these terms, do not use the Platform.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  By accessing or using Cognifica (&quot;the Platform&quot;), including
+                  the CogAI Workforce and CogAI Medical products, you agree to
+                  be bound by these Terms of Service. If you do not agree,
+                  discontinue use.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Description of Service
+                  Description of service
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed mb-4">
-                  Cognifica App provides an Employee Mental Health Hub that
-                  includes:
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
+                  Cognifica provides validated mental health screening and risk
+                  stratification, including:
                 </p>
-                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/60 font-light">
-                  <li>Anonymous mental health self assessments</li>
-                  <li>Interactive digital support resources</li>
-                  <li>Computerized cognitive remediation exercises</li>
-                  <li>Optional access to licensed mental health professionals</li>
-                  <li>Aggregate workforce insights for employers</li>
+                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/70 font-light">
+                  <li>Validated instruments: PHQ-9, GAD-7, PCL-5, DAST-10, AUDIT, PSQI, Work Wellness</li>
+                  <li>R-Score risk stratification</li>
+                  <li>Optional access to licensed clinicians through Cognifica Health</li>
+                  <li>Aggregate tenant insights subject to the consent architecture</li>
                 </ul>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Not a Substitute for Professional Care
+                  Not a substitute for professional care
                 </h2>
                 <div className="bg-[#0A0A0A] p-6 mb-4 border border-white/10">
                   <p className="font-body text-sm text-white font-bold">
-                    Important: Cognifica App is not a substitute for professional
-                    medical advice, diagnosis, or treatment.
+                    Cognifica is not used for diagnosis and is not for emergency response. It is not a
+                    substitute for professional medical advice, diagnosis, or
+                    treatment.
                   </p>
                 </div>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  The Platform provides educational resources and screening
-                  tools. Always seek the advice of a qualified healthcare
-                  provider with any questions regarding a medical condition. If
-                  you are experiencing a mental health emergency, call 988
-                  (Suicide and Crisis Lifeline) or go to your nearest emergency
-                  room.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  The platform provides validated screening and risk
+                  stratification. Always seek the advice of a qualified
+                  healthcare provider for any medical condition. If you are
+                  experiencing a mental health emergency, call 988 for the
+                  Suicide and Crisis Lifeline, text 741741 for the Crisis Text
+                  Line, or go to your nearest emergency room.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  User Responsibilities
+                  User responsibilities
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed mb-4">
-                  As a user of the Platform, you agree to:
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
+                  As a user of the platform, you agree to:
                 </p>
-                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/60 font-light">
-                  <li>Provide accurate information in assessments</li>
-                  <li>Use the Platform only for its intended purpose</li>
-                  <li>Not share your account credentials with others</li>
+                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/70 font-light">
+                  <li>Provide accurate information in screening instruments</li>
+                  <li>Use the platform only for its intended purpose</li>
+                  <li>Not share account credentials with others</li>
                   <li>Not attempt to access other users&apos; data</li>
-                  <li>Comply with all applicable laws and regulations</li>
+                  <li>Comply with applicable laws and regulations</li>
                 </ul>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Employer Responsibilities
+                  Tenant responsibilities
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed mb-4">
-                  Employers using the Platform agree to:
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
+                  Tenants (employers, clinics, insurers) using the platform
+                  agree to:
                 </p>
-                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/60 font-light">
-                  <li>Not attempt to identify individual employees from aggregate data</li>
-                  <li>Not use the Platform for surveillance or monitoring purposes</li>
-                  <li>Maintain confidentiality of all workforce insights</li>
-                  <li>Comply with all applicable employment and privacy laws</li>
+                <ul className="list-disc pl-5 space-y-2 font-body text-sm text-white/70 font-light">
+                  <li>Not attempt to identify individuals from aggregate data</li>
+                  <li>Not use the platform for surveillance or monitoring</li>
+                  <li>Maintain confidentiality of tenant-level insights</li>
+                  <li>Comply with applicable employment, health, and privacy laws</li>
                   <li>Pay all fees associated with the service</li>
                 </ul>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Intellectual Property
+                  Intellectual property
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  The Platform and its original content, features, and
-                  functionality are owned by Cognifica App and are protected by
-                  international copyright, trademark, patent, trade secret, and
-                  other intellectual property laws.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  The platform and its original content, features, and
+                  functionality are owned by Cognifica and are protected by
+                  copyright, trademark, patent, trade secret, and other
+                  intellectual property laws.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Limitation of Liability
+                  Limitation of liability
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  To the maximum extent permitted by law, Cognifica App shall not
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  To the maximum extent permitted by law, Cognifica shall not
                   be liable for any indirect, incidental, special,
-                  consequential, or punitive damages, or any loss of profits or
-                  revenues, whether incurred directly or indirectly, or any loss
-                  of data, use, goodwill, or other intangible losses.
+                  consequential, or punitive damages, or any loss of profits,
+                  revenues, data, or goodwill, whether incurred directly or
+                  indirectly.
                 </p>
               </section>
 
@@ -174,49 +173,48 @@ export default function TermsPage() {
                 <h2 className="font-heading text-lg text-white mb-4">
                   Termination
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  We may terminate or suspend your access to the Platform
-                  immediately, without prior notice or liability, for any reason
-                  whatsoever, including without limitation if you breach these
-                  Terms of Service.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  Access to the platform may be suspended or terminated for
+                  breach of these Terms of Service. Pilot terminations follow
+                  the terms in the applicable pilot agreement.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Changes to Terms
+                  Changes to terms
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  We reserve the right to modify or replace these Terms at any
-                  time. If a revision is material, we will provide at least 30
-                  days&apos; notice prior to any new terms taking effect.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  Cognifica may modify these terms from time to time. Material
+                  changes are communicated with at least 30 days of notice
+                  before taking effect.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Governing Law
+                  Governing law
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  These Terms shall be governed by and construed in accordance
-                  with the laws of the State of New York, without regard to its
-                  conflict of law provisions.
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  These terms are governed by the laws of the State of New
+                  York, without regard to conflict of law provisions.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-heading text-lg text-white mb-4">
-                  Contact Us
+                  Contact
                 </h2>
-                <p className="font-body text-sm text-white/60 font-light leading-relaxed">
-                  For questions about these Terms, contact us at:
-                </p>
-                <p className="font-body text-sm text-white mt-2">
-                  legal@cognifica.app
-                  <br />
-                  <a href="tel:+19147056830" className="hover:text-[#E6A91A] transition-colors">
+                <p className="font-body text-sm text-white/70 font-light leading-relaxed">
+                  For questions about these terms, contact{" "}
+                  <a href="mailto:legal@cognifica.app" className="text-[#E6A91A] hover:underline">
+                    legal@cognifica.app
+                  </a>{" "}
+                  or call{" "}
+                  <a href="tel:+19147056830" className="text-[#E6A91A] hover:underline">
                     (914) 705 6830
                   </a>
+                  .
                 </p>
               </section>
             </div>

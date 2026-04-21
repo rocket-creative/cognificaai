@@ -235,8 +235,8 @@ export function HospitalSystemForm() {
           >
             <option value="">Select current</option>
             <option value="internal_eap">Internal EAP</option>
-            <option value="third_party_eap">Third-party EAP</option>
-            <option value="peer_support">Peer-support only</option>
+            <option value="third_party_eap">Third party EAP</option>
+            <option value="peer_support">Peer support only</option>
             <option value="nothing">Nothing in place</option>
             <option value="not_sure">Not sure</option>
           </select>

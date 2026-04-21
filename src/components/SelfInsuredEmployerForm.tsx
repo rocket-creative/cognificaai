@@ -37,7 +37,7 @@ const labelClass = "block font-body text-xs text-[#0A0A0A]/70 mb-1";
 const errorClass = "text-red-700 text-xs mt-1";
 
 const FUNDING_MODELS = [
-  { value: "self_funded", label: "Self-funded / self-insured" },
+  { value: "self_funded", label: "Self funded or self insured" },
   { value: "level_funded", label: "Level-funded" },
   { value: "fully_insured", label: "Fully insured" },
   { value: "not_sure", label: "Not sure" },
@@ -262,7 +262,7 @@ export function SelfInsuredEmployerForm() {
             <option value="replace_augment_eap">Replace / augment EAP</option>
             <option value="reduce_medical_spend">Reduce medical spend</option>
             <option value="reduce_absenteeism">Reduce absenteeism and turnover</option>
-            <option value="mh_pathway">Mental health pathway for self-funded plan</option>
+            <option value="mh_pathway">Mental health pathway for self funded plan</option>
             <option value="general_inquiry">General inquiry</option>
           </select>
         </div>

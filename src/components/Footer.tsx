@@ -1,21 +1,27 @@
+/* |UXUIDC| Footer */
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "How It Works", href: "#how" },
-    { label: "Clinical Assessments", href: "#assessments" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Request Demo", href: "#demo" },
+    { label: "CogAI Workforce", href: "/for-employers" },
+    { label: "CogAI Medical", href: "/for-clinics" },
+    { label: "For Insurers", href: "/for-insurers" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "Schedule a call", href: "/pilot" },
   ],
   company: [
-    { label: "Cognifica Health", href: "https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer" },
-    { label: "Synaptix", href: "https://www.synaptix.health?utm_source=cognificaapp&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://www.kronosrevenue.health?utm_source=cognificaapp&utm_medium=footer" },
+    { label: "About", href: "/about" },
+    {
+      label: "Cognifica Health",
+      href: "https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer",
+      external: true,
+    },
+    { label: "Press", href: "/about#press" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy architecture", href: "/privacy" },
+    { label: "Privacy policy", href: "/privacy-policy" },
+    { label: "Terms of service", href: "/terms" },
   ],
 };
 
@@ -24,46 +30,55 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-[#161616] border-t border-white/5"
+      className="bg-[#111111] border-t border-white/5"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
 
-      {/* Main Footer */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
+          <div className="lg:col-span-2">
             <Link
               href="/"
               className="text-2xl tracking-wide text-white"
-              style={{ fontFamily: 'var(--font-quicksand)', fontWeight: 300 }}
-              aria-label="Cognifica App Home"
+              style={{ fontFamily: "var(--font-quicksand)", fontWeight: 300 }}
+              aria-label="Cognifica home"
             >
               cognifica
-              <span className="text-[#E6A91A]">ai</span>
             </Link>
-            <p className="mt-4 font-body text-sm text-white/50 font-light leading-relaxed">
-              Employee Mental Health Hub. Trusted by employees. Safe for
-              employers.
+            <p className="mt-4 font-body text-sm text-white/60 font-light leading-relaxed max-w-sm">
+              Validated mental health screening and risk stratification, built by
+              practicing clinicians. Two products. Three audiences. One clinical
+              boundary that the employer never crosses.
             </p>
-            <div className="mt-6">
-              <Link
-                href="tel:+19147056830"
-                className="font-body text-sm text-white/70 hover:text-white transition-colors"
-              >
-                (914) 705 6830
-              </Link>
+
+            <div className="mt-8">
+              <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-3">
+                In crisis right now
+              </p>
+              <ul className="space-y-2 font-body text-sm text-white/70 font-light" role="list">
+                <li>
+                  Call{" "}
+                  <a href="tel:988" className="text-white hover:text-[#E6A91A] transition-colors">
+                    988
+                  </a>{" "}
+                  for the Suicide and Crisis Lifeline
+                </li>
+                <li>
+                  Text{" "}
+                  <a href="sms:741741" className="text-white hover:text-[#E6A91A] transition-colors">
+                    741741
+                  </a>{" "}
+                  for the Crisis Text Line
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Product Links */}
           <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Product
-            </h3>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Product</h3>
             <ul className="space-y-3" role="list">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
@@ -78,24 +93,42 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
           <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Company
-            </h3>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Company</h3>
             <ul className="space-y-3" role="list">
               {footerLinks.company.map((link) => (
+                <li key={link.href}>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${link.label} (opens in new tab)`}
+                      className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="font-body text-sm text-white/60 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Legal</h3>
+            <ul className="space-y-3" role="list">
+              {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="font-body text-sm text-white/60 hover:text-white transition-colors"
-                    {...(link.href.startsWith("http")
-                      ? {
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                          "aria-label": `${link.label} (opens in new tab)`,
-                        }
-                      : {})}
                   >
                     {link.label}
                   </Link>
@@ -103,54 +136,31 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* CTA Column */}
-          <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Get Started
-            </h3>
-            <p className="font-body text-sm text-white/50 font-light mb-4">
-              See how Cognifica App can support your workforce.
-            </p>
-            <Link
-              href="#demo"
-              className="inline-flex items-center gap-3 bg-[#E6A91A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
-            >
-              Request Demo
-              <ArrowRight className="w-3 h-3" aria-hidden="true" />
-            </Link>
-          </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="font-body text-xs text-white/40">
-              © {currentYear} Cognifica App. A{" "}
-              <Link 
-                href="https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer_copyright" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Visit Cognifica Health (opens in new tab)"
-                className="text-[#E6A91A]/70 hover:text-[#E6A91A] transition-colors"
-              >
-                Cognifica Health
-              </Link>{" "}
-              Company. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              {footerLinks.legal.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-body text-xs text-white/40 hover:text-white/70 transition-colors"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="font-body text-xs text-white/40 font-light space-y-1">
+              <p>Cognifica Health · Aquebogue NY · West Harrison NY</p>
+              <p>
+                © {currentYear} Cognifica. A{" "}
+                <a
+                  href="https://www.cognifica.health?utm_source=cognificaapp&utm_medium=footer_copyright"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Cognifica Health (opens in new tab)"
+                  className="text-[#E6A91A]/80 hover:text-[#E6A91A] transition-colors"
                 >
-                  {link.label}
-                </Link>
-              ))}
+                  Cognifica Health
+                </a>{" "}
+                company.
+              </p>
             </div>
+            <p className="font-body text-xs text-white/30 font-light">
+              Not used for diagnosis. Not for emergency response. Clinical decisions are always initiated by a human.
+            </p>
           </div>
         </div>
       </div>
