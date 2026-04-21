@@ -378,7 +378,7 @@ export default function HomePage() {
                 Three audiences. Three pilots. A real operator on every call.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:max-w-md lg:ml-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:max-w-md lg:ml-auto w-full">
               <Link
                 href="/for-employers#demo"
                 className="group flex items-center justify-between gap-3 bg-[#0A0A0A] text-[#E6A91A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#161616] transition-colors"
@@ -395,7 +395,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/pilot"
-                className="group flex items-center justify-between gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#0A0A0A] hover:text-[#E6A91A] transition-colors sm:col-span-2"
+                className="group flex items-center justify-between gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-[#0A0A0A] hover:text-[#E6A91A] transition-colors md:col-span-2"
               >
                 Schedule a consultation
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
