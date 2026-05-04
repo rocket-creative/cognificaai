@@ -7,12 +7,14 @@ interface HeroBackgroundProps {
   className?: string;
   waveCount?: number;
   color?: string;
+  colorAlt?: string;
 }
 
 export function HeroBackground({
   className = "",
   waveCount = 5,
-  color = "230, 169, 26",
+  color = "255, 79, 0",
+  colorAlt = "204, 63, 0",
 }: HeroBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -47,11 +49,11 @@ export function HeroBackground({
     window.addEventListener("resize", resizeCanvas);
 
     const waves = Array.from({ length: waveCount }, (_, i) => ({
-      amplitude: 30 + i * 15,
+      amplitude: 45 + i * 20,
       frequency: 0.008 - i * 0.001,
       speed: 1 + i * 0.2,
       phase: (i * Math.PI) / waveCount,
-      opacity: 0.22 - i * 0.03,
+      stroke: i % 2 === 0 ? `rgb(${color})` : `rgb(${colorAlt})`,
       yOffset: i * 40,
     }));
 
@@ -78,42 +80,17 @@ export function HeroBackground({
           if (x === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = `rgba(${color}, ${wave.opacity})`;
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = wave.stroke;
+        ctx.lineWidth = 3.5;
         ctx.stroke();
-
-        ctx.beginPath();
-        for (let x = 0; x <= width; x += 2) {
-          const y =
-            centerY +
-            wave.yOffset +
-            Math.sin(x * wave.frequency + timeSeed * wave.speed + wave.phase) *
-              wave.amplitude +
-            Math.sin(
-              x * wave.frequency * 2 + timeSeed * wave.speed * 0.5
-            ) *
-              (wave.amplitude * 0.3);
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.lineTo(width, height);
-        ctx.lineTo(0, height);
-        ctx.closePath();
-
-        const gradient = ctx.createLinearGradient(0, centerY, 0, height);
-        gradient.addColorStop(0, `rgba(${color}, ${wave.opacity * 0.5})`);
-        gradient.addColorStop(1, `rgba(${color}, 0)`);
-        ctx.fillStyle = gradient;
-        ctx.fill();
       });
 
       for (let x = 0; x < width; x += 80) {
         const baseY = centerY + Math.sin(x * 0.01 + timeSeed) * 20;
-        const pulseSize = 3 + Math.sin(timeSeed * 2 + x * 0.05) * 2;
-        const opacity = 0.35 + Math.sin(timeSeed + x * 0.02) * 0.2;
+        const pulseSize = 6 + Math.sin(timeSeed * 2 + x * 0.05) * 3;
         ctx.beginPath();
         ctx.arc(x, baseY, Math.max(0.5, pulseSize), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color}, ${Math.max(0, opacity)})`;
+        ctx.fillStyle = `rgb(${color})`;
         ctx.fill();
       }
     };
@@ -134,7 +111,7 @@ export function HeroBackground({
       window.removeEventListener("resize", resizeCanvas);
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
-  }, [waveCount, color]);
+  }, [waveCount, color, colorAlt]);
 
   return (
     <canvas

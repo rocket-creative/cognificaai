@@ -8,27 +8,38 @@ import {
   ArrowLink,
   Reveal,
 } from "@/components/ui";
-import { BreadcrumbSchema, MedicalOrganizationSchema } from "@/components/JsonLd";
+import {
+  BreadcrumbSchema,
+  MedicalOrganizationSchema,
+  PersonSchema,
+} from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Cognifica",
+export const metadata: Metadata = buildMetadata({
+  title: "About COGAI | Founded by a practicing clinician",
   description:
-    "Cognifica was founded by Dr. John Abrahams, a practicing neurosurgeon. Built on top of Cognifica Health, an active clinical practice in Aquebogue and West Harrison, New York.",
-  alternates: { canonical: "https://www.cognifica.app/about" },
-  openGraph: {
-    title: "About Cognifica",
-    description:
-      "Founded by a practicing neurosurgeon. Built on top of an active clinical practice.",
-    url: "https://www.cognifica.app/about",
-  },
-};
+    "COGAI was founded by Dr. John Abrahams, a practicing neurosurgeon. Built on top of Cognifica Health, an active clinical practice in Aquebogue and West Harrison, NY.",
+  path: "/about",
+  ogTitle: "About COGAI",
+  ogDescription:
+    "Founded by a practicing neurosurgeon. Built on top of an active clinical practice.",
+  keywords: [
+    "About COGAI",
+    "Dr John Abrahams",
+    "Cognifica Health",
+    "neurosurgeon founder",
+    "clinical practice",
+    "Aquebogue",
+    "West Harrison",
+  ],
+});
 
 const abrahamsCredentials = [
   "MD, neurosurgery in New York since 2004",
   "Biomedical engineering background",
   "Prior device ventures: EndoMedix, Osteomedix, DTX Medical",
   "Practicing clinician at Cognifica Health",
-  "Founder of Cognifica",
+  "Founder of COGAI",
 ];
 
 const moganCredentials = [
@@ -55,25 +66,39 @@ const clinicLocations = [
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "About", url: "https://www.cognifica.app/about" }]} />
+      <BreadcrumbSchema items={[{ name: "About", url: "https://www.cogai.app/about" }]} />
       <MedicalOrganizationSchema />
+      <PersonSchema
+        name="Dr. John Abrahams"
+        jobTitle="Founder, COGAI; Practicing Neurosurgeon"
+        url="https://www.cogai.app/about"
+        affiliation="Cognifica Health"
+        description="Practicing neurosurgeon in New York since 2004. Founder of COGAI. Biomedical engineering background. Prior device ventures: EndoMedix, Osteomedix, DTX Medical."
+        sameAs={["https://www.cognifica.health"]}
+      />
+      <PersonSchema
+        name="Dr. Mogan"
+        jobTitle="Psychiatric Mental Health Nurse Practitioner, DNP"
+        affiliation="Cognifica Health"
+        description="Practicing psychiatric mental health nurse practitioner at Cognifica Health."
+      />
 
       <PageContainer className="pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-24 lg:pb-32">
         <div className="max-w-4xl">
           <Eyebrow>About</Eyebrow>
-          <h1 className="font-heading text-[clamp(32px,6vw,80px)] leading-[1.05] text-white mt-6">
+          <h1 className="font-heading text-[clamp(32px,6vw,80px)] leading-[1.05] text-[#0A0A0A] mt-6">
             The practice needed a tool. The tool did not exist. So the practice
             built it.
           </h1>
-          <p className="mt-8 font-body text-base sm:text-lg text-white/70 font-light leading-relaxed max-w-2xl">
-            Cognifica is built on top of an active clinical practice and
+          <p className="mt-8 font-body text-base sm:text-lg text-[#515154] font-light leading-relaxed max-w-2xl">
+            COGAI is built on top of an active clinical practice and
             operated by practicing clinicians. That is the whole premise. The
             product is the thing the clinic uses every day.
           </p>
         </div>
       </PageContainer>
 
-      <section className="border-t border-white/10 bg-[#111111]" aria-labelledby="abrahams-heading">
+      <section className="border-t border-[#D2D2D7] bg-[#F5F5F7]" aria-labelledby="abrahams-heading">
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
             <div className="lg:col-span-2">
@@ -81,35 +106,35 @@ export default function AboutPage() {
                 <Eyebrow>Founder</Eyebrow>
                 <h2
                   id="abrahams-heading"
-                  className="font-heading text-[clamp(28px,4vw,52px)] leading-[1.1] text-white mt-4"
+                  className="font-heading text-[clamp(28px,4vw,52px)] leading-[1.1] text-[#0A0A0A] mt-4"
                 >
                   Dr. John Abrahams
                 </h2>
-                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-[#E6A91A]">
+                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-orange-grad">
                   MD · Neurosurgery
                 </p>
               </Reveal>
             </div>
             <div className="lg:col-span-3">
               <Reveal delay={80}>
-                <p className="font-body text-base sm:text-lg text-white/80 font-light leading-relaxed">
+                <p className="font-body text-base sm:text-lg text-[#3A3A3C] font-light leading-relaxed">
                   Dr. Abrahams has practiced neurosurgery in New York since
                   2004. Before medicine he trained as a biomedical engineer, and
                   he has founded three medical device companies prior to
-                  Cognifica. His current practice, Cognifica Health, is the
-                  clinical home where CogAI Medical was built and where it runs
+                  COGAI. His current practice, Cognifica Health, is the
+                  clinical home where COGAI Medical was built and where it runs
                   every day.
                 </p>
                 <ul className="mt-8 space-y-4" role="list">
                   {abrahamsCredentials.map((item, i) => (
                     <li
                       key={item}
-                      className="flex items-start gap-4 border-t border-white/10 pt-4"
+                      className="flex items-start gap-4 border-t border-[#D2D2D7] pt-4"
                     >
-                      <span className="font-heading text-[10px] tracking-widest text-[#E6A91A] pt-1 shrink-0">
+                      <span className="font-heading text-[10px] tracking-widest text-orange-grad pt-1 shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-body text-sm sm:text-base text-white font-light">
+                      <span className="font-body text-sm sm:text-base text-[#0A0A0A] font-light">
                         {item}
                       </span>
                     </li>
@@ -121,7 +146,7 @@ export default function AboutPage() {
         </PageContainer>
       </section>
 
-      <section className="border-t border-white/10" aria-labelledby="mogan-heading">
+      <section className="border-t border-[#D2D2D7]" aria-labelledby="mogan-heading">
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
             <div className="lg:col-span-2">
@@ -129,18 +154,18 @@ export default function AboutPage() {
                 <Eyebrow>Clinician</Eyebrow>
                 <h2
                   id="mogan-heading"
-                  className="font-heading text-[clamp(28px,4vw,52px)] leading-[1.1] text-white mt-4"
+                  className="font-heading text-[clamp(28px,4vw,52px)] leading-[1.1] text-[#0A0A0A] mt-4"
                 >
                   Susan Mogan
                 </h2>
-                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-[#E6A91A]">
+                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-orange-grad">
                   PMHNP · DNP
                 </p>
               </Reveal>
             </div>
             <div className="lg:col-span-3">
               <Reveal delay={80}>
-                <p className="font-body text-base sm:text-lg text-white/80 font-light leading-relaxed">
+                <p className="font-body text-base sm:text-lg text-[#3A3A3C] font-light leading-relaxed">
                   Susan Mogan is the practicing Psychiatric Mental Health Nurse
                   Practitioner at Cognifica Health. She holds a Doctor of
                   Nursing Practice and partners with Dr. Abrahams on clinical
@@ -151,12 +176,12 @@ export default function AboutPage() {
                   {moganCredentials.map((item, i) => (
                     <li
                       key={item}
-                      className="flex items-start gap-4 border-t border-white/10 pt-4"
+                      className="flex items-start gap-4 border-t border-[#D2D2D7] pt-4"
                     >
-                      <span className="font-heading text-[10px] tracking-widest text-[#E6A91A] pt-1 shrink-0">
+                      <span className="font-heading text-[10px] tracking-widest text-orange-grad pt-1 shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-body text-sm sm:text-base text-white font-light">
+                      <span className="font-body text-sm sm:text-base text-[#0A0A0A] font-light">
                         {item}
                       </span>
                     </li>
@@ -169,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       <section
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="clinic-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -181,14 +206,14 @@ export default function AboutPage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
             {clinicLocations.map((loc, i) => (
               <Reveal key={loc.name} delay={i * 80}>
-                <article className="border border-white/10 p-8 min-h-[220px] flex flex-col">
-                  <p className="font-nav text-[10px] tracking-widest uppercase text-[#E6A91A]">
+                <article className="border border-[#D2D2D7] p-8 min-h-[220px] flex flex-col">
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
                     {loc.region}
                   </p>
-                  <h3 className="font-heading text-2xl sm:text-3xl text-white mt-3">
+                  <h3 className="font-heading text-2xl sm:text-3xl text-[#0A0A0A] mt-3">
                     {loc.name}
                   </h3>
-                  <p className="mt-4 font-body text-sm sm:text-base text-white/70 font-light leading-relaxed">
+                  <p className="mt-4 font-body text-sm sm:text-base text-[#515154] font-light leading-relaxed">
                     {loc.description}
                   </p>
                 </article>
@@ -200,7 +225,7 @@ export default function AboutPage() {
               href="https://www.cognifica.health?utm_source=cognificaapp&utm_medium=about"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border border-white/20 text-white px-6 py-3 text-xs tracking-widest uppercase font-light hover:border-[#E6A91A] hover:text-[#E6A91A] hover:gap-5 transition-all"
+              className="group inline-flex items-center gap-3 border border-[#D2D2D7] text-[#0A0A0A] px-6 py-3 text-xs tracking-widest uppercase font-light hover:border-[#3B5A75] text-orange-grad-hover hover:gap-5 transition-all"
             >
               Visit Cognifica Health
               <span aria-hidden="true">→</span>
@@ -210,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       <section
-        className="border-t border-white/10"
+        className="border-t border-[#D2D2D7]"
         aria-labelledby="story-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -218,11 +243,11 @@ export default function AboutPage() {
             <Eyebrow>Founding</Eyebrow>
             <h2
               id="story-heading"
-              className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-white mt-4"
+              className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-[#0A0A0A] mt-4"
             >
               How this started
             </h2>
-            <div className="mt-8 space-y-6 font-body text-base sm:text-lg text-white/80 font-light leading-relaxed">
+            <div className="mt-8 space-y-6 font-body text-base sm:text-lg text-[#3A3A3C] font-light leading-relaxed">
               <p>
                 The practice needed a way to know which patients on a behavioral
                 health panel were deteriorating between visits. Nothing on the
@@ -243,8 +268,8 @@ export default function AboutPage() {
                 supported both, because the clinical boundary never moves.
               </p>
               <p>
-                Cognifica is the umbrella. CogAI Workforce is the employer
-                product. CogAI Medical is the clinical product, serving both
+                COGAI is the umbrella. COGAI Workforce is the employer
+                product. COGAI Medical is the clinical product, serving both
                 clinics and small insurance plans.
               </p>
             </div>
@@ -254,7 +279,7 @@ export default function AboutPage() {
 
       <section
         id="press"
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="contact-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -263,58 +288,58 @@ export default function AboutPage() {
               <Eyebrow>Contact</Eyebrow>
               <h2
                 id="contact-heading"
-                className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-white mt-4"
+                className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
                 Talk to us
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 For product questions, pilot scoping, or a clinical reference,
                 call or email. A clinician or the founder will be on the call.
               </p>
             </div>
             <div className="flex flex-col gap-6 self-center">
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   General
                 </p>
                 <a
-                  href="mailto:info@cognifica.app"
-                  className="font-heading text-xl sm:text-2xl text-white hover:text-[#E6A91A] transition-colors"
+                  href="mailto:info@cogai.app"
+                  className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
-                  info@cognifica.app
+                  info@cogai.app
                 </a>
               </div>
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Phone
                 </p>
                 <a
                   href="tel:+19147056830"
-                  className="font-heading text-xl sm:text-2xl text-white hover:text-[#E6A91A] transition-colors"
+                  className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
                   (914) 705 6830
                 </a>
               </div>
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Press
                 </p>
                 <a
-                  href="mailto:press@cognifica.app"
-                  className="font-heading text-xl sm:text-2xl text-white hover:text-[#E6A91A] transition-colors"
+                  href="mailto:press@cogai.app"
+                  className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
-                  press@cognifica.app
+                  press@cogai.app
                 </a>
               </div>
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Clinical practice
                 </p>
                 <a
                   href="https://www.cognifica.health?utm_source=cognificaapp&utm_medium=about_contact"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-heading text-xl sm:text-2xl text-white hover:text-[#E6A91A] transition-colors"
+                  className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
                   cognifica.health
                 </a>
@@ -323,15 +348,15 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            <ArrowLink href="/for-employers" variant="solid">
-              Explore CogAI Workforce
+            <ArrowLink href="/workforce" variant="solid">
+              Explore COGAI Workforce
             </ArrowLink>
-            <ArrowLink href="/for-clinics" variant="ghost">
-              Explore CogAI Medical
+            <ArrowLink href="/medical" variant="ghost">
+              Explore COGAI Medical
             </ArrowLink>
             <Link
               href="/pilot"
-              className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors self-center px-2"
+              className="font-nav text-xs tracking-widest uppercase text-[#6E6E73] hover:text-[#0A0A0A] transition-colors self-center px-2"
             >
               Schedule a consultation
             </Link>

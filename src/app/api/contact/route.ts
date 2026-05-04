@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 
-const TO = "info@cognifica.app";
-const FROM = "Cognifica <noreply@cognifica.app>";
+const TO = "info@cogai.app";
+const FROM = "COGAI <noreply@cogai.app>";
 
 function getResend(): Resend {
   const key = process.env.RESEND_API_KEY;
@@ -128,19 +128,19 @@ function wrap(title: string, body: string): string {
   return `<!DOCTYPE html><html><body style="font-family:sans-serif;background:#f5f5f5;padding:32px 16px">
 <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:4px;overflow:hidden">
   <div style="background:#0A0A0A;padding:20px 28px">
-    <span style="color:#E6A91A;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:300">Cognifica</span>
+    <span style="color:#3B5A75;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:300">COGAI</span>
     <h2 style="color:#fff;margin:6px 0 0;font-size:18px;font-weight:400">${title}</h2>
   </div>
   <div style="padding:28px">${body}</div>
   <div style="background:#f5f5f5;padding:14px 28px;font-size:11px;color:#999">
-    Sent from cognifica.app contact forms
+    Sent from cogai.app contact forms
   </div>
 </div></body></html>`;
 }
 
 function buildDemoRequestEmail(d: z.infer<typeof DemoRequestSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Demo Request — ${d.organization} — ${d.contact_name}`,
+    subject: `[COGAI] Demo Request — ${d.organization} — ${d.contact_name}`,
     html: wrap(
       "Demo Request",
       htmlTable([
@@ -160,7 +160,7 @@ function buildDemoRequestEmail(d: z.infer<typeof DemoRequestSchema>): { subject:
 
 function buildSelfInsuredEmployerEmail(d: z.infer<typeof SelfInsuredEmployerSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Self Insured Employer — ${d.company_name} — ${d.contact_name}`,
+    subject: `[COGAI] Self Insured Employer — ${d.company_name} — ${d.contact_name}`,
     html: wrap(
       "Self Insured Employer Inquiry",
       htmlTable([
@@ -181,7 +181,7 @@ function buildSelfInsuredEmployerEmail(d: z.infer<typeof SelfInsuredEmployerSche
 
 function buildHospitalSystemEmail(d: z.infer<typeof HospitalSystemSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Hospital Clinician Program — ${d.organization} — ${d.contact_name}`,
+    subject: `[COGAI] Hospital Clinician Program — ${d.organization} — ${d.contact_name}`,
     html: wrap(
       "Hospital Clinician Program",
       htmlTable([
@@ -201,7 +201,7 @@ function buildHospitalSystemEmail(d: z.infer<typeof HospitalSystemSchema>): { su
 
 function buildPayerEmail(d: z.infer<typeof PayerSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Payer Inquiry — ${d.organization} — ${d.contact_name}`,
+    subject: `[COGAI] Payer Inquiry — ${d.organization} — ${d.contact_name}`,
     html: wrap(
       "Health Plan / Payer Inquiry",
       htmlTable([
@@ -221,7 +221,7 @@ function buildPayerEmail(d: z.infer<typeof PayerSchema>): { subject: string; htm
 
 function buildMedicalGroupEmail(d: z.infer<typeof MedicalGroupSchema>): { subject: string; html: string } {
   return {
-    subject: `[Cognifica] Medical Group — ${d.practice_name} — ${d.contact_name}`,
+    subject: `[COGAI] Medical Group — ${d.practice_name} — ${d.contact_name}`,
     html: wrap(
       "Medical Group Inquiry",
       htmlTable([

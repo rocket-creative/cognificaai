@@ -1,14 +1,13 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.cognifica.app";
+  const baseUrl = "https://www.cogai.app";
   const now = new Date();
 
   const routes: MetadataRoute.Sitemap = [
     { url: baseUrl, priority: 1.0, changeFrequency: "weekly" },
-    { url: `${baseUrl}/for-employers`, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${baseUrl}/for-clinics`, priority: 0.9, changeFrequency: "weekly" },
-    { url: `${baseUrl}/for-insurers`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${baseUrl}/workforce`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${baseUrl}/medical`, priority: 0.9, changeFrequency: "weekly" },
     { url: `${baseUrl}/how-it-works`, priority: 0.8, changeFrequency: "monthly" },
     { url: `${baseUrl}/pilot`, priority: 0.7, changeFrequency: "monthly" },
     { url: `${baseUrl}/about`, priority: 0.7, changeFrequency: "monthly" },

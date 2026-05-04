@@ -24,10 +24,10 @@ export function ArrowLink({
   const sizes = "text-[10px] sm:text-xs py-3 px-6";
   const styles =
     variant === "solid"
-      ? `bg-[#E6A91A] text-[#0A0A0A] hover:gap-5 ${sizes}`
+      ? `bg-orange-grad text-white bg-orange-grad-hover hover:gap-5 ${sizes}`
       : variant === "ghost"
-      ? `border border-white/20 text-white hover:border-[#E6A91A] hover:text-[#E6A91A] hover:gap-5 ${sizes}`
-      : "text-white hover:text-[#E6A91A] hover:gap-4 text-xs tracking-widest";
+      ? `border border-[#D2D2D7] text-[#0A0A0A] hover:border-[#3B5A75] text-orange-grad-hover hover:gap-5 ${sizes}`
+      : "text-[#0A0A0A] text-orange-grad-hover hover:gap-4 text-xs tracking-widest";
 
   const props = external
     ? { target: "_blank" as const, rel: "noopener noreferrer", "aria-label": ariaLabel }

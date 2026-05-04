@@ -8,9 +8,9 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const primaryLinks = [
-  { href: "/for-employers", label: "For Employers" },
-  { href: "/for-clinics", label: "For Clinics" },
-  { href: "/for-insurers", label: "For Insurers" },
+  { href: "/workforce", label: "For Employers" },
+  { href: "/medical", label: "For Clinics" },
+  { href: "/medical#insurers", label: "For Insurers" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/about", label: "About" },
 ];
@@ -23,9 +23,9 @@ const cognificaHealthLink = {
 
 function ctaForPath(pathname: string | null) {
   if (!pathname) return { href: "/pilot", label: "Schedule a call" };
-  if (pathname.startsWith("/for-insurers")) return { href: "/for-insurers#contact", label: "Book a call" };
-  if (pathname.startsWith("/for-clinics")) return { href: "/for-clinics#demo", label: "Request a demo" };
-  if (pathname.startsWith("/for-employers")) return { href: "/for-employers#demo", label: "Request a demo" };
+  if (pathname.startsWith("/medical#insurers")) return { href: "/medical#contact", label: "Book a call" };
+  if (pathname.startsWith("/medical")) return { href: "/medical#demo", label: "Request a demo" };
+  if (pathname.startsWith("/workforce")) return { href: "/workforce#demo", label: "Request a demo" };
   if (pathname.startsWith("/pilot")) return { href: "/pilot#consultation", label: "Schedule a consultation" };
   return { href: "/pilot", label: "Schedule a call" };
 }
@@ -74,7 +74,7 @@ export function Nav() {
   return (
     <div
       className={`transition-all duration-300 border-b ${
-        isScrolled ? "border-white/5" : "border-transparent"
+        isScrolled ? "border-[#E5E5EA]" : "border-transparent"
       }`}
     >
       <nav
@@ -85,15 +85,15 @@ export function Nav() {
           <Link
             href="/"
             className="flex-shrink-0 flex items-center"
-            aria-label="Cognifica home"
+            aria-label="COGAI home"
           >
             <Image
-              src="/cognifica-app-logo.svg"
-              alt="Cognifica"
-              width={160}
-              height={46}
+              src="/cogai-logo.svg"
+              alt="COGAI"
+              width={200}
+              height={40}
               priority
-              className="h-8 sm:h-10 w-auto"
+              className="h-7 sm:h-9 w-auto"
             />
           </Link>
 
@@ -105,7 +105,7 @@ export function Nav() {
                   key={link.href}
                   href={link.href}
                   className={`font-nav text-xs tracking-widest uppercase transition-colors whitespace-nowrap ${
-                    active ? "text-white" : "text-white/60 hover:text-white"
+                    active ? "text-[#0A0A0A]" : "text-[#6E6E73] hover:text-[#0A0A0A]"
                   }`}
                   aria-current={active ? "page" : undefined}
                 >
@@ -113,7 +113,7 @@ export function Nav() {
                 </Link>
               );
             })}
-            <span className="text-white/30 font-nav text-xs" aria-hidden="true">
+            <span className="text-[#86868B] font-nav text-xs" aria-hidden="true">
               |
             </span>
             <a
@@ -121,7 +121,7 @@ export function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={cognificaHealthLink.ariaLabel}
-              className="font-nav text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
+              className="font-nav text-xs tracking-widest uppercase text-[#6E6E73] hover:text-[#0A0A0A] transition-colors whitespace-nowrap"
             >
               {cognificaHealthLink.label}
             </a>
@@ -130,13 +130,13 @@ export function Nav() {
           <div className="hidden xl:flex items-center gap-4 flex-shrink-0">
             <a
               href="tel:+19147056830"
-              className="font-nav text-xs tracking-wider text-white/60 hover:text-white transition-colors"
+              className="font-nav text-xs tracking-wider text-[#6E6E73] hover:text-[#0A0A0A] transition-colors"
             >
               (914) 705 6830
             </a>
             <Link
               href={cta.href}
-              className="group inline-flex items-center gap-3 bg-[#E6A91A] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+              className="group inline-flex items-center gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover hover:gap-5 transition-all"
             >
               {cta.label}
               <ArrowRight className="w-3 h-3" aria-hidden="true" />
@@ -147,7 +147,7 @@ export function Nav() {
             ref={menuButtonRef}
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden min-h-[44px] min-w-[44px] flex items-center justify-center -mr-2 text-white"
+            className="xl:hidden min-h-[44px] min-w-[44px] flex items-center justify-center -mr-2 text-[#0A0A0A]"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -163,7 +163,7 @@ export function Nav() {
 
       <div
         id="mobile-menu"
-        className={`xl:hidden fixed inset-0 top-28 sm:top-32 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
+        className={`xl:hidden fixed inset-0 top-28 sm:top-32 bg-white z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}
@@ -176,7 +176,7 @@ export function Nav() {
                 ref={i === 0 ? firstLinkRef : undefined}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-heading text-2xl text-white hover:text-[#E6A91A] transition-colors min-h-[44px] flex items-center"
+                className="font-heading text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -187,23 +187,23 @@ export function Nav() {
               rel="noopener noreferrer"
               aria-label={cognificaHealthLink.ariaLabel}
               onClick={() => setIsOpen(false)}
-              className="font-heading text-2xl text-white hover:text-[#E6A91A] transition-colors min-h-[44px] flex items-center"
+              className="font-heading text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors min-h-[44px] flex items-center"
             >
               {cognificaHealthLink.label}
             </a>
           </nav>
 
-          <div className="mt-auto pt-8 border-t border-white/10">
+          <div className="mt-auto pt-8 border-t border-[#D2D2D7]">
             <a
               href="tel:+19147056830"
-              className="block font-body text-sm text-white/60 mb-4"
+              className="block font-body text-sm text-[#6E6E73] mb-4"
             >
               (914) 705 6830
             </a>
             <Link
               href={cta.href}
               onClick={() => setIsOpen(false)}
-              className="inline-flex items-center justify-center gap-4 bg-[#E6A91A] text-[#0A0A0A] py-4 px-8 w-full uppercase tracking-widest text-xs font-light hover:gap-6 transition-all"
+              className="inline-flex items-center justify-center gap-4 bg-orange-grad text-white py-4 px-8 w-full uppercase tracking-widest text-xs font-light bg-orange-grad-hover hover:gap-6 transition-all"
             >
               {cta.label}
               <ArrowRight className="w-4 h-4" aria-hidden="true" />

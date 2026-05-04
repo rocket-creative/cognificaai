@@ -43,16 +43,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cognifica.app"),
+  metadataBase: new URL("https://www.cogai.app"),
   title: {
-    default: "Cognifica | Cognitive health, measured.",
-    template: "%s | Cognifica",
+    default: "COGAI | Cognitive health, measured.",
+    template: "%s | COGAI",
   },
   description:
     "Validated mental health screening and risk stratification for employers, clinics, and insurers. Built on top of an active clinical practice. The employer never sees an individual score.",
-  authors: [{ name: "Cognifica" }],
-  creator: "Cognifica",
-  publisher: "Cognifica",
+  authors: [{ name: "COGAI" }],
+  creator: "COGAI",
+  publisher: "COGAI",
   robots: {
     index: true,
     follow: true,
@@ -67,29 +67,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.cognifica.app",
-    siteName: "Cognifica",
-    title: "Cognifica | Cognitive health, measured.",
+    url: "https://www.cogai.app",
+    siteName: "COGAI",
+    title: "COGAI | Cognitive health, measured.",
     description:
       "Validated mental health screening for employers, clinics, and insurers. Built by a practicing clinician. The employer never sees an individual score.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Cognifica",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cognifica | Cognitive health, measured.",
+    site: "@cogai",
+    creator: "@cogai",
+    title: "COGAI | Cognitive health, measured.",
     description:
       "Validated mental health screening for employers, clinics, and insurers. Built by a practicing clinician.",
-    images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.cognifica.app",
+    canonical: "https://www.cogai.app",
   },
 };
 
@@ -103,15 +96,15 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable} ${quicksand.variable}`}
     >
-      <body className="min-h-dvh bg-[#0A0A0A] text-white antialiased">
+      <body className="min-h-dvh bg-white text-[#0A0A0A] antialiased">
         <a
           href="#main"
-          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-[#161616] focus-visible:px-4 focus-visible:py-2 focus-visible:text-white focus-visible:shadow-lg"
+          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-[#F5F5F7] focus-visible:px-4 focus-visible:py-2 focus-visible:text-[#0A0A0A] focus-visible:shadow-lg"
         >
           Skip to main content
         </a>
 
-        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0A0A0A]/95 backdrop-blur-md pt-safe-top">
+        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white pt-safe-top">
           <ClinicalReferralBanner />
           <Nav />
         </header>
