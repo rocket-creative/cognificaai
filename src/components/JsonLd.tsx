@@ -4,20 +4,20 @@ interface FAQItem {
   answer: string;
 }
 
-const ORGANIZATION_ID = "https://www.cognifica.app/#organization";
-const WEBSITE_ID = "https://www.cognifica.app/#website";
+const ORGANIZATION_ID = "https://www.cogai.app/#organization";
+const WEBSITE_ID = "https://www.cogai.app/#website";
 
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
-    name: "Cognifica",
-    alternateName: ["CogAI Workforce", "CogAI Medical"],
-    url: "https://www.cognifica.app",
-    logo: "https://www.cognifica.app/og-image.png",
+    name: "COGAI",
+    alternateName: ["COGAI Workforce", "COGAI Medical"],
+    url: "https://www.cogai.app",
+    logo: "https://www.cogai.app/cogai-logo.svg",
     description:
-      "Validated mental health screening and risk stratification for employers, clinics, and insurers. Built by practicing clinicians on top of an active clinical practice.",
+      "Validated mental health screening and risk stratification for employers, clinics, and insurance plans. Built by practicing clinicians on top of an active clinical practice.",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+1 914 705 6830",
@@ -40,10 +40,10 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": WEBSITE_ID,
-    name: "Cognifica",
-    url: "https://www.cognifica.app",
+    name: "COGAI",
+    url: "https://www.cogai.app",
     description:
-      "Cognitive health, measured. Validated screening for employers, clinics, and insurers.",
+      "Cognitive health, measured. Two products with one clinical boundary. COGAI Workforce for employers. COGAI Medical for clinics and insurance plans.",
     publisher: { "@id": ORGANIZATION_ID },
   };
 
@@ -55,27 +55,26 @@ export function WebSiteSchema() {
   );
 }
 
-const SOFTWARE_APP_ID = "https://www.cognifica.app/#softwareapplication";
+const SOFTWARE_APP_ID = "https://www.cogai.app/#softwareapplication";
 
 export function SoftwareApplicationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": SOFTWARE_APP_ID,
-    name: "Cognifica",
+    name: "COGAI",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web, iOS, Android",
     description:
-      "Validated mental health screening and panel triage. PHQ-9, GAD-7, PCL-5, DAST-10, AUDIT, PSQI, and Work Wellness. HIPAA aligned posture. The employer never sees an individual score.",
+      "Validated mental health screening and panel triage. PHQ 9, GAD 7, PCL 5, DAST 10, AUDIT, PSQI. HIPAA aligned posture. The employer never sees an individual score.",
     featureList: [
-      "PHQ-9 depression screening",
-      "GAD-7 anxiety screening",
-      "PCL-5 trauma screening",
-      "DAST-10 drug use screening",
+      "PHQ 9 depression screening",
+      "GAD 7 anxiety screening",
+      "PCL 5 trauma screening",
+      "DAST 10 drug use screening",
       "AUDIT alcohol use screening",
       "PSQI sleep screening",
-      "Work Wellness screening",
-      "R-Score risk stratification",
+      "R Score risk stratification",
       "Panel triage for clinicians",
       "Aggregate only employer dashboard",
       "Consent first architecture",
@@ -119,7 +118,7 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url?: string }[];
 }) {
-  const baseUrl = "https://www.cognifica.app";
+  const baseUrl = "https://www.cogai.app";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -165,6 +164,47 @@ export function ServiceSchema({
     provider: { "@id": ORGANIZATION_ID },
     areaServed: "United States",
     serviceType: "Mental Health Software",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function PersonSchema({
+  name,
+  jobTitle,
+  url,
+  affiliation,
+  description,
+  sameAs,
+}: {
+  name: string;
+  jobTitle: string;
+  url?: string;
+  affiliation?: string;
+  description?: string;
+  sameAs?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle,
+    ...(url ? { url } : {}),
+    ...(affiliation
+      ? {
+          worksFor: {
+            "@type": "Organization",
+            name: affiliation,
+          },
+        }
+      : {}),
+    ...(description ? { description } : {}),
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
   };
 
   return (

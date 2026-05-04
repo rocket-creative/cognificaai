@@ -12,7 +12,7 @@ export function AggregateOnlyBadge({
 }: AggregateOnlyBadgeProps) {
   return (
     <span
-      className={`inline-flex items-center gap-2 border border-[#E6A91A]/30 bg-[#E6A91A]/5 px-3 py-1 text-[10px] tracking-widest uppercase text-[#E6A91A] font-light ${className}`}
+      className={`inline-flex items-center gap-2 border border-[#3B5A75] bg-white px-3 py-1 text-[10px] tracking-widest uppercase text-orange-grad font-light ${className}`}
     >
       <Shield className="w-3 h-3" aria-hidden="true" />
       {label}

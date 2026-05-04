@@ -25,15 +25,15 @@ export function ConsentCommitments({ heading, className = "" }: ConsentCommitmen
   return (
     <div className={className}>
       {heading ? (
-        <h3 className="font-heading text-2xl sm:text-3xl text-white mb-8">{heading}</h3>
+        <h3 className="font-heading text-2xl sm:text-3xl text-[#0A0A0A] mb-8">{heading}</h3>
       ) : null}
       <ul className="space-y-6" role="list">
         {commitments.map((c) => (
-          <li key={c.label} className="flex items-start gap-6 border-t border-white/10 pt-6">
-            <span className="font-heading text-[10px] tracking-widest text-[#E6A91A] pt-1 shrink-0">
+          <li key={c.label} className="flex items-start gap-6 border-t border-[#D2D2D7] pt-6">
+            <span className="font-heading text-[10px] tracking-widest text-orange-grad pt-1 shrink-0">
               {c.label}
             </span>
-            <p className="font-body text-base sm:text-lg text-white font-light leading-relaxed">
+            <p className="font-body text-base sm:text-lg text-[#0A0A0A] font-light leading-relaxed">
               {c.text}
             </p>
           </li>

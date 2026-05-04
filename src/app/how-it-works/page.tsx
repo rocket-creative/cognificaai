@@ -8,20 +8,27 @@ import {
   NumberedStep,
   Reveal,
 } from "@/components/ui";
-import { BreadcrumbSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How it works",
+export const metadata: Metadata = buildMetadata({
+  title: "How COGAI works | Instruments, R Score, clinical routing",
   description:
-    "Validated instruments on a cadence. R-Score risk stratification. Three views: employee, manager, executive. Crisis protocol routed through the clinical team. AI is not diagnostic, and clinical decisions are always initiated by a human.",
-  alternates: { canonical: "https://www.cognifica.app/how-it-works" },
-  openGraph: {
-    title: "How Cognifica works",
-    description:
-      "Validated instruments. R-Score stratification. A consent architecture that prevents employer reidentification.",
-    url: "https://www.cognifica.app/how-it-works",
-  },
-};
+    "Validated instruments on a monthly cadence. R Score risk stratification. Three role views. Crisis protocol routed through the COGAI clinical team. AI is not diagnostic.",
+  path: "/how-it-works",
+  ogTitle: "How COGAI works",
+  ogDescription:
+    "Validated instruments. R Score stratification. A consent architecture that prevents employer reidentification.",
+  keywords: [
+    "how COGAI works",
+    "R Score",
+    "validated instruments",
+    "panel triage",
+    "consent architecture",
+    "crisis protocol",
+    "clinical routing",
+  ],
+});
 
 const screeners = [
   {
@@ -134,16 +141,21 @@ const aiPostureLines = [
 export default function HowItWorksPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "How it works", url: "https://www.cognifica.app/how-it-works" }]} />
+      <BreadcrumbSchema items={[{ name: "How it works", url: "https://www.cogai.app/how-it-works" }]} />
+      <ServiceSchema
+        name="COGAI mental health screening"
+        description="Validated instruments on a monthly cadence. R Score risk stratification. Three role views. Crisis protocol routed through the COGAI clinical team. AI is not diagnostic."
+        url="https://www.cogai.app/how-it-works"
+      />
 
       <PageContainer className="pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-24">
         <div className="max-w-4xl">
           <Eyebrow>How it works</Eyebrow>
-          <h1 className="font-heading text-[clamp(32px,6vw,80px)] leading-[1.05] text-white mt-6">
+          <h1 className="font-heading text-[clamp(32px,6vw,80px)] leading-[1.05] text-[#0A0A0A] mt-6">
             Validated instruments. Run on a cadence. Stratified by risk.
             Consented up front.
           </h1>
-          <p className="mt-8 font-body text-base sm:text-lg text-white/70 font-light leading-relaxed max-w-2xl">
+          <p className="mt-8 font-body text-base sm:text-lg text-[#515154] font-light leading-relaxed max-w-2xl">
             One reference page. One set of mechanics. Every audience page sits
             on top of what is described here. The clinical boundary, the
             aggregate only floor, and the crisis protocol are the same
@@ -153,7 +165,7 @@ export default function HowItWorksPage() {
       </PageContainer>
 
       <section
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="screeners-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -171,14 +183,14 @@ export default function HowItWorksPage() {
             {screeners.map((s, i) => (
               <li key={s.acronym}>
                 <Reveal delay={i * 40}>
-                  <article className="border border-white/10 p-6 sm:p-8 h-full flex flex-col">
-                    <p className="font-heading text-2xl sm:text-3xl text-white">
+                  <article className="border border-[#D2D2D7] p-6 sm:p-8 h-full flex flex-col">
+                    <p className="font-heading text-2xl sm:text-3xl text-[#0A0A0A]">
                       {s.acronym}
                     </p>
-                    <p className="mt-2 font-nav text-[10px] tracking-widest uppercase text-[#E6A91A]">
+                    <p className="mt-2 font-nav text-[10px] tracking-widest uppercase text-orange-grad">
                       {s.measures}
                     </p>
-                    <p className="mt-4 font-body text-sm text-white/70 font-light leading-relaxed">
+                    <p className="mt-4 font-body text-sm text-[#515154] font-light leading-relaxed">
                       {s.name}. {s.note}
                     </p>
                   </article>
@@ -189,48 +201,48 @@ export default function HowItWorksPage() {
         </PageContainer>
       </section>
 
-      <section className="border-t border-white/10" aria-labelledby="rscore-heading">
+      <section className="border-t border-[#D2D2D7]" aria-labelledby="rscore-heading">
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
             <div className="lg:col-span-2">
               <Eyebrow>Section 02</Eyebrow>
               <h2
                 id="rscore-heading"
-                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-white mt-4"
+                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
                 The R-Score
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 A single composite stratifier computed from weighted instrument
                 scores. The weighting formula is not published. What the R-Score
                 is for and who can see it are.
               </p>
             </div>
             <div className="lg:col-span-3 space-y-6">
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Scale
                 </p>
-                <p className="font-body text-base text-white/80 font-light">
+                <p className="font-body text-base text-[#3A3A3C] font-light">
                   0.0 to 1.0. Lower is better.
                 </p>
               </div>
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Scope
                 </p>
-                <p className="font-body text-base text-white/80 font-light">
+                <p className="font-body text-base text-[#3A3A3C] font-light">
                   Individual, department, and organization. Individual scope is
                   visible only to the Medical Provider role. Department and
                   organization scope are available to the employer tenant on an
                   aggregate only basis.
                 </p>
               </div>
-              <div className="border-t border-white/10 pt-6">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-2">
+              <div className="border-t border-[#D2D2D7] pt-6">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Clinical thresholds pre wired
                 </p>
-                <p className="font-body text-base text-white/80 font-light">
+                <p className="font-body text-base text-[#3A3A3C] font-light">
                   PHQ-9 ≥ 15 · GAD-7 ≥ 15 · PCL-5 ≥ 50 · DAST-10 ≥ 6 · AUDIT ≥ 18.
                   Flags fire at the instrument layer before the R-Score
                   composite is computed. Every threshold is auditable.
@@ -242,7 +254,7 @@ export default function HowItWorksPage() {
       </section>
 
       <section
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="views-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -255,14 +267,14 @@ export default function HowItWorksPage() {
           <div id="views-heading" className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {views.map((v, i) => (
               <Reveal key={v.label} delay={i * 80}>
-                <article className="border border-white/10 p-8 h-full">
-                  <p className="font-nav text-[10px] tracking-widest uppercase text-[#E6A91A]">
+                <article className="border border-[#D2D2D7] p-8 h-full">
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
                     {v.label}
                   </p>
-                  <h3 className="font-heading text-2xl text-white mt-3">
+                  <h3 className="font-heading text-2xl text-[#0A0A0A] mt-3">
                     {v.title}
                   </h3>
-                  <p className="mt-4 font-body text-sm text-white/70 font-light leading-relaxed">
+                  <p className="mt-4 font-body text-sm text-[#515154] font-light leading-relaxed">
                     {v.body}
                   </p>
                 </article>
@@ -272,18 +284,18 @@ export default function HowItWorksPage() {
         </PageContainer>
       </section>
 
-      <section className="border-t border-white/10" aria-labelledby="cadence-heading">
+      <section className="border-t border-[#D2D2D7]" aria-labelledby="cadence-heading">
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
             <div className="lg:col-span-2">
               <Eyebrow>Section 04</Eyebrow>
               <h2
                 id="cadence-heading"
-                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-white mt-4"
+                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
                 Cadence
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 Pick a rhythm that matches the program. Change it later. The
                 system does not assume one answer.
               </p>
@@ -304,7 +316,7 @@ export default function HowItWorksPage() {
       </section>
 
       <section
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="scheduling-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -337,23 +349,23 @@ export default function HowItWorksPage() {
             ].map((step, i) => (
               <li
                 key={step.n}
-                className={`border border-white/10 p-8 ${
-                  i === 0 ? "bg-white/[0.02]" : ""
+                className={`border border-[#D2D2D7] p-8 ${
+                  i === 0 ? "bg-[#F5F5F7]" : ""
                 }`}
               >
-                <p className="font-heading text-[10px] tracking-widest text-[#E6A91A]">
+                <p className="font-heading text-[10px] tracking-widest text-orange-grad">
                   {step.n}
                 </p>
-                <h3 className="font-heading text-xl text-white mt-3">
+                <h3 className="font-heading text-xl text-[#0A0A0A] mt-3">
                   {step.t}
                 </h3>
-                <p className="mt-3 font-body text-sm text-white/70 font-light leading-relaxed">
+                <p className="mt-3 font-body text-sm text-[#515154] font-light leading-relaxed">
                   {step.b}
                 </p>
               </li>
             ))}
           </ol>
-          <p className="mt-6 font-body text-xs text-white/40 font-light italic">
+          <p className="mt-6 font-body text-xs text-[#86868B] font-light italic">
             Screenshots from the live tenant UI land with the production
             launch. Until then, the three click flow above is the sequence.
           </p>
@@ -361,7 +373,7 @@ export default function HowItWorksPage() {
       </section>
 
       <section
-        className="border-t border-white/10"
+        className="border-t border-[#D2D2D7]"
         aria-labelledby="crisis-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -370,30 +382,30 @@ export default function HowItWorksPage() {
               <Eyebrow>Section 06</Eyebrow>
               <h2
                 id="crisis-heading"
-                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-white mt-4"
+                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
                 Crisis protocol
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
-                The escalation path runs through the Cognifica clinical team,
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
+                The escalation path runs through the COGAI clinical team,
                 not through HR and not through the employer. Anonymity may be
                 paused only to connect urgent clinical or crisis support.
               </p>
-              <div className="mt-8 p-6 border border-[#E6A91A]/30 bg-[#E6A91A]/5">
-                <p className="font-nav text-[10px] tracking-widest uppercase text-[#E6A91A] mb-3">
+              <div className="mt-8 p-6 border border-[#3B5A75] bg-white">
+                <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad mb-3">
                   In crisis right now
                 </p>
-                <ul className="space-y-2 font-body text-sm text-white font-light" role="list">
+                <ul className="space-y-2 font-body text-sm text-[#0A0A0A] font-light" role="list">
                   <li>
                     Call{" "}
-                    <a href="tel:988" className="text-[#E6A91A] hover:underline">
+                    <a href="tel:988" className="text-orange-grad hover:underline">
                       988
                     </a>{" "}
                     for the Suicide and Crisis Lifeline
                   </li>
                   <li>
                     Text{" "}
-                    <a href="sms:741741" className="text-[#E6A91A] hover:underline">
+                    <a href="sms:741741" className="text-orange-grad hover:underline">
                       741741
                     </a>{" "}
                     for the Crisis Text Line
@@ -417,7 +429,7 @@ export default function HowItWorksPage() {
       </section>
 
       <section
-        className="border-t border-white/10 bg-[#111111]"
+        className="border-t border-[#D2D2D7] bg-[#F5F5F7]"
         aria-labelledby="ai-heading"
       >
         <PageContainer className="py-16 sm:py-24">
@@ -426,11 +438,11 @@ export default function HowItWorksPage() {
               <Eyebrow>Section 07</Eyebrow>
               <h2
                 id="ai-heading"
-                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-white mt-4"
+                className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
                 AI posture
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 The system flags and sorts. It does not diagnose. It does not
                 decide. Clinicians decide. Users see what the system concluded
                 and why.
@@ -441,12 +453,12 @@ export default function HowItWorksPage() {
                 {aiPostureLines.map((line, i) => (
                   <li
                     key={line}
-                    className="flex items-baseline gap-6 border-t border-white/10 py-6"
+                    className="flex items-baseline gap-6 border-t border-[#D2D2D7] py-6"
                   >
-                    <span className="font-heading text-[10px] tracking-widest text-[#E6A91A] shrink-0">
+                    <span className="font-heading text-[10px] tracking-widest text-orange-grad shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-body text-lg sm:text-xl text-white font-light">
+                    <p className="font-body text-lg sm:text-xl text-[#0A0A0A] font-light">
                       {line}.
                     </p>
                   </li>
@@ -457,15 +469,15 @@ export default function HowItWorksPage() {
         </PageContainer>
       </section>
 
-      <section className="border-t border-white/10" aria-label="Next steps">
+      <section className="border-t border-[#D2D2D7]" aria-label="Next steps">
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <Eyebrow>Try the sandbox</Eyebrow>
-              <h2 className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-white mt-4">
+              <h2 className="font-heading text-[clamp(26px,4vw,48px)] leading-[1.1] text-[#0A0A0A] mt-4">
                 See it running
               </h2>
-              <p className="mt-6 font-body text-base text-white/70 font-light leading-relaxed">
+              <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 A live demo sandbox sits at cognifica.ai/demo. Click through a
                 tenant. Run a check in. Look at the R-Score. Leave without
                 leaving a record.

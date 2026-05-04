@@ -13,23 +13,23 @@ export function CrisisResourcesStrip({
     <div
       className={`${
         isInline
-          ? "border border-white/10 bg-white/[0.02] p-6"
+          ? "border border-[#D2D2D7] bg-[#F5F5F7] p-6"
           : ""
       } ${className}`}
       role="region"
       aria-label="Crisis resources"
     >
       {isInline ? (
-        <p className="font-nav text-[10px] tracking-widest uppercase text-white/40 mb-3">
+        <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-3">
           In crisis right now
         </p>
       ) : null}
-      <ul className="flex flex-col sm:flex-row gap-3 sm:gap-8 font-body text-sm text-white/70 font-light" role="list">
+      <ul className="flex flex-col sm:flex-row gap-3 sm:gap-8 font-body text-sm text-[#515154] font-light" role="list">
         <li>
           Call{" "}
           <a
             href="tel:988"
-            className="text-white hover:text-[#E6A91A] transition-colors"
+            className="text-[#0A0A0A] text-orange-grad-hover transition-colors"
           >
             988
           </a>{" "}
@@ -39,7 +39,7 @@ export function CrisisResourcesStrip({
           Text{" "}
           <a
             href="sms:741741"
-            className="text-white hover:text-[#E6A91A] transition-colors"
+            className="text-[#0A0A0A] text-orange-grad-hover transition-colors"
           >
             741741
           </a>{" "}

@@ -23,16 +23,16 @@ interface FormErrors {
 }
 
 const inputClass = (error?: string) =>
-  `w-full h-12 bg-[#0A0A0A]/20 border ${
-    error ? "border-red-400" : "border-[#0A0A0A]/30"
-  } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`;
+  `w-full h-12 bg-[#F5F5F7] border ${
+    error ? "border-red-400" : "border-[#404040]"
+  } px-4 text-[#0A0A0A] placeholder:text-[#737373] font-body font-light focus:outline-none focus:border-[#525252] transition-colors`;
 
 const selectClass = (hasValue: boolean) =>
-  `w-full h-12 bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors cursor-pointer ${
-    hasValue ? "text-[#0A0A0A]" : "text-[#0A0A0A]/50"
+  `w-full h-12 bg-[#F5F5F7] border border-[#404040] px-4 font-body font-light focus:outline-none focus:border-[#525252] transition-colors cursor-pointer ${
+    hasValue ? "text-[#0A0A0A]" : "text-[#737373]"
   }`;
 
-const labelClass = "block font-body text-xs text-[#0A0A0A]/70 mb-1";
+const labelClass = "block font-body text-xs text-[#404040] mb-1";
 const errorClass = "text-red-700 text-xs mt-1";
 
 export function MedicalGroupForm() {
@@ -95,9 +95,9 @@ export function MedicalGroupForm() {
   if (isSuccess) {
     return (
       <div className="text-center py-8">
-        <CheckCircle className="w-12 h-12 text-[#E6A91A] mx-auto mb-4" aria-hidden="true" />
+        <CheckCircle className="w-12 h-12 text-orange-grad mx-auto mb-4" aria-hidden="true" />
         <h3 className="font-heading text-xl text-[#0A0A0A] mb-2">Thank You</h3>
-        <p className="font-body text-sm text-[#0A0A0A]/70 font-light">
+        <p className="font-body text-sm text-[#404040] font-light">
           We&apos;ll be in touch within one business day to discuss your patient panel program.
         </p>
       </div>
@@ -125,7 +125,7 @@ export function MedicalGroupForm() {
 
         <div>
           <label htmlFor="title" className={labelClass}>
-            Title <span className="text-[#0A0A0A]/40">(optional)</span>
+            Title <span className="text-[#737373]">(optional)</span>
           </label>
           <input
             type="text" id="title" name="title"
@@ -184,7 +184,7 @@ export function MedicalGroupForm() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label htmlFor="specialty" className={labelClass}>
-            Specialty <span className="text-[#0A0A0A]/40">(optional)</span>
+            Specialty <span className="text-[#737373]">(optional)</span>
           </label>
           <select
             id="specialty" name="specialty"
@@ -205,7 +205,7 @@ export function MedicalGroupForm() {
 
         <div>
           <label htmlFor="patient_panel_size" className={labelClass}>
-            Patient panel size <span className="text-[#0A0A0A]/40">(optional)</span>
+            Patient panel size <span className="text-[#737373]">(optional)</span>
           </label>
           <select
             id="patient_panel_size" name="patient_panel_size"
@@ -224,7 +224,7 @@ export function MedicalGroupForm() {
 
         <div>
           <label htmlFor="integration_needed" className={labelClass}>
-            EHR integration <span className="text-[#0A0A0A]/40">(optional)</span>
+            EHR integration <span className="text-[#737373]">(optional)</span>
           </label>
           <select
             id="integration_needed" name="integration_needed"
@@ -245,20 +245,20 @@ export function MedicalGroupForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Message <span className="text-[#0A0A0A]/40">(optional)</span>
+          Message <span className="text-[#737373]">(optional)</span>
         </label>
         <textarea
           id="message" name="message"
           value={formData.message} onChange={handleChange}
           placeholder="Anything else you'd like us to know"
           rows={3} autoComplete="off" style={{ fontSize: "16px" }}
-          className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
+          className="w-full bg-[#F5F5F7] border border-[#404040] px-4 py-3 text-[#0A0A0A] placeholder:text-[#737373] font-body font-light focus:outline-none focus:border-[#525252] transition-colors resize-none"
         />
       </div>
 
       <button
         type="submit" disabled={isSubmitting}
-        className="w-full min-h-[48px] bg-[#0A0A0A] text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light hover:bg-[#0A0A0A]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full min-h-[48px] bg-orange-grad text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
           <><Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />Submitting...</>
@@ -267,9 +267,9 @@ export function MedicalGroupForm() {
         )}
       </button>
 
-      <p className="text-[10px] text-[#0A0A0A]/60 text-center">
+      <p className="text-[10px] text-[#525252] text-center">
         By submitting, you agree to our{" "}
-        <a href="/privacy" className="underline hover:text-[#0A0A0A]/80">Privacy Policy</a>
+        <a href="/privacy" className="underline hover:text-[#262626]">Privacy Policy</a>
       </p>
     </form>
   );

@@ -8,7 +8,7 @@ interface EyebrowProps {
 }
 
 export function Eyebrow({ children, className = "", tone = "yellow" }: EyebrowProps) {
-  const color = tone === "yellow" ? "text-[#E6A91A]" : "text-white/40";
+  const color = tone === "yellow" ? "text-orange-grad" : "text-[#86868B]";
   return (
     <p
       className={`font-nav text-[10px] sm:text-xs tracking-widest uppercase ${color} ${className}`}

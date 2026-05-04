@@ -69,18 +69,18 @@ export function CookieConsent() {
       aria-describedby="cookie-description"
       onKeyDown={handleKeyDown}
     >
-      <div className="max-w-2xl mx-auto bg-[#161616] border border-white/10 shadow-lg p-4 sm:p-6">
+      <div className="max-w-2xl mx-auto bg-[#F5F5F7] border border-[#D2D2D7] shadow-lg p-4 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
             <h2
               id="cookie-heading"
-              className="font-heading text-sm text-white mb-2"
+              className="font-heading text-sm text-[#0A0A0A] mb-2"
             >
               Cookie Preferences
             </h2>
             <p
               id="cookie-description"
-              className="font-body text-xs text-white/50 font-light leading-relaxed"
+              className="font-body text-xs text-[#6E6E73] font-light leading-relaxed"
             >
               We use cookies to improve your experience and analyze site usage.
               No personal health information is ever stored in cookies.
@@ -88,7 +88,7 @@ export function CookieConsent() {
           </div>
           <button
             onClick={handleDecline}
-            className="p-1 text-white/40 hover:text-white transition-colors"
+            className="p-1 text-[#86868B] hover:text-[#0A0A0A] transition-colors"
             aria-label="Close cookie banner"
           >
             <X className="w-4 h-4" aria-hidden="true" />
@@ -98,13 +98,13 @@ export function CookieConsent() {
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <button
             onClick={handleAccept}
-            className="inline-flex items-center justify-center bg-[#E6A91A] text-[#0A0A0A] py-2.5 px-5 text-[10px] tracking-widest uppercase font-light hover:bg-[#E6A91A]/90 transition-colors"
+            className="inline-flex items-center justify-center bg-orange-grad text-white py-2.5 px-5 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors"
           >
             Accept All
           </button>
           <button
             onClick={handleDecline}
-            className="inline-flex items-center justify-center bg-transparent text-white/60 py-2.5 px-5 text-[10px] tracking-widest uppercase font-light border border-white/20 hover:bg-white/5 hover:text-white transition-colors"
+            className="inline-flex items-center justify-center bg-transparent text-[#6E6E73] py-2.5 px-5 text-[10px] tracking-widest uppercase font-light border border-[#D2D2D7] hover:bg-[#F5F5F7] hover:text-[#0A0A0A] transition-colors"
           >
             Necessary Only
           </button>

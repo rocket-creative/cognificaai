@@ -30,13 +30,13 @@ export function SectionHeading({
   return (
     <div className={`${alignment} max-w-3xl ${align === "center" ? "" : ""} ${className}`}>
       {eyebrow ? (
-        <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-[#E6A91A] mb-4">
+        <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-orange-grad mb-4">
           {eyebrow}
         </p>
       ) : null}
-      <HeadingTag className={`font-heading ${size} text-white`}>{title}</HeadingTag>
+      <HeadingTag className={`font-heading ${size} text-[#0A0A0A]`}>{title}</HeadingTag>
       {lede ? (
-        <p className="mt-6 font-body text-base sm:text-lg text-white/70 font-light leading-relaxed">
+        <p className="mt-6 font-body text-base sm:text-lg text-[#515154] font-light leading-relaxed">
           {lede}
         </p>
       ) : null}

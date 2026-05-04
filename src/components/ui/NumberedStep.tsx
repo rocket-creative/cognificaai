@@ -11,15 +11,15 @@ interface NumberedStepProps {
 export function NumberedStep({ index, title, children, className = "" }: NumberedStepProps) {
   const label = index.toString().padStart(2, "0");
   return (
-    <div className={`flex flex-col gap-4 border-t border-white/10 pt-6 ${className}`}>
+    <div className={`flex flex-col gap-4 border-t border-[#D2D2D7] pt-6 ${className}`}>
       <div className="flex items-baseline justify-between gap-4">
-        <span className="font-heading text-[10px] tracking-widest uppercase text-[#E6A91A]">
+        <span className="font-heading text-[10px] tracking-widest uppercase text-orange-grad">
           {label}
         </span>
-        <span className="h-px flex-1 bg-white/10" aria-hidden="true" />
+        <span className="h-px flex-1 bg-[#E5E5EA]" aria-hidden="true" />
       </div>
-      <h3 className="font-heading text-xl sm:text-2xl text-white leading-tight">{title}</h3>
-      <div className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed">
+      <h3 className="font-heading text-xl sm:text-2xl text-[#0A0A0A] leading-tight">{title}</h3>
+      <div className="font-body text-sm sm:text-base text-[#515154] font-light leading-relaxed">
         {children}
       </div>
     </div>

@@ -44,16 +44,27 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/for-employers", destination: "/workforce", permanent: true },
+      { source: "/for-clinics", destination: "/medical", permanent: true },
+      { source: "/for-insurers", destination: "/medical#insurers", permanent: true },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.cognifica.app",
+        hostname: "www.cogai.app",
       },
       {
         protocol: "https",
-        hostname: "cognifica.app",
+        hostname: "cogai.app",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cognifica.app",
       },
     ],
   },

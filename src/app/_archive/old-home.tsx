@@ -109,7 +109,7 @@ const howItWorks = [
   {
     step: "02",
     title: "Proprietary Risk Scoring",
-    desc: "Cognifica App integrates results into a dynamic mental health risk score. Stratifies into risk tiers, identifies emerging concerns early, flags high risk responses.",
+    desc: "COGAI integrates results into a dynamic mental health risk score. Stratifies into risk tiers, identifies emerging concerns early, flags high risk responses.",
   },
   {
     step: "03",
@@ -313,7 +313,7 @@ export default function HomePage() {
               <div className="mb-6 sm:mb-8" data-hero-title>
                 <Image
                   src="/cognifica-app-logo.svg"
-                  alt="Cognifica App"
+                  alt="COGAI"
                   width={260}
                   height={80}
                   className="w-[160px] sm:w-[200px] lg:w-[260px] h-auto"
@@ -499,7 +499,7 @@ export default function HomePage() {
             id="comparison-heading"
             className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
           >
-            Why choose Cognifica App?
+            Why choose COGAI?
           </h2>
           <p className="font-body text-sm text-white/60 font-light mb-12 max-w-2xl">
             Our proactive model reaches 3 to 5 times more employees than hotline only EAPs.
@@ -516,7 +516,7 @@ export default function HomePage() {
                     Traditional EAP
                   </th>
                   <th scope="col" className="text-left py-4 px-4 font-nav text-xs tracking-widest uppercase text-[#E6A91A] border-b border-[#E6A91A]">
-                    Cognifica App
+                    COGAI
                   </th>
                 </tr>
               </thead>
@@ -660,7 +660,7 @@ export default function HomePage() {
               id="how-heading"
               className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
             >
-              How does Cognifica App work?
+              How does COGAI work?
             </h2>
             <p className="font-body text-sm text-white/50 font-light max-w-2xl">
               Move from reactive crisis management to proactive prevention with
@@ -1019,7 +1019,7 @@ export default function HomePage() {
           <h2 id="credentials-heading" className="sr-only">Content credentials</h2>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <p className="font-nav text-xs tracking-widest uppercase text-white/40">
-              Content developed by Cognifica App clinical team. Contributors include licensed clinicians and workplace mental health specialists. Built in partnership with Kronos Group.
+              Content developed by COGAI clinical team. Contributors include licensed clinicians and workplace mental health specialists. Built in partnership with Kronos Group.
             </p>
           </div>
         </div>
@@ -1091,8 +1091,8 @@ export default function HomePage() {
                 Mental Health Shouldn&apos;t Be Invisible
               </h2>
               <p className="font-body text-sm sm:text-base text-[#0A0A0A]/70 font-light mb-4">
-                Cognifica App makes it measurable — and manageable. Join forward
-                thinking employers using Cognifica App to proactively support
+                COGAI makes it measurable — and manageable. Join forward
+                thinking employers using COGAI to proactively support
                 their workforce.
               </p>
               <ul className="space-y-2 mb-4" role="list">
