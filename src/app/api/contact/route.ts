@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 
-const TO = "info@cogai.app";
+const TO = "jma@nybrainspine.com";
 const FROM = "COGAI <noreply@cogai.app>";
 
 function getResend(): Resend {
