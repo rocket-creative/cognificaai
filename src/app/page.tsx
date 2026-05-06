@@ -89,7 +89,7 @@ export default function HomePage() {
           <HomeHeroVideo />
         </div>
         <div
-          className="bg-white border-t border-[#D4D4D4] lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-white/40 lg:backdrop-blur-md lg:border-white/50"
+          className="bg-white border-t border-[#D4D4D4]"
           role="presentation"
         >
           <PageContainer className="py-6 sm:py-8 lg:py-10">
