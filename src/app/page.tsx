@@ -87,39 +87,39 @@ export default function HomePage() {
       <section className="relative bg-black text-white" aria-label="Intro">
         <div className="relative w-full aspect-video overflow-hidden">
           <HomeHeroVideo />
-          <div
-            className="absolute inset-x-0 bottom-0 bg-white/40 backdrop-blur-md border-t border-white/50"
-            role="presentation"
-          >
-            <PageContainer className="py-6 sm:py-8 lg:py-10">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12">
-                <div className="max-w-3xl">
-                  <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-[#0A0A0A]">
-                    COGAI
-                  </p>
-                  <h1 className="font-heading text-[clamp(28px,5vw,72px)] leading-[0.98] mt-3 uppercase">
-                    <span className="gradient-text">Cognitive health, measured.</span>
-                  </h1>
-                  <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
-                    Two products. One clinical boundary. Workforce for
-                    employers. Medical for clinicians and insurance plans.
-                  </p>
-                </div>
-                <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
-                  <ArrowLink href="/workforce" variant="solid">
-                    COGAI Workforce
-                  </ArrowLink>
-                  <Link
-                    href="/medical"
-                    className="group inline-flex items-center gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] sm:text-xs uppercase tracking-widest font-light hover:border-[#3B5A75] text-orange-grad-hover hover:gap-5 transition-all"
-                  >
-                    COGAI Medical
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
+        </div>
+        <div
+          className="bg-white border-t border-[#D4D4D4] lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-white/40 lg:backdrop-blur-md lg:border-white/50"
+          role="presentation"
+        >
+          <PageContainer className="py-6 sm:py-8 lg:py-10">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12">
+              <div className="max-w-3xl">
+                <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-[#0A0A0A]">
+                  COGAI
+                </p>
+                <h1 className="font-heading text-[clamp(28px,5vw,72px)] leading-[0.98] mt-3 uppercase">
+                  <span className="gradient-text">Cognitive health, measured.</span>
+                </h1>
+                <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
+                  Two products. One clinical boundary. Workforce for
+                  employers. Medical for clinicians and insurance plans.
+                </p>
               </div>
-            </PageContainer>
-          </div>
+              <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
+                <ArrowLink href="/workforce" variant="solid">
+                  COGAI Workforce
+                </ArrowLink>
+                <Link
+                  href="/medical"
+                  className="group inline-flex items-center gap-3 border border-[#0A0A0A] text-[#0A0A0A] py-3 px-6 text-[10px] sm:text-xs uppercase tracking-widest font-light hover:border-[#3B5A75] text-orange-grad-hover hover:gap-5 transition-all"
+                >
+                  COGAI Medical
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
+          </PageContainer>
         </div>
       </section>
 
