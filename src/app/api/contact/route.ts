@@ -3,7 +3,7 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 const TO = "jma@nybrainspine.com";
-const FROM = "COGAI <noreply@cogai.app>";
+const FROM = "COGAI <noreply@cogai.health>";
 
 function getResend(): Resend {
   const key = process.env.RESEND_API_KEY;
@@ -133,7 +133,7 @@ function wrap(title: string, body: string): string {
   </div>
   <div style="padding:28px">${body}</div>
   <div style="background:#f5f5f5;padding:14px 28px;font-size:11px;color:#999">
-    Sent from cogai.app contact forms
+    Sent from cogai.health contact forms
   </div>
 </div></body></html>`;
 }

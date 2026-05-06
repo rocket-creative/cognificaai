@@ -4,8 +4,8 @@ interface FAQItem {
   answer: string;
 }
 
-const ORGANIZATION_ID = "https://www.cogai.app/#organization";
-const WEBSITE_ID = "https://www.cogai.app/#website";
+const ORGANIZATION_ID = "https://www.cogai.health/#organization";
+const WEBSITE_ID = "https://www.cogai.health/#website";
 
 export function OrganizationSchema() {
   const schema = {
@@ -14,8 +14,8 @@ export function OrganizationSchema() {
     "@id": ORGANIZATION_ID,
     name: "COGAI",
     alternateName: ["COGAI Workforce", "COGAI Medical"],
-    url: "https://www.cogai.app",
-    logo: "https://www.cogai.app/cogai-logo.svg",
+    url: "https://www.cogai.health",
+    logo: "https://www.cogai.health/cogai-logo.svg",
     description:
       "Validated mental health screening and risk stratification for employers, clinics, and insurance plans. Built by practicing clinicians on top of an active clinical practice.",
     contactPoint: {
@@ -41,7 +41,7 @@ export function WebSiteSchema() {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     name: "COGAI",
-    url: "https://www.cogai.app",
+    url: "https://www.cogai.health",
     description:
       "Cognitive health, measured. Two products with one clinical boundary. COGAI Workforce for employers. COGAI Medical for clinics and insurance plans.",
     publisher: { "@id": ORGANIZATION_ID },
@@ -55,7 +55,7 @@ export function WebSiteSchema() {
   );
 }
 
-const SOFTWARE_APP_ID = "https://www.cogai.app/#softwareapplication";
+const SOFTWARE_APP_ID = "https://www.cogai.health/#softwareapplication";
 
 export function SoftwareApplicationSchema() {
   const schema = {
@@ -118,7 +118,7 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url?: string }[];
 }) {
-  const baseUrl = "https://www.cogai.app";
+  const baseUrl = "https://www.cogai.health";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

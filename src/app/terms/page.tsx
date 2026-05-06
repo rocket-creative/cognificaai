@@ -13,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
 export default function TermsPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Terms of Service", url: "https://www.cogai.app/terms" }]} />
+      <BreadcrumbSchema items={[{ name: "Terms of Service", url: "https://www.cogai.health/terms" }]} />
 
       <div className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,10 +185,10 @@ export default function TermsPage() {
                   Contact
                 </h2>
                 <p className="font-body text-sm text-[#515154] font-light leading-relaxed">
-                  For questions about these terms, contact{" "}
-                  <a href="mailto:legal@cogai.app" className="text-orange-grad hover:underline">
-                    legal@cogai.app
-                  </a>{" "}
+                  For questions about these terms, use the{" "}
+                  <Link href="/pilot" className="text-orange-grad hover:underline">
+                    contact form
+                  </Link>{" "}
                   or call{" "}
                   <a href="tel:+19147056830" className="text-orange-grad hover:underline">
                     (914) 705 6830

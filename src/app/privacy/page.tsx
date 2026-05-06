@@ -82,7 +82,7 @@ export default function PrivacyPage() {
   return (
     <>
       <BreadcrumbSchema
-        items={[{ name: "Privacy architecture", url: "https://www.cogai.app/privacy" }]}
+        items={[{ name: "Privacy architecture", url: "https://www.cogai.health/privacy" }]}
       />
 
       <PageContainer className="pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-24">
@@ -355,7 +355,7 @@ export default function PrivacyPage() {
                 Read the policy
                 <span aria-hidden="true">→</span>
               </Link>
-              <ArrowLink href="mailto:privacy@cogai.app" variant="solid">
+              <ArrowLink href="/pilot" variant="solid">
                 Talk to our counsel
               </ArrowLink>
             </div>

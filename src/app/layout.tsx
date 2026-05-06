@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cogai.app"),
+  metadataBase: new URL("https://www.cogai.health"),
   title: {
     default: "COGAI | Cognitive health, measured.",
     template: "%s | COGAI",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.cogai.app",
+    url: "https://www.cogai.health",
     siteName: "COGAI",
     title: "COGAI | Cognitive health, measured.",
     description:
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
       "Validated mental health screening for employers, clinics, and insurers. Built by a practicing clinician.",
   },
   alternates: {
-    canonical: "https://www.cogai.app",
+    canonical: "https://www.cogai.health",
   },
 };
 

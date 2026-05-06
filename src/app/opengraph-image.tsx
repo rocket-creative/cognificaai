@@ -75,7 +75,7 @@ export default function OpenGraphImage() {
           }}
         >
           <div>The employer never sees a score.</div>
-          <div>cogai.app</div>
+          <div>cogai.health</div>
         </div>
       </div>
     ),

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.cogai.app";
+  const baseUrl = "https://www.cogai.health";
   const now = new Date();
 
   const routes: MetadataRoute.Sitemap = [

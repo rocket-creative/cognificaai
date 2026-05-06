@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <BreadcrumbSchema
-        items={[{ name: "Privacy policy", url: "https://www.cogai.app/privacy-policy" }]}
+        items={[{ name: "Privacy policy", url: "https://www.cogai.health/privacy-policy" }]}
       />
 
       <div className="min-h-screen bg-white pt-12 pb-16">
@@ -177,10 +177,10 @@ export default function PrivacyPolicyPage() {
                   Contact
                 </h2>
                 <p className="font-body text-sm text-[#515154] font-light leading-relaxed">
-                  For privacy inquiries, contact{" "}
-                  <a href="mailto:privacy@cogai.app" className="text-orange-grad hover:underline">
-                    privacy@cogai.app
-                  </a>{" "}
+                  For privacy inquiries, use the{" "}
+                  <Link href="/pilot" className="text-orange-grad hover:underline">
+                    contact form
+                  </Link>{" "}
                   or call{" "}
                   <a href="tel:+19147056830" className="text-orange-grad hover:underline">
                     (914) 705 6830

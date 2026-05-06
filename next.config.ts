@@ -56,11 +56,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.cogai.app",
+        hostname: "www.cogai.health",
       },
       {
         protocol: "https",
-        hostname: "cogai.app",
+        hostname: "cogai.health",
       },
       {
         protocol: "https",

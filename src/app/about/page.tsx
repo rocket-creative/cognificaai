@@ -66,12 +66,12 @@ const clinicLocations = [
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "About", url: "https://www.cogai.app/about" }]} />
+      <BreadcrumbSchema items={[{ name: "About", url: "https://www.cogai.health/about" }]} />
       <MedicalOrganizationSchema />
       <PersonSchema
         name="Dr. John Abrahams"
         jobTitle="Founder, COGAI; Practicing Neurosurgeon"
-        url="https://www.cogai.app/about"
+        url="https://www.cogai.health/about"
         affiliation="Cognifica Health"
         description="Practicing neurosurgeon in New York since 2004. Founder of COGAI. Biomedical engineering background. Prior device ventures: EndoMedix, Osteomedix, DTX Medical."
         sameAs={["https://www.cognifica.health"]}
@@ -294,7 +294,8 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 For product questions, pilot scoping, or a clinical reference,
-                call or email. A clinician or the founder will be on the call.
+                use the contact form or call. A clinician or the founder will
+                be on the call.
               </p>
             </div>
             <div className="flex flex-col gap-6 self-center">
@@ -302,12 +303,12 @@ export default function AboutPage() {
                 <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   General
                 </p>
-                <a
-                  href="mailto:info@cogai.app"
+                <Link
+                  href="/pilot"
                   className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
-                  info@cogai.app
-                </a>
+                  Open the contact form →
+                </Link>
               </div>
               <div className="border-t border-[#D2D2D7] pt-6">
                 <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
@@ -324,12 +325,12 @@ export default function AboutPage() {
                 <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">
                   Press
                 </p>
-                <a
-                  href="mailto:press@cogai.app"
+                <Link
+                  href="/pilot"
                   className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
-                  press@cogai.app
-                </a>
+                  Submit a press inquiry →
+                </Link>
               </div>
               <div className="border-t border-[#D2D2D7] pt-6">
                 <p className="font-nav text-[10px] tracking-widest uppercase text-[#86868B] mb-2">

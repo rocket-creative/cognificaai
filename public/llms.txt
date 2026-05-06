@@ -8,23 +8,23 @@ The clinical boundary is the architecture. Employers receive aggregate only repo
 
 ## Products
 
-- [COGAI Workforce](https://www.cogai.app/workforce): Workplace mental health for employers. Seven validated instruments on the employee's phone every month. One composite R Score. The employer never sees an individual score. Aggregate insight for HR. Confidential for the employee.
-- [COGAI Medical](https://www.cogai.app/medical): Population mental health for clinics and insurance plans. Validated screeners on a monthly cadence. Twelve month trend per patient. Crisis flags surfaced in real time. Per seat for clinics. Per patient per month for insurance plans.
+- [COGAI Workforce](https://www.cogai.health/workforce): Workplace mental health for employers. Seven validated instruments on the employee's phone every month. One composite R Score. The employer never sees an individual score. Aggregate insight for HR. Confidential for the employee.
+- [COGAI Medical](https://www.cogai.health/medical): Population mental health for clinics and insurance plans. Validated screeners on a monthly cadence. Twelve month trend per patient. Crisis flags surfaced in real time. Per seat for clinics. Per patient per month for insurance plans.
 
 ## How it works
 
-- [How COGAI works](https://www.cogai.app/how-it-works): Validated instruments, R Score risk stratification, three role views, crisis protocol, and the AI posture in detail.
-- [Privacy architecture](https://www.cogai.app/privacy): Consent first. Architecture, not policy. Three contractual commitments and the consent document.
+- [How COGAI works](https://www.cogai.health/how-it-works): Validated instruments, R Score risk stratification, three role views, crisis protocol, and the AI posture in detail.
+- [Privacy architecture](https://www.cogai.health/privacy): Consent first. Architecture, not policy. Three contractual commitments and the consent document.
 
 ## Get started
 
-- [Pilot](https://www.cogai.app/pilot): Ninety day pilot for employers, clinics, and insurers. One full measurement cycle. Day 35 decision meeting. Walk away clause with no contract pressure.
-- [About](https://www.cogai.app/about): Founded by Dr. John Abrahams. Built on top of Cognifica Health.
+- [Pilot](https://www.cogai.health/pilot): Ninety day pilot for employers, clinics, and insurers. One full measurement cycle. Day 35 decision meeting. Walk away clause with no contract pressure.
+- [About](https://www.cogai.health/about): Founded by Dr. John Abrahams. Built on top of Cognifica Health.
 
 ## Legal
 
-- [Privacy policy](https://www.cogai.app/privacy-policy)
-- [Terms of service](https://www.cogai.app/terms)
+- [Privacy policy](https://www.cogai.health/privacy-policy)
+- [Terms of service](https://www.cogai.health/terms)
 
 ## Crisis resources
 
@@ -32,6 +32,4 @@ If you or someone you know is in crisis, call or text 988 (the Suicide and Crisi
 
 ## Contact
 
-- Sales and pilots: (914) 705 6830
-- Privacy: privacy@cogai.app
-- Legal: legal@cogai.app
+- Sales, pilots, privacy, and legal: use the contact form at https://www.cogai.health/pilot or call (914) 705 6830

@@ -199,12 +199,12 @@ export default function WorkforcePage() {
   return (
     <>
       <BreadcrumbSchema
-        items={[{ name: "Workforce", url: "https://www.cogai.app/workforce" }]}
+        items={[{ name: "Workforce", url: "https://www.cogai.health/workforce" }]}
       />
       <ServiceSchema
         name="COGAI Workforce"
         description="Workplace mental health, proactive, easy, and measurable, without violating privacy. Seven validated instruments. The R Score. Aggregate only reporting. Sixty day pilot."
-        url="https://www.cogai.app/workforce"
+        url="https://www.cogai.health/workforce"
       />
       <FAQSchema questions={faqs} />
 

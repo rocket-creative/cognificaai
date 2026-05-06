@@ -26,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Diffbot", allow: "/", disallow: ["/api/"] },
       { userAgent: "MistralAI-User", allow: "/", disallow: ["/api/"] },
     ],
-    sitemap: "https://www.cogai.app/sitemap.xml",
-    host: "https://www.cogai.app",
+    sitemap: "https://www.cogai.health/sitemap.xml",
+    host: "https://www.cogai.health",
   };
 }

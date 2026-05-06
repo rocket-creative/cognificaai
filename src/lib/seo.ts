@@ -10,7 +10,7 @@
 
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://www.cogai.app";
+export const SITE_URL = "https://www.cogai.health";
 export const SITE_NAME = "COGAI";
 export const TWITTER_HANDLE = "@cogai";
 

@@ -212,12 +212,12 @@ export default function MedicalPage() {
   return (
     <>
       <BreadcrumbSchema
-        items={[{ name: "Medical", url: "https://www.cogai.app/medical" }]}
+        items={[{ name: "Medical", url: "https://www.cogai.health/medical" }]}
       />
       <ServiceSchema
         name="COGAI Medical"
         description="Population mental health for clinics and small insurance plans. Validated screeners on a monthly cadence. R Score sorted panel. Clinical thresholds pre wired. LiveChat with crisis protocol. Per patient per month."
-        url="https://www.cogai.app/medical"
+        url="https://www.cogai.health/medical"
       />
       <FAQSchema questions={faqs} />
 

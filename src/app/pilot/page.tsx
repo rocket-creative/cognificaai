@@ -109,11 +109,11 @@ const sharedRules = [
 export default function PilotPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Pilot", url: "https://www.cogai.app/pilot" }]} />
+      <BreadcrumbSchema items={[{ name: "Pilot", url: "https://www.cogai.health/pilot" }]} />
       <ServiceSchema
         name="COGAI ninety day pilot"
         description="A scoped ninety day mental health screening pilot for employers, clinics, and insurers. One full measurement cycle. Day 35 decision meeting. Walk away clause."
-        url="https://www.cogai.app/pilot"
+        url="https://www.cogai.health/pilot"
       />
 
       <PageContainer className="pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-24">

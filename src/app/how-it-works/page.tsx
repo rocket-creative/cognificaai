@@ -141,11 +141,11 @@ const aiPostureLines = [
 export default function HowItWorksPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "How it works", url: "https://www.cogai.app/how-it-works" }]} />
+      <BreadcrumbSchema items={[{ name: "How it works", url: "https://www.cogai.health/how-it-works" }]} />
       <ServiceSchema
         name="COGAI mental health screening"
         description="Validated instruments on a monthly cadence. R Score risk stratification. Three role views. Crisis protocol routed through the COGAI clinical team. AI is not diagnostic."
-        url="https://www.cogai.app/how-it-works"
+        url="https://www.cogai.health/how-it-works"
       />
 
       <PageContainer className="pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-24">
