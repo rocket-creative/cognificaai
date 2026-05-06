@@ -14,7 +14,7 @@ import {
   SoftwareApplicationSchema,
   MedicalOrganizationSchema,
 } from "@/components/JsonLd";
-import { HeroVideo } from "@/components/HeroVideo";
+import { HomeHeroVideo } from "@/components/HomeHeroVideo";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -86,7 +86,7 @@ export default function HomePage() {
 
       <section className="relative bg-black text-white" aria-label="Intro">
         <div className="relative w-full aspect-video overflow-hidden">
-          <HeroVideo />
+          <HomeHeroVideo />
           <div
             className="absolute inset-x-0 bottom-0 bg-white/40 backdrop-blur-md border-t border-white/50"
             role="presentation"
