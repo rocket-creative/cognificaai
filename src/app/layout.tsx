@@ -96,7 +96,7 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable} ${quicksand.variable}`}
     >
-      <body className="min-h-dvh bg-stone-200 text-[#0A0A0A] antialiased">
+      <body className="min-h-dvh bg-[#EFE9DD] text-[#0A0A0A] antialiased">
         <a
           href="#main"
           className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-[#F5F5F7] focus-visible:px-4 focus-visible:py-2 focus-visible:text-[#0A0A0A] focus-visible:shadow-lg"
