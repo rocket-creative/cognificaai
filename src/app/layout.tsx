@@ -96,7 +96,7 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable} ${quicksand.variable}`}
     >
-      <body className="min-h-dvh bg-white text-[#0A0A0A] antialiased">
+      <body className="min-h-dvh bg-stone-100 text-[#0A0A0A] antialiased">
         <a
           href="#main"
           className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-50 focus-visible:bg-[#F5F5F7] focus-visible:px-4 focus-visible:py-2 focus-visible:text-[#0A0A0A] focus-visible:shadow-lg"
@@ -104,16 +104,19 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white pt-safe-top">
+        <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1280px] bg-white pt-safe-top shadow-sm">
           <ClinicalReferralBanner />
           <Nav />
         </header>
 
-        <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
-          {children}
-        </main>
+        <div className="max-w-[1280px] mx-auto bg-white shadow-sm">
+          <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </div>
+
         <MobileStickyCTA />
         <CookieConsent />
       </body>
