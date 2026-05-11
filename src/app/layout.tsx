@@ -2,11 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
-import { CookieConsent } from "@/components/CookieConsent";
-import { ClinicalReferralBanner } from "@/components/ClinicalReferralBanner";
-import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import { SiteChrome } from "@/components/SiteChrome";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -104,21 +100,7 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1280px] bg-white pt-safe-top shadow-sm">
-          <ClinicalReferralBanner />
-          <Nav />
-        </header>
-
-        <div className="max-w-[1280px] mx-auto bg-white shadow-sm">
-          <main id="main" className="min-h-dvh pt-28 sm:pt-32 pb-24 lg:pb-0">
-            {children}
-          </main>
-
-          <Footer />
-        </div>
-
-        <MobileStickyCTA />
-        <CookieConsent />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

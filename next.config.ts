@@ -8,6 +8,7 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
+      "media-src 'self' https:",
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self' https://fonts.googleapis.com",
       "frame-ancestors 'none'",

@@ -21,6 +21,12 @@ const cognificaHealthLink = {
   ariaLabel: "Visit Cognifica Health for clinical care (opens in new tab)",
 };
 
+const pdfDownloadLink = {
+  href: "/cogai-sales.pdf",
+  label: "Download One Sheet",
+  filename: "cogai-sales.pdf",
+};
+
 function ctaForPath(pathname: string | null) {
   if (!pathname) return { href: "/pilot", label: "Schedule a call" };
   if (pathname.startsWith("/medical#insurers")) return { href: "/medical#contact", label: "Book a call" };
@@ -134,6 +140,14 @@ export function Nav() {
             >
               (914) 705 6830
             </a>
+            <a
+              href={pdfDownloadLink.href}
+              download={pdfDownloadLink.filename}
+              className="group inline-flex items-center gap-3 border border-[#D2D2D7] text-[#0A0A0A] py-3 px-5 text-[10px] tracking-widest uppercase font-light text-orange-grad-hover hover:gap-5 hover:border-[#3B5A75] transition-all"
+            >
+              {pdfDownloadLink.label}
+              <ArrowRight className="w-3 h-3" aria-hidden="true" />
+            </a>
             <Link
               href={cta.href}
               className="group inline-flex items-center gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover hover:gap-5 transition-all"
@@ -199,6 +213,15 @@ export function Nav() {
               className="block font-body text-sm text-[#6E6E73] mb-4"
             >
               (914) 705 6830
+            </a>
+            <a
+              href={pdfDownloadLink.href}
+              download={pdfDownloadLink.filename}
+              onClick={() => setIsOpen(false)}
+              className="mb-3 inline-flex items-center justify-center gap-4 border border-[#D2D2D7] text-[#0A0A0A] py-4 px-8 w-full uppercase tracking-widest text-xs font-light text-orange-grad-hover hover:gap-6 hover:border-[#3B5A75] transition-all"
+            >
+              {pdfDownloadLink.label}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <Link
               href={cta.href}
