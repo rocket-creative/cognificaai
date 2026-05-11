@@ -28,7 +28,7 @@ export function ClinicalReferralBanner() {
       role="banner"
       aria-label="Clinical care referral"
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-center min-h-[44px]">
+      <div className="relative max-w-7xl mx-auto px-4 pr-12 sm:px-6 sm:pr-14 lg:px-8 lg:pr-16 py-2.5 sm:py-3 flex items-center justify-center min-h-[44px]">
         <p className="font-body text-xs sm:text-sm text-white font-light text-center">
           Having trouble now? Our clinical team is ready to help.{" "}
           <a

@@ -16,7 +16,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
       </header>
 
       <div className="mx-auto max-w-[1280px] bg-white shadow-sm">
-        <main id="main" className="min-h-dvh pt-28 pb-24 sm:pt-32 lg:pb-0">
+        <main id="main" className="min-h-dvh pt-28 pb-24 sm:pt-32 xl:pt-40 lg:pb-0">
           {children}
         </main>
 

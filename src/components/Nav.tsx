@@ -87,7 +87,31 @@ export function Nav() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="hidden xl:flex min-h-12 items-center justify-end gap-4 border-b border-[#F2F2F2] py-2">
+          <a
+            href="tel:+19147056830"
+            className="font-nav text-xs tracking-wider text-[#6E6E73] hover:text-[#0A0A0A] transition-colors"
+          >
+            (914) 705 6830
+          </a>
+          <a
+            href={pdfDownloadLink.href}
+            download={pdfDownloadLink.filename}
+            className="group inline-flex items-center gap-3 border border-[#D2D2D7] text-[#0A0A0A] py-2.5 px-5 text-[10px] tracking-widest uppercase font-light text-orange-grad-hover hover:gap-5 hover:border-[#3B5A75] transition-all"
+          >
+            {pdfDownloadLink.label}
+            <ArrowRight className="w-3 h-3" aria-hidden="true" />
+          </a>
+          <Link
+            href={cta.href}
+            className="group inline-flex items-center gap-3 bg-orange-grad text-white py-2.5 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover hover:gap-5 transition-all"
+          >
+            {cta.label}
+            <ArrowRight className="w-3 h-3" aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div className="flex items-center justify-between h-16 sm:h-20 xl:h-16">
           <Link
             href="/"
             className="flex-shrink-0 flex items-center"
@@ -131,30 +155,6 @@ export function Nav() {
             >
               {cognificaHealthLink.label}
             </a>
-          </div>
-
-          <div className="hidden xl:flex items-center gap-4 flex-shrink-0">
-            <a
-              href="tel:+19147056830"
-              className="font-nav text-xs tracking-wider text-[#6E6E73] hover:text-[#0A0A0A] transition-colors"
-            >
-              (914) 705 6830
-            </a>
-            <a
-              href={pdfDownloadLink.href}
-              download={pdfDownloadLink.filename}
-              className="group inline-flex items-center gap-3 border border-[#D2D2D7] text-[#0A0A0A] py-3 px-5 text-[10px] tracking-widest uppercase font-light text-orange-grad-hover hover:gap-5 hover:border-[#3B5A75] transition-all"
-            >
-              {pdfDownloadLink.label}
-              <ArrowRight className="w-3 h-3" aria-hidden="true" />
-            </a>
-            <Link
-              href={cta.href}
-              className="group inline-flex items-center gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover hover:gap-5 transition-all"
-            >
-              {cta.label}
-              <ArrowRight className="w-3 h-3" aria-hidden="true" />
-            </Link>
           </div>
 
           <button

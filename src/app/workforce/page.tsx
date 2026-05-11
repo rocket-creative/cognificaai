@@ -358,14 +358,14 @@ export default function WorkforcePage() {
                 <p className="mt-4 font-nav text-xs tracking-widest uppercase text-[#0A0A0A]">
                   Mild risk · trend down four percent month over month
                 </p>
-                <ul className="mt-8 grid grid-cols-2 gap-3 font-body text-xs sm:text-sm text-[#525252] font-light">
+                <ul className="mt-8 grid grid-cols-1 xs:grid-cols-2 gap-3 font-body text-xs sm:text-sm text-[#525252] font-light">
                   <li>Depression · PHQ 9</li>
                   <li>Anxiety · GAD 7</li>
                   <li>Trauma · PCL 5</li>
                   <li>Drug use · DAST 10</li>
                   <li>Alcohol use · AUDIT</li>
                   <li>Sleep · PSQI</li>
-                  <li className="col-span-2">Work wellness</li>
+                  <li className="xs:col-span-2">Work wellness</li>
                 </ul>
               </div>
             </div>
@@ -386,7 +386,7 @@ export default function WorkforcePage() {
           />
           <ul
             id="instruments-heading"
-            className="mt-12 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
+            className="mt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
             role="list"
           >
             {instruments.map((s, i) => (

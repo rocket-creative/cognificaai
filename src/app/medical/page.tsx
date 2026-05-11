@@ -361,7 +361,7 @@ export default function MedicalPage() {
           />
           <ul
             id="instruments-heading"
-            className="mt-12 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
+            className="mt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
             role="list"
           >
             {instruments.map((s, i) => (
