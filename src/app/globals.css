@@ -110,7 +110,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
+  background-color: #EFE9DD;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -120,7 +120,7 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #EFE9DD;
   color: #0A0A0A;
   font-family: var(--font-body, 'IBM Plex Sans', system-ui, sans-serif);
   font-weight: 300;
