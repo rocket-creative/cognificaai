@@ -349,8 +349,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            <ArrowLink href="/workforce" variant="solid">
-              Explore COGAI Workforce
+            <ArrowLink href="/workforce#demo" variant="solid">
+              Start your free trial
             </ArrowLink>
             <ArrowLink href="/medical" variant="ghost">
               Explore COGAI Medical

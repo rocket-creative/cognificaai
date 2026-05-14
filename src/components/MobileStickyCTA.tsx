@@ -14,7 +14,7 @@ interface StickyCta {
 function stickyCtaForPath(pathname: string | null): StickyCta | null {
   if (!pathname) return null;
   if (pathname.startsWith("/workforce")) {
-    return { label: "Request a demo", href: "/workforce#demo" };
+    return { label: "Start your free trial", href: "/workforce#demo" };
   }
   if (pathname.startsWith("/medical")) {
     return { label: "Request a demo", href: "/medical#demo" };

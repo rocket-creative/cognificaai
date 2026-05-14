@@ -8,7 +8,7 @@ const footerLinks = {
     { label: "COGAI Medical", href: "/medical" },
     { label: "For Insurers", href: "/medical#insurers" },
     { label: "How It Works", href: "/how-it-works" },
-    { label: "Schedule a call", href: "/pilot" },
+    { label: "Start your free trial", href: "/workforce#demo" },
   ],
   company: [
     { label: "About", href: "/about" },
@@ -51,9 +51,10 @@ export function Footer() {
               />
             </Link>
             <p className="mt-6 font-body text-sm text-[#525252] font-light leading-relaxed max-w-sm">
-              Validated mental health screening and risk stratification, built
-              by practicing clinicians. Two products. One clinical boundary
-              that the employer never crosses.
+              The workforce mental health platform that gives employers aggregate
+              insight into the cognitive health of their workforce — without ever
+              revealing an individual score. Six clinically validated screeners,
+              monthly. Built inside an active clinical practice.
             </p>
 
             <div className="mt-8">

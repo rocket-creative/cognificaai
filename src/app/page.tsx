@@ -20,12 +20,12 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "COGAI | Cognitive health, measured.",
   description:
-    "Two products with one clinical boundary. COGAI Workforce for employers. COGAI Medical for clinics and insurance plans. The employer never sees a score.",
+    "The workforce mental health platform that gives employers aggregate insight into the cognitive health of their workforce — without ever revealing an individual score. Six clinically validated screeners, monthly. Free 6-month trial.",
   path: "/",
   ogDescription:
-    "Validated workplace and clinical mental health screening. R Score risk stratification. The employer never sees an individual score.",
+    "Know the mental health of your workforce — without ever seeing an individual score. Six clinically validated screeners. Monthly 8-minute cadence. Free 6-month trial.",
   twitterDescription:
-    "Two products. One clinical boundary. COGAI Workforce. COGAI Medical.",
+    "Aggregate insight for employers. Confidential for the employee. Free 6-month trial.",
   keywords: [
     "COGAI",
     "COGAI Workforce",
@@ -33,11 +33,10 @@ export const metadata: Metadata = buildMetadata({
     "employee mental health",
     "workforce mental health",
     "validated screening",
-    "PHQ 9",
-    "GAD 7",
-    "panel triage",
+    "PHQ-9",
+    "GAD-7",
+    "free trial workforce mental health",
     "behavioral health",
-    "HIPAA aligned",
     "R Score",
   ],
 });
@@ -48,15 +47,15 @@ const audienceCards = [
     eyebrow: "COGAI Workforce",
     product: "For employers",
     title: "What an EAP was supposed to be.",
-    body: "Three to six percent of your employees actually use your EAP. Ninety four percent go unserved. COGAI Workforce reaches the rest. Aggregate insight for HR. Confidential for the employee.",
-    cta: { label: "Explore COGAI Workforce", href: "/workforce" },
+    body: "Three to six percent of your employees actually use your EAP. The other ninety-four percent go unserved. COGAI Workforce reaches the rest. Aggregate insight for HR. Confidential for the employee. Free 6-month trial.",
+    cta: { label: "Start your free trial", href: "/workforce#demo" },
   },
   {
     key: "medical",
     eyebrow: "COGAI Medical",
     product: "For clinics and insurance plans",
-    title: "Know which patients need you on Monday. Before Monday.",
-    body: "Validated screeners on a cadence. Twelve month trend per patient. Crisis flags surfaced in real time. Per seat for clinics. Per patient per month for insurance plans.",
+    title: "Know which patients need you on Monday — before Monday.",
+    body: "Validated screeners on a monthly cadence. Twelve-month trend per patient. Crisis flags surfaced in real time. Per seat for clinics. Per patient per month for insurance plans.",
     cta: { label: "Explore COGAI Medical", href: "/medical" },
   },
 ];
@@ -96,19 +95,18 @@ export default function HomePage() {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12">
               <div className="max-w-3xl">
                 <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-[#0A0A0A]">
-                  COGAI
+                  Cognitive health, measured.
                 </p>
-                <h1 className="font-heading text-[clamp(28px,5vw,72px)] leading-[0.98] mt-3 uppercase">
-                  <span className="gradient-text">Cognitive health, measured.</span>
+                <h1 className="font-heading text-[clamp(28px,5vw,72px)] leading-[0.98] mt-3">
+                  <span className="gradient-text">Know the mental health of your workforce — without ever seeing an individual score.</span>
                 </h1>
                 <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
-                  Two products. One clinical boundary. Workforce for
-                  employers. Medical for clinicians and insurance plans.
+                  Six clinically validated screeners. Monthly 8-minute cadence. Aggregate insight for employers. Confidential for the employee. Free 6-month trial.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
-                <ArrowLink href="/workforce" variant="solid">
-                  COGAI Workforce
+                <ArrowLink href="/workforce#demo" variant="solid">
+                  Start your free trial
                 </ArrowLink>
                 <Link
                   href="/medical"
@@ -359,27 +357,27 @@ export default function HomePage() {
                 Pick your lane.
               </h2>
               <p className="mt-6 font-body text-base text-white font-light leading-relaxed">
-                Two products. Three audiences. A real operator on every call.
+                No credit card. No commitment to convert. A real operator on every call.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:max-w-md lg:ml-auto w-full">
               <Link
                 href="/workforce#demo"
-                className="group flex items-center justify-between gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors"
+                className="group flex items-center justify-between gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors md:col-span-2"
               >
-                Workforce demo
+                Start your free trial
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/medical#demo"
-                className="group flex items-center justify-between gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors"
+                className="group flex items-center justify-between gap-3 border border-white text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-white hover:text-[#0A0A0A] transition-colors"
               >
-                Medical demo
+                Explore COGAI Medical
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/pilot"
-                className="group flex items-center justify-between gap-3 border border-white text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-white hover:text-[#0A0A0A] transition-colors md:col-span-2"
+                className="group flex items-center justify-between gap-3 border border-white text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-white hover:text-[#0A0A0A] transition-colors"
               >
                 Schedule a consultation
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>

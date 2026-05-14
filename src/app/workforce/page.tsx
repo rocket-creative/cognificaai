@@ -18,17 +18,17 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "COGAI Workforce | Workplace mental health, measured.",
   description:
-    "Seven validated instruments. Monthly check ins on the employee's phone. One composite R Score. The employer never sees an individual score. Ninety day pilot.",
+    "Free 6-month trial. Six clinically validated screeners. Monthly 8-minute cadence. Aggregate insight for employers. Confidential for the employee. The employer never sees an individual score.",
   path: "/workforce",
   ogDescription:
-    "Workplace mental health, proactive and measurable, without violating privacy. Aggregate insight for HR. Confidential for the employee.",
+    "Free 6-month trial of COGAI Workforce. For organizations with 50 to 2,200 employees. No credit card. No commitment to convert. Aggregate insight for HR. Confidential for the employee.",
   keywords: [
     "COGAI Workforce",
     "workplace mental health",
-    "employee wellness",
+    "free workforce mental health trial",
     "EAP alternative",
-    "PHQ 9",
-    "GAD 7",
+    "PHQ-9",
+    "GAD-7",
     "R Score",
     "workforce screening",
     "HIPAA aligned",
@@ -232,7 +232,7 @@ export default function WorkforcePage() {
                 </div>
                 <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
                   <ArrowLink href="#demo" variant="solid">
-                    Request a demo
+                    Start your free trial
                   </ArrowLink>
                   <Link
                     href="#privacy"
@@ -766,23 +766,25 @@ export default function WorkforcePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <p className="font-nav text-[10px] sm:text-xs tracking-widest uppercase text-orange-grad">
-                Request a demo
+                Start your free trial
               </p>
               <h2
                 id="demo-heading"
                 className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.05] text-white mt-4"
               >
-                Show me what this looks like in a real workforce.
+                Free 6-month trial of COGAI Workforce.
               </h2>
               <p className="mt-6 font-body text-base text-white font-light leading-relaxed">
-                A product lead walks you through the three views, the consent
-                architecture, and a representative dashboard. Forty five
-                minutes. No sales cadence after.
+                For organizations with 50 to 2,200 employees. No credit card.
+                No commitment to convert. You see the data on your own
+                workforce. At month six, you decide.
               </p>
               <ul className="mt-8 space-y-2 font-body text-sm text-white font-light">
-                <li>Three views walk through</li>
-                <li>Consent architecture, line by line</li>
-                <li>Sixty day pilot scoping, if the fit is right</li>
+                <li>Full COGAI Workforce dashboard for HR leadership</li>
+                <li>Monthly 8-minute opt-in screening for all enrolled employees</li>
+                <li>Six clinically validated instruments — PHQ-9, GAD-7, PCL-5, AUDIT, DAST-10, PSQI</li>
+                <li>R Score reporting at the workforce level</li>
+                <li>Day 1, month 3, and month 6 readout sessions with a COGAI team member</li>
               </ul>
               <div className="mt-8">
                 <Link

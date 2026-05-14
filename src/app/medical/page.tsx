@@ -106,13 +106,13 @@ const useCases = [
   {
     label: "Use case A",
     title: "Medical clinics",
-    body: "Practice administrators, medical directors, and directors of behavioral health at multi site clinics or behavioral health groups. The panel view sorts by R Score with clinical thresholds pre wired. LiveChat routes a flagged patient to a clinician without a three system scramble. Medical directors care for a larger panel without missing the people who are declining.",
+    body: "Know which patients need you on Monday — before Monday. Validated screeners on a monthly cadence. Twelve-month trend per patient. Crisis flags surfaced in real time. The panel view sorts by R Score with clinical thresholds pre wired. LiveChat routes a flagged patient to a clinician without a three system scramble.",
     cta: { href: "#demo", label: "COGAI Medical — request a demo" },
   },
   {
     label: "Use case B",
     title: "Small insurance plans",
-    body: "Medical directors, VPs of care management, and the care team at small insurance companies. Proactive population health on the membership without an EAP hotline deflection. Medication compliance up. ER admissions down. HEDIS depression and follow up measures move. Per patient per month pricing.",
+    body: "Validated screeners on a monthly cadence across your covered population. Identified clinical panels. Per patient per month pricing. Medication compliance up. ER admissions down. HEDIS depression and follow up measures move.",
     cta: { href: "#payer", label: "For insurance plans — scope a pilot" },
   },
 ];
@@ -238,9 +238,10 @@ export default function MedicalPage() {
                     <span className="gradient-text">Catching the spark before the fire.</span>
                   </h1>
                   <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
-                    Proactive screening for every patient in a population.
-                    Clinician routing for the ones who need a person next. The
-                    panel arrives sorted. The thresholds are pre wired.
+                    Know which patients need you on Monday — before Monday.
+                    Validated screeners on a monthly cadence. Twelve-month trend
+                    per patient. Crisis flags surfaced in real time. Per seat for
+                    clinics.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
@@ -468,7 +469,7 @@ export default function MedicalPage() {
           <SectionHeading
             eyebrow="For insurance plans"
             title="Proactive care, priced per patient per month."
-            lede="Members do not show up to behavioral health care until they are in crisis. COGAI Medical catches them before the crisis. The underlying software works across both use cases. The go to market for the insurance company use case is being co designed with our first prospective client."
+            lede="Validated screeners on a monthly cadence across your covered population. Identified clinical panels. Per patient per month pricing. The underlying software works across both use cases. The go to market for the insurance company use case is being co designed with our first prospective client."
             as="h2"
           />
           <div

@@ -44,7 +44,7 @@ const pilotColumns = [
       "Decision: Day 35 board ready dashboard",
       "Out: walk away clause, no contract pressure",
     ],
-    cta: { label: "Request a workforce pilot", href: "/workforce#demo" },
+    cta: { label: "Start your free trial", href: "/workforce#demo" },
   },
   {
     key: "clinic",
