@@ -18,7 +18,7 @@ The clinical boundary is the architecture. Employers receive aggregate only repo
 
 ## Get started
 
-- [Pilot](https://www.cogai.health/pilot): Ninety day pilot for employers, clinics, and insurers. One full measurement cycle. Day 35 decision meeting. Walk away clause with no contract pressure.
+- [Start your free trial](https://www.cogai.health/workforce#demo): Free six month trial of COGAI Workforce for organizations with 50 to 2,200 employees. One full measurement cycle every month. Readout sessions at Day 1, month 3, and month 6. No credit card. No commitment to convert.
 - [About](https://www.cogai.health/about): Founded by Dr. John Abrahams. Built on top of Cognifica Health.
 
 ## Legal
@@ -32,4 +32,4 @@ If you or someone you know is in crisis, call or text 988 (the Suicide and Crisi
 
 ## Contact
 
-- Sales, pilots, privacy, and legal: use the contact form at https://www.cogai.health/pilot or call (914) 705 6830
+- Sales, trials, privacy, and legal: use the contact form at https://www.cogai.health/workforce#demo or call (914) 705 6830

@@ -186,7 +186,7 @@ export default function TermsPage() {
                 </h2>
                 <p className="font-body text-sm text-[#515154] font-light leading-relaxed">
                   For questions about these terms, use the{" "}
-                  <Link href="/pilot" className="text-orange-grad hover:underline">
+                  <Link href="/workforce#demo" className="text-orange-grad hover:underline">
                     contact form
                   </Link>{" "}
                   or call{" "}

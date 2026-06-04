@@ -48,7 +48,6 @@ export function PayerForm() {
     const e: FormErrors = {};
     if (!formData.contact_name.trim()) e.contact_name = "Name is required";
     if (!formData.organization.trim()) e.organization = "Organization is required";
-    if (!formData.phone.trim()) e.phone = "Phone number is required";
     if (!formData.email.trim()) {
       e.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -153,7 +152,7 @@ export function PayerForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="phone" className={labelClass}>Phone *</label>
+          <label htmlFor="phone" className={labelClass}>Phone (optional)</label>
           <input
             type="tel" id="phone" name="phone"
             value={formData.phone} onChange={handleChange}

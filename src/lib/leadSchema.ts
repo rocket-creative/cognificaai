@@ -10,7 +10,7 @@ export const exploringOptions = [
   "COGAI Workforce (for employers)",
   "COGAI Medical (for clinics)",
   "COGAI Medical (for insurers)",
-  "Just curious — tell me what fits",
+  "Just curious, tell me what fits",
 ] as const;
 
 export const leadSchema = z.object({

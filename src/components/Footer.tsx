@@ -52,9 +52,9 @@ export function Footer() {
             </Link>
             <p className="mt-6 font-body text-sm text-[#525252] font-light leading-relaxed max-w-sm">
               The workforce mental health platform that gives employers aggregate
-              insight into the cognitive health of their workforce — without ever
-              revealing an individual score. Six clinically validated screeners,
-              monthly. Built inside an active clinical practice.
+              insight into the cognitive health of their workforce, without ever
+              revealing an individual score. Seven validated instruments, monthly.
+              Built inside an active clinical practice.
             </p>
 
             <div className="mt-8">

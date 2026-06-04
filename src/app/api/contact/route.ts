@@ -18,7 +18,7 @@ const DemoRequestSchema = z.object({
   contact_name: z.string().min(1).max(100),
   title: z.string().max(100).optional(),
   organization: z.string().min(1).max(200),
-  phone: z.string().min(7).max(30),
+  phone: z.string().max(30).optional(),
   email: z.string().email(),
   buyer_type: z.enum(["employer", "provider", "payer", "broker", "other"]).optional(),
   population_size: z
@@ -35,7 +35,7 @@ const SelfInsuredEmployerSchema = z.object({
   contact_name: z.string().min(1).max(100),
   title: z.string().max(100).optional(),
   company_name: z.string().min(1).max(200),
-  phone: z.string().min(7).max(30),
+  phone: z.string().max(30).optional(),
   email: z.string().email(),
   employee_count: z
     .enum(["500_1000", "1001_2500", "2501_5000", "5001_10000", "over_10000"])
@@ -57,7 +57,7 @@ const HospitalSystemSchema = z.object({
   contact_name: z.string().min(1).max(100),
   title: z.string().min(1).max(100),
   organization: z.string().min(1).max(200),
-  phone: z.string().min(7).max(30),
+  phone: z.string().max(30).optional(),
   email: z.string().email(),
   clinician_count: z
     .enum(["under_500", "500_2000", "2001_5000", "5001_10000", "over_10000"])
@@ -76,7 +76,7 @@ const PayerSchema = z.object({
   contact_name: z.string().min(1).max(100),
   title: z.string().max(100).optional(),
   organization: z.string().min(1).max(200),
-  phone: z.string().min(7).max(30),
+  phone: z.string().max(30).optional(),
   email: z.string().email(),
   payer_type: z
     .enum(["commercial", "medicare_advantage", "medicaid_mco", "self_funded_tpa", "other"])
@@ -95,7 +95,7 @@ const MedicalGroupSchema = z.object({
   contact_name: z.string().min(1).max(100),
   title: z.string().max(100).optional(),
   practice_name: z.string().min(1).max(200),
-  phone: z.string().min(7).max(30),
+  phone: z.string().max(30).optional(),
   email: z.string().email(),
   specialty: z
     .enum(["primary_care", "internal_medicine", "multi_specialty", "fqhc", "cardiology", "oncology", "other"])

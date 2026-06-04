@@ -32,25 +32,25 @@ export const metadata: Metadata = buildMetadata({
 
 const screeners = [
   {
-    acronym: "PHQ-9",
+    acronym: "PHQ 9",
     name: "Patient Health Questionnaire 9",
     measures: "Depression severity",
     note: "Validated across primary care, behavioral health, and workplace settings.",
   },
   {
-    acronym: "GAD-7",
+    acronym: "GAD 7",
     name: "Generalized Anxiety Disorder 7",
     measures: "Anxiety severity",
     note: "Short, validated anxiety screener used widely across primary care.",
   },
   {
-    acronym: "PCL-5",
+    acronym: "PCL 5",
     name: "PTSD Checklist for DSM 5",
     measures: "Trauma and posttraumatic stress",
     note: "Used for screening, severity, and response to treatment over time.",
   },
   {
-    acronym: "DAST-10",
+    acronym: "DAST 10",
     name: "Drug Abuse Screening Test 10",
     measures: "Drug use",
     note: "Validated in clinical and general population screening.",
@@ -88,8 +88,8 @@ const views = [
   },
   {
     label: "Executive",
-    title: "Organization R-Score and engagement.",
-    body: "Leadership sees organization level R-Score, participation, and trend. The same aggregate only rules apply. Every view enforces the same boundary.",
+    title: "Organization R Score and engagement.",
+    body: "Leadership sees organization level R Score, participation, and trend. The same aggregate only rules apply. Every view enforces the same boundary.",
   },
 ];
 
@@ -210,11 +210,11 @@ export default function HowItWorksPage() {
                 id="rscore-heading"
                 className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.1] text-[#0A0A0A] mt-4"
               >
-                The R-Score
+                The R Score
               </h2>
               <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 A single composite stratifier computed from weighted instrument
-                scores. The weighting formula is not published. What the R-Score
+                scores. The weighting formula is not published. What the R Score
                 is for and who can see it are.
               </p>
             </div>
@@ -243,8 +243,8 @@ export default function HowItWorksPage() {
                   Clinical thresholds pre wired
                 </p>
                 <p className="font-body text-base text-[#3A3A3C] font-light">
-                  PHQ-9 ≥ 15 · GAD-7 ≥ 15 · PCL-5 ≥ 50 · DAST-10 ≥ 6 · AUDIT ≥ 18.
-                  Flags fire at the instrument layer before the R-Score
+                  PHQ 9 ≥ 15 · GAD 7 ≥ 15 · PCL 5 ≥ 50 · DAST 10 ≥ 6 · AUDIT ≥ 18.
+                  Flags fire at the instrument layer before the R Score
                   composite is computed. Every threshold is auditable.
                 </p>
               </div>
@@ -479,7 +479,7 @@ export default function HowItWorksPage() {
               </h2>
               <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
                 A live demo sandbox sits at cognifica.ai/demo. Click through a
-                tenant. Run a check in. Look at the R-Score. Leave without
+                tenant. Run a check in. Look at the R Score. Leave without
                 leaving a record.
               </p>
             </div>

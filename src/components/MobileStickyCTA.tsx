@@ -22,9 +22,6 @@ function stickyCtaForPath(pathname: string | null): StickyCta | null {
   if (pathname.startsWith("/medical#insurers")) {
     return { label: "Book a call", href: "/medical#contact" };
   }
-  if (pathname.startsWith("/pilot")) {
-    return { label: "Schedule a consultation", href: "/pilot#consultation" };
-  }
   if (pathname.startsWith("/how-it-works")) {
     return { label: "Try the demo", href: "https://www.cognifica.ai/demo" };
   }

@@ -18,7 +18,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "COGAI Workforce | Workplace mental health, measured.",
   description:
-    "Free 6-month trial. Six clinically validated screeners. Monthly 8-minute cadence. Aggregate insight for employers. Confidential for the employee. The employer never sees an individual score.",
+    "Free 6-month trial. Seven validated instruments. Monthly 8-minute cadence. Aggregate insight for employers. Confidential for the employee. The employer never sees an individual score.",
   path: "/workforce",
   ogDescription:
     "Free 6-month trial of COGAI Workforce. For organizations with 50 to 2,200 employees. No credit card. No commitment to convert. Aggregate insight for HR. Confidential for the employee.",
@@ -86,7 +86,7 @@ const gapBlocks = [
     body: "Twenty percent of Americans live with a mental health condition. Five percent live with a severe one. Most are undiagnosed. The last place they are going to share is with their employer.",
   },
   {
-    n: "$500K — $2.5M",
+    n: "$500K to $2.5M",
     title: "The cost gap",
     body: "For a company doing ten to fifty million in revenue, untreated mental health typically shows up as five hundred thousand to two and a half million per year in absenteeism, low performance, turnover, and unfilled positions.",
   },
@@ -135,13 +135,6 @@ const crisisSteps = [
   },
 ];
 
-const pricingTiers = [
-  { tier: "XS", size: "Up to 25 employees", note: "Small practices, micro teams" },
-  { tier: "SM", size: "Up to 150 employees", note: "Schools, nonprofits, small firms" },
-  { tier: "MD", size: "Up to 355 employees", note: "Mid sized organizations" },
-  { tier: "LG", size: "2,200 or more employees", note: "Enterprise and agencies" },
-];
-
 const faqs = [
   {
     question: "We already have an EAP. Why pay for another vendor?",
@@ -179,9 +172,9 @@ const faqs = [
       "Crisis escalation runs through the COGAI clinical team, not HR. A designated crisis counselor is engaged, live chat is available around the clock, a warm handoff to 988 is available, and a templated twelve week high risk check in runs after the acute moment.",
   },
   {
-    question: "What does the pilot look like?",
+    question: "What does the free trial look like?",
     answer:
-      "Pilot one business unit or one site for sixty days. One full cycle. One decision meeting at day thirty five with a board ready dashboard. If the number does not move and your people do not tell you it was worth doing, you walk away. The clause is written to be used.",
+      "Six months of COGAI Workforce, free, for organizations with 50 to 2,200 employees. No credit card. No commitment to convert. One full measurement cycle every month, readout sessions with a COGAI team member at Day 1, month 3, and month 6, and a board ready dashboard at every readout. At month six you have seen the data on your own workforce, and you decide.",
   },
   {
     question: "Mental health is not really our problem.",
@@ -191,7 +184,7 @@ const faqs = [
   {
     question: "We cannot afford another vendor.",
     answer:
-      "Start with the sixty day pilot. If the cycle does not show movement and the employees do not tell you it was worth doing, you walk away. The pilot is built to surface the offset on your own panel, not against a marketing figure.",
+      "Start with the free six month trial. There is no license fee and no credit card. If six cycles on your own workforce do not show movement and your employees do not tell you it was worth doing, you walk away. The trial is built to surface the offset on your own panel, not against a marketing figure.",
   },
 ];
 
@@ -203,7 +196,7 @@ export default function WorkforcePage() {
       />
       <ServiceSchema
         name="COGAI Workforce"
-        description="Workplace mental health, proactive, easy, and measurable, without violating privacy. Seven validated instruments. The R Score. Aggregate only reporting. Sixty day pilot."
+        description="Workplace mental health, proactive, easy, and measurable, without violating privacy. Seven validated instruments. The R Score. Aggregate only reporting. Free six month trial."
         url="https://www.cogai.health/workforce"
       />
       <FAQSchema questions={faqs} />
@@ -624,24 +617,24 @@ export default function WorkforcePage() {
 
       <section
         className="border-t border-[#D4D4D4]"
-        aria-labelledby="pilot-heading"
+        aria-labelledby="trial-heading"
       >
         <PageContainer className="py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
-              <Eyebrow>Sixty day pilot</Eyebrow>
+              <Eyebrow>Your free trial</Eyebrow>
               <h2
-                id="pilot-heading"
+                id="trial-heading"
                 className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.05] text-[#0A0A0A] mt-4"
               >
-                Sixty days. One cycle. One decision.
+                Six months. Real data. Your decision.
               </h2>
               <p className="mt-6 font-body text-base text-[#404040] font-light leading-relaxed">
-                Pilot one business unit or one site. One full measurement
-                cycle. A Day 35 decision meeting with a board ready dashboard.
-                If the number does not move and your people do not tell you it
-                was worth doing, you walk away. The clause is written to be
-                used.
+                Try COGAI Workforce free for six months. One full measurement
+                cycle every month. Readout sessions at Day 1, month 3, and
+                month 6. If the number does not move and your people do not tell
+                you it was worth doing, you walk away. There is no commitment to
+                convert.
               </p>
               <p className="mt-4 font-body text-sm text-[#525252] font-light italic">
                 Completion in seeded tenants runs above ninety percent because
@@ -658,28 +651,25 @@ export default function WorkforcePage() {
               </li>
               <li>
                 <NumberedStep index={2} title="First cycle inside a month">
-                  Eight minute monthly check in goes out. Employees see their
-                  own R Score immediately. The aggregate begins to populate.
+                  The eight minute monthly check in goes out. Employees see
+                  their own R Score immediately. The aggregate begins to
+                  populate.
                 </NumberedStep>
               </li>
               <li>
-                <NumberedStep index={3} title="Day 35 board ready dashboard">
+                <NumberedStep index={3} title="Readout sessions at Day 1, month 3, and month 6">
                   Organization R Score, department aggregates, completion,
-                  trend. Continue, adjust, or walk away.
+                  trend. A COGAI team member walks you through each readout.
                 </NumberedStep>
               </li>
               <li>
-                <NumberedStep index={4} title="Day 60 decision">
-                  One full cycle complete. The number, the participation, and
-                  the employee feedback drive the contract conversation.
+                <NumberedStep index={4} title="Month 6 decision">
+                  You have seen six full cycles on your own workforce. The
+                  number, the participation, and the employee feedback drive the
+                  conversation. No commitment to convert.
                 </NumberedStep>
               </li>
             </ul>
-          </div>
-          <div className="mt-10">
-            <ArrowLink href="/pilot" variant="ghost">
-              Compare the three pilot shapes
-            </ArrowLink>
           </div>
         </PageContainer>
       </section>
@@ -691,43 +681,10 @@ export default function WorkforcePage() {
         <PageContainer className="py-16 sm:py-24">
           <SectionHeading
             eyebrow="Pricing"
-            title="Seat based. Four tiers."
-            lede="Per seat pricing is set with the client at pilot scoping. The tier structure is fixed. The dollar figure is in conversation."
+            title="Seat based. Free for six months."
+            lede="Per seat pricing is set with you near the end of your free trial, sized to your headcount and cadence. Nothing is owed during the six months. No credit card. The first pricing conversation happens after you have seen six cycles of data on your own workforce."
             as="h2"
           />
-          <div id="pricing-heading" className="mt-12 border-t border-[#D4D4D4]">
-            <table className="w-full text-left" aria-label="Workforce pricing tiers">
-              <thead className="sr-only">
-                <tr>
-                  <th>Tier</th>
-                  <th>Headcount</th>
-                  <th>Typical fit</th>
-                  <th>Per seat per month</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pricingTiers.map((t) => (
-                  <tr key={t.tier} className="border-b border-[#D4D4D4]">
-                    <td className="py-6 pr-4 font-heading text-3xl sm:text-4xl text-orange-grad align-top">
-                      {t.tier}
-                    </td>
-                    <td className="py-6 pr-4 font-body text-base text-[#0A0A0A] font-light align-top">
-                      {t.size}
-                    </td>
-                    <td className="py-6 pr-4 font-body text-sm text-[#525252] font-light align-top hidden md:table-cell">
-                      {t.note}
-                    </td>
-                    <td className="py-6 font-nav text-xs tracking-widest uppercase text-[#737373] text-right align-top">
-                      $TBD / seat / month
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-6 font-body text-xs text-[#737373] font-light italic">
-            Pricing is confirmed during pilot scoping.
-          </p>
         </PageContainer>
       </section>
 
@@ -777,14 +734,53 @@ export default function WorkforcePage() {
               <p className="mt-6 font-body text-base text-white font-light leading-relaxed">
                 For organizations with 50 to 2,200 employees. No credit card.
                 No commitment to convert. You see the data on your own
-                workforce. At month six, you decide.
+                workforce. At month six, you decide. We are opening a first
+                cohort of trial organizations now.
               </p>
               <ul className="mt-8 space-y-2 font-body text-sm text-white font-light">
                 <li>Full COGAI Workforce dashboard for HR leadership</li>
                 <li>Monthly 8-minute opt-in screening for all enrolled employees</li>
-                <li>Six clinically validated instruments — PHQ-9, GAD-7, PCL-5, AUDIT, DAST-10, PSQI</li>
+                <li>Seven validated instruments: PHQ 9, GAD 7, PCL 5, DAST 10, AUDIT, PSQI, and Work Wellness</li>
                 <li>R Score reporting at the workforce level</li>
                 <li>Day 1, month 3, and month 6 readout sessions with a COGAI team member</li>
+              </ul>
+              <ul className="mt-8 space-y-5 border-t border-white/20 pt-8" role="list">
+                <li>
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
+                    Built and used inside the founder&apos;s own clinical practice
+                  </p>
+                  <p className="mt-1 font-body text-sm text-white font-light leading-relaxed">
+                    COGAI runs every day inside Cognifica Health, the New York
+                    practice Dr. John Abrahams operates. He is the first customer.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
+                    Completion above ninety percent in seeded tenants
+                  </p>
+                  <p className="mt-1 font-body text-sm text-white font-light leading-relaxed">
+                    The cycle is eight minutes and the employee gets their own
+                    score back immediately.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
+                    Crisis escalation through a licensed clinical team
+                  </p>
+                  <p className="mt-1 font-body text-sm text-white font-light leading-relaxed">
+                    A licensed counselor is available around the clock. The
+                    employer is never the first responder.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
+                    HIPAA aligned posture
+                  </p>
+                  <p className="mt-1 font-body text-sm text-white font-light leading-relaxed">
+                    Consent captured per user before any data exists. BAA
+                    available on request.
+                  </p>
+                </li>
               </ul>
               <div className="mt-8">
                 <Link

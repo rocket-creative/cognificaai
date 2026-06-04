@@ -355,7 +355,7 @@ export default function PrivacyPage() {
                 Read the policy
                 <span aria-hidden="true">→</span>
               </Link>
-              <ArrowLink href="/pilot" variant="solid">
+              <ArrowLink href="/workforce#demo" variant="solid">
                 Talk to our counsel
               </ArrowLink>
             </div>

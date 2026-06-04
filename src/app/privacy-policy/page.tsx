@@ -178,7 +178,7 @@ export default function PrivacyPolicyPage() {
                 </h2>
                 <p className="font-body text-sm text-[#515154] font-light leading-relaxed">
                   For privacy inquiries, use the{" "}
-                  <Link href="/pilot" className="text-orange-grad hover:underline">
+                  <Link href="/workforce#demo" className="text-orange-grad hover:underline">
                     contact form
                   </Link>{" "}
                   or call{" "}

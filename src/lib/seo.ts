@@ -42,7 +42,7 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
     twitterTitle,
     twitterDescription,
     image = DEFAULT_OG_IMAGE,
-    imageAlt = `${SITE_NAME} — Cognitive health, measured.`,
+    imageAlt = `${SITE_NAME}. Cognitive health, measured.`,
     noindex = false,
     keywords,
   } = input;

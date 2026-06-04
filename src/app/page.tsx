@@ -20,10 +20,10 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "COGAI | Cognitive health, measured.",
   description:
-    "The workforce mental health platform that gives employers aggregate insight into the cognitive health of their workforce — without ever revealing an individual score. Six clinically validated screeners, monthly. Free 6-month trial.",
+    "The workforce mental health platform that gives employers aggregate insight into the cognitive health of their workforce, without ever revealing an individual score. Seven validated instruments, monthly. Free 6-month trial.",
   path: "/",
   ogDescription:
-    "Know the mental health of your workforce — without ever seeing an individual score. Six clinically validated screeners. Monthly 8-minute cadence. Free 6-month trial.",
+    "Know the mental health of your workforce without ever seeing an individual score. Seven validated instruments. Monthly 8-minute cadence. Free 6-month trial.",
   twitterDescription:
     "Aggregate insight for employers. Confidential for the employee. Free 6-month trial.",
   keywords: [
@@ -54,7 +54,7 @@ const audienceCards = [
     key: "medical",
     eyebrow: "COGAI Medical",
     product: "For clinics and insurance plans",
-    title: "Know which patients need you on Monday — before Monday.",
+    title: "Know which patients need you on Monday, before Monday.",
     body: "Validated screeners on a monthly cadence. Twelve-month trend per patient. Crisis flags surfaced in real time. Per seat for clinics. Per patient per month for insurance plans.",
     cta: { label: "Explore COGAI Medical", href: "/medical" },
   },
@@ -64,9 +64,10 @@ const instruments = [
   { acronym: "PHQ 9", name: "Depression" },
   { acronym: "GAD 7", name: "Anxiety" },
   { acronym: "PCL 5", name: "Trauma" },
-  { acronym: "AUDIT", name: "Alcohol use" },
   { acronym: "DAST 10", name: "Drug use" },
+  { acronym: "AUDIT", name: "Alcohol use" },
   { acronym: "PSQI", name: "Sleep" },
+  { acronym: "WORK", name: "Work wellness" },
 ];
 
 const commitments = [
@@ -98,10 +99,10 @@ export default function HomePage() {
                   Cognitive health, measured.
                 </p>
                 <h1 className="font-heading text-[clamp(28px,5vw,72px)] leading-[0.98] mt-3">
-                  <span className="gradient-text">Know the mental health of your workforce — without ever seeing an individual score.</span>
+                  <span className="gradient-text">Know the mental health of your workforce without ever seeing an individual score.</span>
                 </h1>
                 <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
-                  Six clinically validated screeners. Monthly 8-minute cadence. Aggregate insight for employers. Confidential for the employee. Free 6-month trial.
+                  Seven validated instruments. Monthly 8 minute cadence. Aggregate insight for employers. Confidential for the employee. Free 6 month trial.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3 lg:flex-shrink-0">
@@ -129,7 +130,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="One umbrella. Two products."
             title="Pick a lane."
-            lede="COGAI Workforce for employers. COGAI Medical for clinics and for small insurance plans. Same clinical boundary underneath. Same six validated instruments."
+            lede="COGAI Workforce for employers. COGAI Medical for clinics and for small insurance plans. Same clinical boundary underneath. Same seven validated instruments."
             as="h2"
           />
           <ul
@@ -267,14 +268,14 @@ export default function HomePage() {
       >
         <PageContainer className="py-16 sm:py-24">
           <SectionHeading
-            eyebrow="Six clinically validated instruments"
+            eyebrow="Seven validated instruments"
             title="Clinical instruments with research behind them"
             lede="Named. Scored. Tracked. No proprietary questionnaires stand in for them."
             as="h2"
           />
           <ul
             id="instruments-heading"
-            className="mt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"
+            className="mt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3"
             role="list"
           >
             {instruments.map((s, i) => (
@@ -360,10 +361,10 @@ export default function HomePage() {
                 No credit card. No commitment to convert. A real operator on every call.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:max-w-md lg:ml-auto w-full">
+            <div className="grid grid-cols-1 gap-3 lg:max-w-md lg:ml-auto w-full">
               <Link
                 href="/workforce#demo"
-                className="group flex items-center justify-between gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors md:col-span-2"
+                className="group flex items-center justify-between gap-3 bg-orange-grad text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light bg-orange-grad-hover transition-colors"
               >
                 Start your free trial
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
@@ -373,13 +374,6 @@ export default function HomePage() {
                 className="group flex items-center justify-between gap-3 border border-white text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-white hover:text-[#0A0A0A] transition-colors"
               >
                 Explore COGAI Medical
-                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="/pilot"
-                className="group flex items-center justify-between gap-3 border border-white text-white py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:bg-white hover:text-[#0A0A0A] transition-colors"
-              >
-                Schedule a consultation
                 <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </div>

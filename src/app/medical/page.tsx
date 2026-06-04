@@ -106,14 +106,14 @@ const useCases = [
   {
     label: "Use case A",
     title: "Medical clinics",
-    body: "Know which patients need you on Monday — before Monday. Validated screeners on a monthly cadence. Twelve-month trend per patient. Crisis flags surfaced in real time. The panel view sorts by R Score with clinical thresholds pre wired. LiveChat routes a flagged patient to a clinician without a three system scramble.",
-    cta: { href: "#demo", label: "COGAI Medical — request a demo" },
+    body: "Know which patients need you on Monday, before Monday. Validated screeners on a monthly cadence. Twelve-month trend per patient. Crisis flags surfaced in real time. The panel view sorts by R Score with clinical thresholds pre wired. LiveChat routes a flagged patient to a clinician without a three system scramble.",
+    cta: { href: "#demo", label: "Request a demo" },
   },
   {
     label: "Use case B",
     title: "Small insurance plans",
     body: "Validated screeners on a monthly cadence across your covered population. Identified clinical panels. Per patient per month pricing. Medication compliance up. ER admissions down. HEDIS depression and follow up measures move.",
-    cta: { href: "#payer", label: "For insurance plans — scope a pilot" },
+    cta: { href: "#payer", label: "For insurance plans" },
   },
 ];
 
@@ -194,7 +194,7 @@ const faqs = [
   {
     question: "What about EMR integration?",
     answer:
-      "Most clinics start without EMR integration. The Medical Provider console runs alongside the chart and the panel data is exportable. Direct EMR integration is on roadmap. The pilot does not require it.",
+      "Most clinics start without EMR integration. The Medical Provider console runs alongside the chart and the panel data is exportable. Direct EMR integration is on roadmap. It is not required to get started.",
   },
   {
     question: "Patients say it is yet another survey.",
@@ -238,7 +238,7 @@ export default function MedicalPage() {
                     <span className="gradient-text">Catching the spark before the fire.</span>
                   </h1>
                   <p className="mt-4 font-body text-sm sm:text-base text-[#0A0A0A] font-light leading-relaxed max-w-2xl">
-                    Know which patients need you on Monday — before Monday.
+                    Know which patients need you on Monday, before Monday.
                     Validated screeners on a monthly cadence. Twelve-month trend
                     per patient. Crisis flags surfaced in real time. Per seat for
                     clinics.
@@ -494,8 +494,8 @@ export default function MedicalPage() {
           </div>
           <p className="mt-8 font-body text-xs text-[#737373] font-light italic max-w-2xl">
             Specific percentages are confirmed against the plan&apos;s own
-            panel during pilot scoping. Outcome categories are designed targets
-            for the product, not delivered claims.
+            panel. Outcome categories are designed targets for the product, not
+            delivered claims.
           </p>
         </PageContainer>
       </section>
@@ -684,7 +684,8 @@ export default function MedicalPage() {
               </h2>
               <p className="mt-6 font-body text-base text-[#404040] font-light leading-relaxed">
                 Clinics buy seats. Insurance plans and workers comp carriers
-                buy panels. Both rates are confirmed at pilot scoping.
+                buy panels. Both rates are set with you after you have seen the
+                product on your own panel.
               </p>
             </div>
             <div className="space-y-6">
@@ -699,9 +700,6 @@ export default function MedicalPage() {
                   XS · SM · MD · LG. Same tier structure as the workforce
                   product.
                 </p>
-                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-[#737373]">
-                  $TBD / seat / month
-                </p>
               </div>
               <div className="border border-[#D4D4D4] bg-white p-6">
                 <p className="font-nav text-[10px] tracking-widest uppercase text-orange-grad">
@@ -713,9 +711,6 @@ export default function MedicalPage() {
                 <p className="mt-3 font-body text-sm text-[#404040] font-light">
                   Plan size, panel shape, and the instruments in scope drive
                   the rate. Workers comp prices per claim or per episode.
-                </p>
-                <p className="mt-3 font-nav text-xs tracking-widest uppercase text-[#737373]">
-                  $TBD / patient / month
                 </p>
               </div>
             </div>
@@ -776,7 +771,7 @@ export default function MedicalPage() {
                 <li>Medical Provider console walk through</li>
                 <li>R Score sort and clinical thresholds</li>
                 <li>Crisis protocol live</li>
-                <li>Pilot scoping, if the fit is right</li>
+                <li>Scoping, if the fit is right</li>
               </ul>
               <div className="mt-8">
                 <Link
@@ -809,7 +804,7 @@ export default function MedicalPage() {
                 id="payer-heading"
                 className="font-heading text-[clamp(28px,4vw,56px)] leading-[1.05] text-white mt-4"
               >
-                Scope a pilot against your own panel.
+                See it against your own panel.
               </h2>
               <p className="mt-6 font-body text-base text-white font-light leading-relaxed">
                 A clinical operator and the founder are on the call. We look

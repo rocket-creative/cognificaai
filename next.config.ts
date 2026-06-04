@@ -50,6 +50,7 @@ const nextConfig: NextConfig = {
       { source: "/for-employers", destination: "/workforce", permanent: true },
       { source: "/for-clinics", destination: "/medical", permanent: true },
       { source: "/for-insurers", destination: "/medical#insurers", permanent: true },
+      { source: "/pilot", destination: "/workforce#demo", permanent: true },
     ];
   },
   images: {

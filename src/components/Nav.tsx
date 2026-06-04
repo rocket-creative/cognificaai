@@ -32,7 +32,6 @@ function ctaForPath(pathname: string | null) {
   if (pathname.startsWith("/medical#insurers")) return { href: "/medical#contact", label: "Book a call" };
   if (pathname.startsWith("/medical")) return { href: "/medical#demo", label: "Request a demo" };
   if (pathname.startsWith("/workforce")) return { href: "/workforce#demo", label: "Start your free trial" };
-  if (pathname.startsWith("/pilot")) return { href: "/pilot#consultation", label: "Schedule a consultation" };
   return { href: "/workforce#demo", label: "Start your free trial" };
 }
 

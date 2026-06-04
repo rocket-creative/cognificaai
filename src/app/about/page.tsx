@@ -293,9 +293,9 @@ export default function AboutPage() {
                 Talk to us
               </h2>
               <p className="mt-6 font-body text-base text-[#515154] font-light leading-relaxed">
-                For product questions, pilot scoping, or a clinical reference,
-                use the contact form or call. A clinician or the founder will
-                be on the call.
+                For product questions, trial scoping, or a clinical reference,
+                use the form or call. A clinician or the founder will be on the
+                call.
               </p>
             </div>
             <div className="flex flex-col gap-6 self-center">
@@ -304,7 +304,7 @@ export default function AboutPage() {
                   General
                 </p>
                 <Link
-                  href="/pilot"
+                  href="/workforce#demo"
                   className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
                   Open the contact form →
@@ -326,7 +326,7 @@ export default function AboutPage() {
                   Press
                 </p>
                 <Link
-                  href="/pilot"
+                  href="/workforce#demo"
                   className="font-heading text-xl sm:text-2xl text-[#0A0A0A] text-orange-grad-hover transition-colors"
                 >
                   Submit a press inquiry →
@@ -355,12 +355,6 @@ export default function AboutPage() {
             <ArrowLink href="/medical" variant="ghost">
               Explore COGAI Medical
             </ArrowLink>
-            <Link
-              href="/pilot"
-              className="font-nav text-xs tracking-widest uppercase text-[#6E6E73] hover:text-[#0A0A0A] transition-colors self-center px-2"
-            >
-              Schedule a consultation
-            </Link>
           </div>
         </PageContainer>
       </section>
